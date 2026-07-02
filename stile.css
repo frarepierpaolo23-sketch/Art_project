@@ -1,0 +1,57 @@
+
+/* 1. ARTE ANTICA (Luce Solare/Naturale)
+   Sfondo: Grigio pietra chiaro o sabbia. La luce è quella del sole che colpisce i templi e i marmi. */
+.arte-antica {
+    background-color: #f4f1ea !important;
+    color: #2c3e50 !important;
+}
+
+/* 2. ARTE PALEOCRISTIANA E MEDIEVALE (Luce Mistica/Fondo Oro)
+   Sfondo: Un ocra scuro o oro brunito. La luce nasce dai mosaici nell'oscurità delle basiliche. */
+.paleocristiana-medievale {
+    background-color: #2c2416 !important;
+    color: #f1c40f !important; /* Testo color oro per brillare sul buio */
+}
+
+/* 3. ROMANICO E GOTICO (La "Lux Nova" dalle vetrate)
+   Sfondo: Blu notte profondo o viola scuro, che ricorda l'interno di una cattedrale dove la luce filtra colorata. */
+.romanico-gotico {
+    background-color: #0b0f19 !important;
+    color: #cbd5e1 !important;
+}
+
+/* 4. RINASCIMENTO (Luce della Ragione / Chiara e Diffusa)
+   Sfondo: Bianco caldo, avorio o crema. Massima chiarezza matematica e geometrica. */
+.rinascimento {
+    background-color: #fffdf3 !important;
+    color: #1a202c !important;
+}
+
+/* 5. MANIERISMO (Luce Artificiale / Irreale)
+   Sfondo: Un grigio-verde acido o tonalità fredde e instabili. La luce non è più naturale, diventa teatrale e bizzarra. */
+.manierismo {
+    background-color: #2d3748 !important;
+    color: #a3e635 !important; /* Testo verde acido/giallo freddo */
+}
+
+/* 6. BAROCCO (Luce Tagliente / Effetto Caravaggio)
+   Sfondo: Nero assoluto. Contrasto violento tra buio pesto e squarci di luce accecante. */
+.barocco {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.4); /* Effetto bagliore sul testo */
+}
+
+/* 7. NEOCLASSICISMO (Luce Fredda e Razionale)
+   Sfondo: Grigio marmo chiarissimo o bianco ghiaccio. Pulizia assoluta, ordine e rigore illuminista. */
+.neoclassicismo {
+    background-color: #f8fafc !important;
+    color: #0f172a !important;
+}
+
+/* 8. ROMANTICISMO / REALISMO (Luce della Natura / Temporale)
+   Sfondo: Colori della terra, grigio tempesta o arancione tramonto (pensa ai cieli di Turner o Friedrich). */
+.romanticismo-realismo {
+    background-color: #1e1b18 !important; /* Grigio fumo/terra scura */
+    color: #fdba74 !important; /* Testo color alba/tramonto */
+}
