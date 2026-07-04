@@ -68,6 +68,14 @@
         .dark-section .btn-explore { background-color: var(--gold); color: var(--dark); }
         .dark-section .btn-explore:hover { background-color: transparent; color: var(--gold); }
 
+        .btn-info-sm {
+            display: inline-block; padding: 10px 20px; font-size: 11px; font-weight: 600;
+            text-transform: uppercase; letter-spacing: 1px; color: var(--dark);
+            background-color: var(--gold); border: 2px solid var(--gold); border-radius: 40px;
+            text-decoration: none; transition: all 0.3s ease; margin-top: 15px;
+        }
+        .btn-info-sm:hover { background-color: transparent; color: var(--gold); }
+
         .two-column { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; width: 100%; }
         
         .image-wrapper { 
@@ -89,11 +97,12 @@
         .info-card { 
             padding: 40px; border: 1px solid var(--gold); border-radius: 20px; text-align: center; 
             background: rgba(255,255,255,0.03); transition: background 0.3s;
+            display: flex; flex-direction: column; justify-content: space-between; align-items: center;
         }
         .info-card:hover { background: rgba(212, 175, 55, 0.05); }
         .info-card i { font-size: 45px; color: var(--gold); margin-bottom: 25px; }
         .info-card h3 { font-family: 'Playfair Display', serif; margin-bottom: 15px; font-size: 24px; color: var(--gold); }
-        .info-card p { color: #cbd5e1; font-size: 16px; line-height: 1.6; }
+        .info-card p { color: #cbd5e1; font-size: 16px; line-height: 1.6; width: 100%; }
 
         @media (max-width: 1024px) {
             .two-column { grid-template-columns: 1fr; }
@@ -271,19 +280,26 @@
             
             <div class="info-grid">
                 <div class="info-card">
-                    <i class="fa-solid fa-user-graduate"></i>
-                    <h3>Autore</h3>
-                    <p>Realizzato da [Il tuo Nome e Cognome]<br>Classe [Tua Classe]<br>Anno Scolastico 2025/2026</p>
+                    <div>
+                        <i class="fa-solid fa-user-graduate"></i>
+                        <h3>Autore</h3>
+                        <p><strong>Studente:</strong> Pierpaolo Frare<br><strong>Classe:</strong> 4°BA<br><strong>Istituto:</strong> Duca degli Abruzzi, Treviso</p>
+                    </div>
                 </div>
                 <div class="info-card">
-                    <i class="fa-solid fa-school"></i>
-                    <h3>Istituto</h3>
-                    <p>[Nome del tuo Liceo/Scuola]<br>Percorso d'Esame Interdisciplinare</p>
+                    <div>
+                        <i class="fa-solid fa-code"></i>
+                        <h3>Realizzazione</h3>
+                        <p>Dettagli sullo sviluppo del codice e la gestione della struttura web.</p>
+                    </div>
+                    <a href="crediti.html" class="btn-info-sm">Vedi Crediti Sviluppo</a>
                 </div>
                 <div class="info-card">
-                    <i class="fa-solid fa-circle-info"></i>
-                    <h3>Il Progetto</h3>
-                    <p>Un percorso digitale volto a esplorare l'evoluzione del concetto di luce nella storia dell'arte, in connessione con la fisica e il pensiero filosofico.</p>
+                    <div>
+                        <i class="fa-solid fa-circle-info"></i>
+                        <h3>Il Progetto</h3>
+                        <p>Un percorso digitale interamente volto a esplorare l'evoluzione del concetto di luce nella storia dell'arte.</p>
+                    </div>
                 </div>
             </div>
         </div>
