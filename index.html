@@ -16,10 +16,10 @@
 --text-dark: #1c1917;
 --navbar-height: 70px;
 }
-* { box-sizing: border-box; margin: 0; padding: 0; }
+​* { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; scroll-padding-top: var(--navbar-height); }
 body { background-color: var(--dark); color: var(--text-dark); font-family: 'Montserrat', sans-serif; overflow-x: hidden; }
-.navbar {
+​.navbar {
 position: fixed; top: 0; left: 0; width: 100%; height: var(--navbar-height);
 background: rgba(15, 23, 42, 0.95); backdrop-filter: blur(10px);
 z-index: 1000; padding: 0 50px; display: flex; justify-content: space-between; align-items: center;
@@ -33,31 +33,31 @@ text-transform: uppercase; letter-spacing: 1px; padding: 8px 12px; transition: a
 border-radius: 4px;
 }
 .nav-links a:hover, .nav-links a.active { color: var(--gold); background: rgba(212, 175, 55, 0.1); }
-section {
+​section {
 width: 100%; min-height: 100vh; display: flex; flex-direction: column;
 justify-content: center; padding: 100px 10%; position: relative;
 background-color: var(--light); border-bottom: 1px solid #e2e8f0;
 }
-.reveal { opacity: 0; transform: translateY(50px); transition: all 1s cubic-bezier(0.2, 0.8, 0.2, 1); }
+​.reveal { opacity: 0; transform: translateY(50px); transition: all 1s cubic-bezier(0.2, 0.8, 0.2, 1); }
 .reveal.visible { opacity: 1; transform: translateY(0); }
-h1, h2, h3 { font-family: 'Playfair Display', serif; }
+​h1, h2, h3 { font-family: 'Playfair Display', serif; }
 .slide-title { font-size: 45px; margin-bottom: 30px; border-bottom: 3px solid var(--gold); padding-bottom: 10px; width: fit-content; }
 p { font-size: 19px; line-height: 1.7; color: #444; margin-bottom: 20px; }
-.two-column { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; width: 100%; }
-.image-wrapper {
+​.two-column { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; width: 100%; }
+​.image-wrapper {
 border-radius: 15px; overflow: hidden; height: 450px;
 box-shadow: 0 20px 40px rgba(0,0,0,0.15); border: 1px solid #ddd;
 transition: transform 0.5s ease;
 }
 .image-wrapper:hover { transform: translateY(-10px); }
 .image-wrapper img { width: 100%; height: 100%; object-fit: cover; }
-#home { background-color: var(--dark); color: #fff; text-align: center; border: none; }
+​#home { background-color: var(--dark); color: #fff; text-align: center; border: none; }
 #home h1 { font-size: 120px; color: var(--gold); margin-bottom: 10px; }
 #home p { color: #94a3b8; font-size: 26px; }
-.dark-section { background-color: #0a0a0a; color: #fff; border-bottom: 1px solid #1a1a1a; }
+​.dark-section { background-color: #0a0a0a; color: #fff; border-bottom: 1px solid #1a1a1a; }
 .dark-section .slide-title { color: var(--gold); }
 .dark-section p { color: #cbd5e1; }
-.icon-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 40px; }
+​.icon-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 40px; }
 .icon-card {
 padding: 40px; border: 1px solid var(--gold); border-radius: 20px; text-align: center;
 background: rgba(255,255,255,0.03); transition: background 0.3s;
@@ -65,8 +65,8 @@ background: rgba(255,255,255,0.03); transition: background 0.3s;
 .icon-card:hover { background: rgba(212, 175, 55, 0.05); }
 .icon-card i { font-size: 45px; color: var(--gold); margin-bottom: 25px; }
 .icon-card h3 { margin-bottom: 15px; font-size: 24px; color: var(--gold); }
-.footer-tag { position: absolute; bottom: 30px; left: 10%; font-size: 12px; color: #999; letter-spacing: 3px; text-transform: uppercase; }
-@media (max-width: 1024px) {
+​.footer-tag { position: absolute; bottom: 30px; left: 10%; font-size: 12px; color: #999; letter-spacing: 3px; text-transform: uppercase; }
+​@media (max-width: 1024px) {
 .two-column { grid-template-columns: 1fr; }
 .image-wrapper { height: 300px; }
 .nav-links { display: none; }
@@ -74,7 +74,7 @@ background: rgba(255,255,255,0.03); transition: background 0.3s;
 </style>
 </head>
 <body>
-<nav class="navbar">
+​<nav class="navbar">
 <a href="#home" class="logo">LUX</a>
 <ul class="nav-links">
 <li><a href="#home">Home</a></li>
@@ -89,14 +89,14 @@ background: rgba(255,255,255,0.03); transition: background 0.3s;
 <li><a href="#connessioni">Interdisciplinare</a></li>
 </ul>
 </nav>
-<section id="home">
+​<section id="home">
 <div class="reveal">
 <h1>LUX</h1>
 <p>Viaggio tra Arte, Scienza e Pensiero</p>
 <div style="margin-top: 50px; font-size: 12px; letter-spacing: 5px; color: var(--gold); text-transform: uppercase;">Esplora l'Evoluzione della Visione</div>
 </div>
 </section>
-<section id="antica">
+​<section id="antica">
 <div class="two-column reveal">
 <div>
 <h2 class="slide-title">La Forma Scolpita</h2>
@@ -109,7 +109,7 @@ background: rgba(255,255,255,0.03); transition: background 0.3s;
 </div>
 <div class="footer-tag">01 / L'Armonia Classica</div>
 </section>
-<section id="paleocristiana" class="dark-section">
+​<section id="paleocristiana" class="dark-section">
 <div class="two-column reveal">
 <div class="image-wrapper" style="border: 1px solid var(--gold);">
 <img src="http://googleusercontent.com/image_collection/image_retrieval/16614073691177128400" alt="Mosaico Bizantino">
@@ -117,12 +117,12 @@ background: rgba(255,255,255,0.03); transition: background 0.3s;
 <div>
 <h2 class="slide-title">Luce Trascendente</h2>
 <h3>Paleocristiana e Medievale</h3>
-<p>Qui la luce cambia natura: diventa <strong>Oro Divino</strong>. Nei mosaici di Ravenna, la luce riflessa non serve a creare spazio, ma ad azzerarlo. È una luce anti-naturalistica che rappresenta la divinità, l'eternità e la verità spirituale che non conosce ombra.</p>
+<p>Qui la luce cambia natura: diventa <strong>Oro Divino</strong>. Nei mosaici di Ravenna, la luce riflessa non serve a creare spazio, ma ad azzerarlo. È una luce anti-naturalistica che rappresenta la divinità, l'eternità e la verità spirituale che non conhece ombra.</p>
 </div>
 </div>
 <div class="footer-tag">02 / L'Oro di Dio</div>
 </section>
-<section id="gotico">
+​<section id="gotico">
 <div class="two-column reveal">
 <div>
 <h2 class="slide-title">Lux Nova</h2>
@@ -135,7 +135,7 @@ background: rgba(255,255,255,0.03); transition: background 0.3s;
 </div>
 <div class="footer-tag">03 / La Teologia della Luce</div>
 </section>
-<section id="rinascimento">
+​<section id="rinascimento">
 <div class="two-column reveal">
 <div class="image-wrapper">
 <img src="http://googleusercontent.com/image_collection/image_retrieval/16311664788026912264" alt="Rinascimento Luce">
@@ -148,7 +148,7 @@ background: rgba(255,255,255,0.03); transition: background 0.3s;
 </div>
 <div class="footer-tag">04 / Ragione e Prospettiva</div>
 </section>
-<section id="manierismo" class="dark-section" style="background-color: #1a1c1a;">
+​<section id="manierismo" class="dark-section" style="background-color: #1a1c1a;">
 <div class="two-column reveal">
 <div>
 <h2 class="slide-title">Luce Artificiale</h2>
@@ -161,7 +161,7 @@ background: rgba(255,255,255,0.03); transition: background 0.3s;
 </div>
 <div class="footer-tag">05 / L'Inquietudine della Forma</div>
 </section>
-<section id="barocco" class="dark-section">
+​<section id="barocco" class="dark-section">
 <div class="two-column reveal">
 <div class="image-wrapper">
 <img src="http://googleusercontent.com/image_collection/image_retrieval/8343567970090063389" alt="Caravaggio Chiaroscuro">
@@ -174,12 +174,12 @@ background: rgba(255,255,255,0.03); transition: background 0.3s;
 </div>
 <div class="footer-tag">06 / L'Istantanea del Sacro</div>
 </section>
-<section id="neoclassicismo">
+​<section id="neoclassicismo">
 <div class="two-column reveal">
 <div>
 <h2 class="slide-title">La Luce del Logos</h2>
 <h3>Neoclassicismo</h3>
-<p>Sotto l'influenza dell'Illuminismo, la luce torna a essere <strong>chiara, fredda e ferma</strong>. David usa una luce razionale che modella i corpi como sculture antiche, celebrando l'eroismo, il dovere civico e la verità della ragione.</p>
+<p>Sotto l'influenza dell'Illuminismo, la luce torna a essere <strong>chiara, fredda e ferma</strong>. David usa una luce razionale che modella i corpi come sculture antiche, celebrando l'eroismo, il dovere civico e la verità della ragione.</p>
 </div>
 <div class="image-wrapper">
 <img src="http://googleusercontent.com/image_collection/image_retrieval/13913568184068445450" alt="David Giuramento Orazi">
@@ -187,7 +187,7 @@ background: rgba(255,255,255,0.03); transition: background 0.3s;
 </div>
 <div class="footer-tag">07 / La Ragione Illuminata</div>
 </section>
-<section id="romanticismo">
+​<section id="romanticismo">
 <div class="two-column reveal">
 <div class="image-wrapper">
 <img src="http://googleusercontent.com/image_collection/image_retrieval/3445172198331826275" alt="Turner Sublime">
@@ -200,11 +200,11 @@ background: rgba(255,255,255,0.03); transition: background 0.3s;
 </div>
 <div class="footer-tag">08 / L'Infinito Visivo</div>
 </section>
-<section id="connessioni" class="dark-section" style="border: none;">
+​<section id="connessioni" class="dark-section" style="border: none;">
 <div class="reveal">
 <h2 class="slide-title">Oltre l'Immagine</h2>
 <p>Il dialogo interdisciplinare della luce attraversa i secoli del nostro liceo.</p>
-<div class="icon-grid">
+​<div class="icon-grid">
 <div class="icon-card">
 <i class="fa-solid fa-atom"></i>
 <h3>Fisica</h3>
@@ -223,7 +223,7 @@ background: rgba(255,255,255,0.03); transition: background 0.3s;
 </div>
 </div>
 </section>
-<script>
+​<script>
 const observerOptions = { threshold: 0.15 };
 const observer = new IntersectionObserver((entries) => {
 entries.forEach(entry => {
@@ -232,8 +232,8 @@ entry.target.classList.add('visible');
 }
 });
 }, observerOptions);
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-window.addEventListener('scroll', () => {
+​document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+​window.addEventListener('scroll', () => {
 let current = "";
 document.querySelectorAll('section').forEach(section => {
 const sectionTop = section.offsetTop;
@@ -241,7 +241,7 @@ if (pageYOffset >= sectionTop - 100) {
 current = section.getAttribute('id');
 }
 });
-document.querySelectorAll('.nav-links a').forEach(a => {
+​document.querySelectorAll('.nav-links a').forEach(a => {
 a.classList.remove('active');
 if (a.getAttribute('href').includes(current)) {
 a.classList.add('active');
