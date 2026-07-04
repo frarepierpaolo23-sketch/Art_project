@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LUCE: Arte, Scienza e Pensiero</title>
+    <title>Luce: Arte, Scienza e Pensiero</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
@@ -45,11 +45,9 @@
         .reveal { opacity: 0; transform: translateY(50px); transition: all 1s cubic-bezier(0.2, 0.8, 0.2, 1); }
         .reveal.visible { opacity: 1; transform: translateY(0); }
 
-        h1, h2, h3 { font-family: 'Playfair Display', serif; }
-        .slide-title { font-size: 45px; margin-bottom: 15px; border-bottom: 3px solid var(--gold); padding-bottom: 10px; width: fit-content; }
-        h3 { font-size: 22px; color: #64748b; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px; }
+        h1, h2 { font-family: 'Playfair Display', serif; }
+        .slide-title { font-size: 45px; margin-bottom: 30px; border-bottom: 3px solid var(--gold); padding-bottom: 10px; width: fit-content; color: var(--text-dark); }
         
-        /* PUNTI E APPUNTI VETRINA */
         .bullet-notes { list-style-type: none; margin-bottom: 35px; }
         .bullet-notes li { font-size: 18px; line-height: 1.8; color: #444; margin-bottom: 12px; position: relative; padding-left: 25px; }
         .bullet-notes li::before { content: "✦"; position: absolute; left: 0; color: var(--gold); font-size: 16px; }
@@ -87,29 +85,28 @@
         .dark-section { background-color: #0a0a0a; color: #fff; border-bottom: 1px solid #1a1a1a; }
         .dark-section .slide-title { color: var(--gold); }
 
-        .icon-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 40px; }
-        .icon-card { 
+        .info-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 40px; }
+        .info-card { 
             padding: 40px; border: 1px solid var(--gold); border-radius: 20px; text-align: center; 
             background: rgba(255,255,255,0.03); transition: background 0.3s;
         }
-        .icon-card:hover { background: rgba(212, 175, 55, 0.05); }
-        .icon-card i { font-size: 45px; color: var(--gold); margin-bottom: 25px; }
-        .icon-card h3 { margin-bottom: 15px; font-size: 24px; color: var(--gold); }
-        .icon-card p { color: #cbd5e1; font-size: 14px; line-height: 1.6; }
-
-        .footer-tag { position: absolute; bottom: 30px; left: 10%; font-size: 12px; color: #999; letter-spacing: 3px; text-transform: uppercase; }
+        .info-card:hover { background: rgba(212, 175, 55, 0.05); }
+        .info-card i { font-size: 45px; color: var(--gold); margin-bottom: 25px; }
+        .info-card h3 { font-family: 'Playfair Display', serif; margin-bottom: 15px; font-size: 24px; color: var(--gold); }
+        .info-card p { color: #cbd5e1; font-size: 16px; line-height: 1.6; }
 
         @media (max-width: 1024px) {
             .two-column { grid-template-columns: 1fr; }
             .image-wrapper { height: 300px; }
             .nav-links { display: none; }
+            .info-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
     <nav class="navbar">
-        <a href="#home" class="logo">LUX</a>
+        <a href="#home" class="logo">LUCE</a>
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#antica">Antica</a></li>
@@ -120,13 +117,13 @@
             <li><a href="#barocco">Barocco</a></li>
             <li><a href="#neoclassicismo">Neoclassicismo</a></li>
             <li><a href="#romanticismo">Romanticismo</a></li>
-            <li><a href="#connessioni">Interdisciplinare</a></li>
+            <li><a href="#info">Info</a></li>
         </ul>
     </nav>
 
     <section id="home">
         <div class="reveal">
-            <h1>LUX</h1>
+            <h1>LUCE</h1>
             <p>Viaggio tra Arte, Scienza e Pensiero</p>
             <div style="margin-top: 50px; font-size: 12px; letter-spacing: 5px; color: var(--gold); text-transform: uppercase;">Esplora l'Evoluzione della Visione</div>
         </div>
@@ -135,8 +132,7 @@
     <section id="antica">
         <div class="two-column reveal">
             <div>
-                <h2 class="slide-title">La Forma Scolpita</h2>
-                <h3>Arte Greca e Romana</h3>
+                <h2 class="slide-title">Arte Greca e Romana</h2>
                 <ul class="bullet-notes">
                     <li>La luce come elemento <strong>oggettivo e razionale</strong>.</li>
                     <li>Definizione millimetrica del volume plastico e dell'anatomia.</li>
@@ -148,7 +144,6 @@
                 <img src="http://googleusercontent.com/image_collection/image_retrieval/16357726398793917531" alt="Augusto di Prima Porta - Dettaglio Marmo">
             </div>
         </div>
-        <div class="footer-tag">01 / L'Armonia Classica</div>
     </section>
 
     <section id="paleocristiana" class="dark-section">
@@ -157,8 +152,7 @@
                 <img src="http://googleusercontent.com/image_collection/image_retrieval/16614073691177128400" alt="Mosaici di Ravenna - Luce Trascendente">
             </div>
             <div>
-                <h2 class="slide-title">Luce Trascendente</h2>
-                <h3>Paleocristiana e Medievale</h3>
+                <h2 class="slide-title">Arte Paleocristiana e Medievale</h2>
                 <ul class="bullet-notes">
                     <li>La luce si smaterializza e diventa <strong>Oro Divino</strong>.</li>
                     <li>I mosaici di Ravenna annullano lo spazio fisico e prospettico.</li>
@@ -167,14 +161,12 @@
                 <a href="paleocristiana.html" class="btn-explore">Esplora l'Opera e la Luce <i class="fa-solid fa-arrow-right" style="margin-left: 8px;"></i></a>
             </div>
         </div>
-        <div class="footer-tag">02 / L'Oro di Dio</div>
     </section>
 
     <section id="gotico">
         <div class="two-column reveal">
             <div>
-                <h2 class="slide-title">Lux Nova</h2>
-                <h3>Romanico e Gotico</h3>
+                <h2 class="slide-title">Arte Romanica e Gotica</h2>
                 <ul class="bullet-notes">
                     <li>La luce fisica "attraversa" la materia e si fa architettura.</li>
                     <li>Le grandi vetrate istoriate trasformano l'ambiente in uno spazio mistico.</li>
@@ -186,7 +178,6 @@
                 <img src="http://googleusercontent.com/image_collection/image_retrieval/16552439557681082615" alt="Vetrate della Sainte-Chapelle">
             </div>
         </div>
-        <div class="footer-tag">03 / La Teologia della Luce</div>
     </section>
 
     <section id="rinascimento">
@@ -195,8 +186,7 @@
                 <img src="http://googleusercontent.com/image_collection/image_retrieval/16311664788026912264" alt="Piero della Francesca o Leonardo da Vinci">
             </div>
             <div>
-                <h2 class="slide-title">La Luce Scientifica</h2>
-                <h3>Il Rinascimento</h3>
+                <h2 class="slide-title">Il Rinascimento</h2>
                 <ul class="bullet-notes">
                     <li>La luce diventa <strong>misurabile, matematica e naturale</strong>.</li>
                     <li>Uso della prospettiva geometrica per ordinare lo spazio visivo.</li>
@@ -205,14 +195,12 @@
                 <a href="rinascimento.html" class="btn-explore">Esplora l'Opera e la Luce <i class="fa-solid fa-arrow-right" style="margin-left: 8px;"></i></a>
             </div>
         </div>
-        <div class="footer-tag">04 / Ragione e Prospettiva</div>
     </section>
 
     <section id="manierismo" class="dark-section" style="background-color: #1a1c1a;">
         <div class="two-column reveal">
             <div>
-                <h2 class="slide-title">Luce Artificiale</h2>
-                <h3>Il Manierismo</h3>
+                <h2 class="slide-title">Il Manierismo</h2>
                 <ul class="bullet-notes">
                     <li>Crisi delle certezze rinascimentali e dello spazio geometrico.</li>
                     <li>La luce si fa <strong>instabile, asimmetrica e fortemente teatrale</strong>.</li>
@@ -224,7 +212,6 @@
                 <img src="http://googleusercontent.com/image_collection/image_retrieval/16335198031301918349" alt="Il Manierismo di Tintoretto">
             </div>
         </div>
-        <div class="footer-tag">05 / L'Inquietudine della Forma</div>
     </section>
 
     <section id="barocco" class="dark-section">
@@ -233,8 +220,7 @@
                 <img src="http://googleusercontent.com/image_collection/image_retrieval/8343567970090063389" alt="Caravaggio - Vocazione di San Matteo">
             </div>
             <div>
-                <h2 class="slide-title">Chiaroscuro Drammatico</h2>
-                <h3>Il Barocco</h3>
+                <h2 class="slide-title">Il Barocco</h2>
                 <ul class="bullet-notes">
                     <li>La rivoluzione del chiaroscuro introdotta da <strong>Caravaggio</strong>.</li>
                     <li>Luce direzionale e tagliente che squarcia l'oscurità dello sfondo.</li>
@@ -243,14 +229,12 @@
                 <a href="barocco.html" class="btn-explore">Esplora l'Opera e la Luce <i class="fa-solid fa-arrow-right" style="margin-left: 8px;"></i></a>
             </div>
         </div>
-        <div class="footer-tag">06 / L'Istantanea del Sacro</div>
     </section>
 
     <section id="neoclassicismo">
         <div class="two-column reveal">
             <div>
-                <h2 class="slide-title">La Luce del Logos</h2>
-                <h3>Neoclassicismo</h3>
+                <h2 class="slide-title">Neoclassicismo</h2>
                 <ul class="bullet-notes">
                     <li>Ritorno a una luce <strong>nitida, diffusa, fredda e ferma</strong>.</li>
                     <li>L'influenza del pensiero illuminista sulla razionalità compositiva.</li>
@@ -262,7 +246,6 @@
                 <img src="http://googleusercontent.com/image_collection/image_retrieval/13913568184068445450" alt="David - Il Giuramento degli Orazi">
             </div>
         </div>
-        <div class="footer-tag">07 / La Ragione Illuminata</div>
     </section>
 
     <section id="romanticismo">
@@ -271,8 +254,7 @@
                 <img src="http://googleusercontent.com/image_collection/image_retrieval/3445172198331826275" alt="William Turner - Luce e Colore">
             </div>
             <div>
-                <h2 class="slide-title">Il Sublime Luminoso</h2>
-                <h3>Romanticismo e Realismo</h3>
+                <h2 class="slide-title">Romanticismo e Realismo</h2>
                 <ul class="bullet-notes">
                     <li>In <strong>William Turner</strong> la luce atmosferica dissolve completamente la materia.</li>
                     <li>La resa visiva del <strong>Sublime</strong>: terrore, infinito ed emozione pura.</li>
@@ -281,29 +263,27 @@
                 <a href="romanticismo.html" class="btn-explore">Esplora l'Opera e la Luce <i class="fa-solid fa-arrow-right" style="margin-left: 8px;"></i></a>
             </div>
         </div>
-        <div class="footer-tag">08 / L'Infinito Visivo</div>
     </section>
 
-    <section id="connessioni" class="dark-section" style="border: none;">
+    <section id="info" class="dark-section" style="border: none;">
         <div class="reveal">
-            <h2 class="slide-title">Oltre l'Immagine</h2>
-            <p style="font-size: 18px; color: #cbd5e1; margin-bottom: 40px;">Il dialogo interdisciplinare della luce attraverso i secoli del nostro percorso scolastico.</p>
+            <h2 class="slide-title">Informazioni sul Progetto</h2>
             
-            <div class="icon-grid">
-                <div class="icon-card">
-                    <i class="fa-solid fa-atom"></i>
-                    <h3>Fisica</h3>
-                    <p>Dall'ottica geometrica classica alla rifrazione nelle vetrate, fino allo studio moderno della natura ondulatoria della luce.</p>
+            <div class="info-grid">
+                <div class="info-card">
+                    <i class="fa-solid fa-user-graduate"></i>
+                    <h3>Autore</h3>
+                    <p>Realizzato da [Il tuo Nome e Cognome]<br>Classe [Tua Classe]<br>Anno Scolastico 2025/2026</p>
                 </div>
-                <div class="icon-card">
-                    <i class="fa-solid fa-scroll"></i>
-                    <h3>Filosofia</h3>
-                    <p>La luce intesa come Verità e Conoscenza: dal celebre Mito della Caverna platonico all'avvento storico dell'Illuminismo.</p>
+                <div class="info-card">
+                    <i class="fa-solid fa-school"></i>
+                    <h3>Istituto</h3>
+                    <p>[Nome del tuo Liceo/Scuola]<br>Percorso d'Esame Interdisciplinare</p>
                 </div>
-                <div class="icon-card">
-                    <i class="fa-solid fa-pen-nib"></i>
-                    <h3>Letteratura</h3>
-                    <p>Dalla "Luce intellettual piena d'amore" della Commedia di Dante fino alla luna malinconica e distante di Giacomo Leopardi.</p>
+                <div class="info-card">
+                    <i class="fa-solid fa-circle-info"></i>
+                    <h3>Il Progetto</h3>
+                    <p>Un percorso digitale volto a esplorare l'evoluzione del concetto di luce nella storia dell'arte, in connessione con la fisica e il pensiero filosofico.</p>
                 </div>
             </div>
         </div>
