@@ -2,63 +2,177 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>1. Arte Antica - Il Viaggio della Luce</title>
+    <title>1. Arte Greca e Romana - I Bronzi di Riace</title>
     <link rel="stylesheet" href="stile.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body.arte-antica {
+            background-color: #0f172a;
+            color: #cbd5e1;
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+        }
+        header {
+            text-align: center; 
+            padding: 60px 20px 30px 20px;
+        }
+        header p {
+            opacity: 0.6;
+            font-size: 14px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #d4af37;
+            margin-bottom: 5px;
+        }
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 38px;
+            color: #fafaf9;
+            margin-top: 0;
+        }
+        nav {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        nav a {
+            color: #d4af37;
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 2px;
+            padding: 8px 16px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+        nav a:hover {
+            background-color: #d4af37;
+            color: #0f172a;
+        }
+        main {
+            max-width: 800px; 
+            margin: 0 auto 60px auto; 
+            padding: 20px;
+        }
+        h2, h3 {
+            font-family: 'Playfair Display', serif;
+            color: #d4af37;
+        }
+        h2 {
+            font-size: 28px;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            padding-bottom: 10px;
+            margin-top: 40px;
+        }
+        p strong {
+            color: #fafaf9;
+        }
+        .intro-text {
+            font-size: 18px;
+            font-weight: 400;
+            color: #e2e8f0;
+            margin-bottom: 25px;
+            border-left: 3px solid #d4af37;
+            padding-left: 15px;
+        }
+        .opera-box {
+            background: rgba(255, 255, 255, 0.03); 
+            padding: 30px; 
+            border-radius: 15px;
+            border: 1px solid rgba(212, 175, 55, 0.15);
+            margin-top: 30px;
+        }
+        .opera-box h3 {
+            margin-top: 0;
+            font-size: 22px;
+        }
+        .section-block {
+            margin-bottom: 25px;
+        }
+        /* Galleria Immagini */
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .image-container {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background-color: rgba(0,0,0,0.2);
+        }
+        .image-container img {
+            width: 100%;
+            height: 220px;
+            display: block;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+        .image-container:hover img {
+            transform: scale(1.05);
+        }
+        .image-caption {
+            text-align: center;
+            font-size: 12px;
+            font-style: italic;
+            color: #94a3b8;
+            padding: 10px 5px;
+        }
+    </style>
 </head>
-<body class="arte-antica"> <header style="text-align: center; padding: 30px 20px;">
-        <p style="text-transform: uppercase; letter-spacing: 2px; font-size: 0.9em; opacity: 0.7;">Tappa 1 di 8</p>
-        <h1>L'Età Classica: La Luce Solare e Filosofica</h1>
+<body class="arte-antica">
+
+    <header>
+        <p>Tappa 1 di 8</p>
+        <h1>I Bronzi di Riace: La Luce della Materia</h1>
     </header>
 
-    <nav style="text-align: center; margin-bottom: 40px; padding: 10px; border-bottom: 1px solid rgba(0,0,0,0.1);">
-        <a href="index.html">Home</a> | 
-        <a href="1-antica.html">1. Arte Antica</a> | 
-        <a href="2-paleocristiana.html">2. Paleocristiana</a> |
-        <a href="3-gotico.html">3. Romanico/Gotico</a> |
-        <a href="4-rinascimento.html">4. Rinascimento</a> |
-        <a href="5-manierismo.html">5. Manierismo</a> |
-        <a href="6-barocco.html">6. Barocco</a> |
-        <a href="7-neoclassicismo.html">7. Neoclassicismo</a> |
-        <a href="8-romanticismo.html">8. Romanticismo</a>
+    <nav>
+        <a href="index.html">Home</a>
     </nav>
 
-    <main style="max-width: 900px; margin: 0 auto; padding: 20px;">
-        
-        <section style="text-align: justify; line-height: 1.6; margin-bottom: 40px;">
-            <h2>La concezione della luce nel mondo greco e romano</h2>
-            <p>Nell'antichità classica, la luce è identificata principalmente con la <strong>luce solare e naturale</strong>. Non è ancora un effetto artificiale ricreato sulla tela, ma un elemento architettonico e filosofico reale. Per i Greci, la bellezza coincide con l'armonia, la proporzione e la chiarezza: la luce del sole mette in mostra la perfezione geometrica dei templi e il candore (originariamente colorato) dei marmi.</p>
-            
-            <p><strong>Filosofia e Scienza:</strong> Questo periodo è dominato dal pensiero di <strong>Platone</strong>, che nel mito della caverna usa il Sole come metafora del "Bene" e della conoscenza pura, mentre le ombre rappresentano l'ignoranza. Dal punto di vista scientifico, scienziati come <strong>Euclide</strong> iniziano a studiare l'ottica e la catottrica, scoprendo che la luce viaggia in linea retta e formulando le prime leggi sulla riflessione degli specchi.</p>
-        </section>
+    <main>
+        <p class="intro-text">
+            Spesso considerati solo come imponenti sculture di bronzo scuro, i Bronzi di Riace nascondono un legame profondo con la luce, dove l'arte antica, la chimica della materia e l'illuminotecnica moderna si incontrano.
+        </p>
 
-        <section style="background-color: rgba(0,0,0,0.03); padding: 30px; border-radius: 8px; border: 1px solid rgba(0,0,0,0.05);">
-            <h3 style="margin-top: 0;">L'Opera Significativa: Il Pantheon (Esempio)</h3>
-            
-            <div style="display: flex; flex-wrap: wrap; gap: 20px; margin-top: 20px;">
-                
-                <div style="flex: 1; min-width: 300px; text-align: center;">
-                    <img src="pantheon.jpg" alt="Luce nel Pantheon" style="max-width: 100%; height: auto; border-radius: 4px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
-                    <p style="font-size: 0.85em; font-style: italic; margin-top: 5px;">Architettura Romana: L'oculo del Pantheon</p>
+        <div class="opera-box">
+            <h2>L'Estetica Classica e il Bronzo Dorato</h2>
+            <p>Per gli scultori dell'età classica, attribuibili a grandi maestri come Policleto, Fidia o la loro cerchia, la luce non era un vero elemento decorativo, ma il fattore fondamentale per dare volume e vita alla scultura anatomica. Realizzati con la raffinata tecnica della fusione a cera persa cava, in cui veniva colata una lega di bronzo composta prevalentemente da rame e stagno, i Bronzi non avevano originariamente l'aspetto scuro con cui li conosciamo oggi. Una volta completati, venivano accuratamente levigati e lucidati fino a raggiungere un colore biondo-dorato e una superficie quasi specchiante. Collocate all'aperto nei santuari e negli spazi pubblici dell'antica Grecia, le statue riflettevano direttamente i raggi del sole: il gioco di bagliori luminosi e ombre esaltava la plasticità della muscolatura e la tensione dei corpi, facendole apparire maestose, dinamiche e incredibilmente vive.</p>
+
+            <h2>Policromia e Dettagli Strategici</h2>
+            <p>Per creare un netto contrasto cromatico e luminoso con il corpo dorato, gli artigiani applicarono inoltre materiali differenti in punti strategici delle sculture. Utilizzarono rame puro, caratterizzato da una tonalità più calda e rossastra, per modellare le labbra e i capezzoli; intrecciarono sottili lamine d'argento per i denti socchiusi della Statua A, pensate per catturare improvvisi bagliori di luce al variare dell'angolazione dell'osservatore; infine, impiegarono avorio, calcite e pietra scura per gli occhi, lavorati finemente per rifrangere la luce e conferire allo sguardo uno straordinario realismo e una profonda espressività.</p>
+
+            <div class="image-gallery">
+                <div class="image-container">
+                    <img src="Roma.jpg" alt="Bronzi di Riace e Arte Antica - Foto 1">
+                    <div class="image-caption">Particolare anatomico - Roma.jpg</div>
                 </div>
-                
-                <div style="flex: 1; min-width: 300px; text-align: justify;">
-                    <p>Il <strong>Pantheon di Roma</strong> (126 d.C.) è l'esempio più grandioso di come l'architettura antica usasse la luce come materiale da costruzione. L'unica fonte di illuminazione è l'<strong>oculo</strong>, un'apertura di 9 metri di diametro posta in cima alla cupola.</p>
-                    <p>Il raggio di sole che entra non illumina la stanza in modo diffuso, ma crea un immenso e netto <strong>cilindro di luce</strong> che si muove all'interno del tempio durante il giorno, comportandosi come una gigantesca meridiana solare. La luce qui diventa la connessione diretta tra l'uomo, l'imperatore e il cosmo astronomico.</p>
+                <div class="image-container">
+                    <img src="Roma1.jpg" alt="Bronzi di Riace e Arte Antica - Foto 2">
+                    <div class="image-caption">Dettaglio del volto - Roma1.jpg</div>
                 </div>
-                
+                <div class="image-container">
+                    <img src="Roma2.jpg" alt="Bronzi di Riace e Arte Antica - Foto 3">
+                    <div class="image-caption">Prospettiva e tridimensionalità - Roma2.jpg</div>
+                </div>
             </div>
-        </section>
 
-        <div style="text-align: center; margin-top: 50px;">
-            <a href="2-paleocristiana.html" class="wp-block-button__link">Continua il viaggio: L'Arte Paleocristiana →</a>
+            <h2>Il Naufragio, l'Ossidazione e la Patina Scura</h2>
+            <p>Tuttavia, il rapporto primario tra queste sculture e la luce solare si interruppe bruscamente con il naufragio della nave romana che le trasportava e con i duemila anni trascorsi sul fondo del mare Ionio, prima del loro casuale ritrovamento il 16 agosto 1972 a Riace Marina da parte del subacqueo Stefano Mariottini. L'interazione prolungata tra la lega metallica, l'ossigeno e i sali dell'acqua marina ha innescato complessi processi chimici di ossidazione. Il metallo ha così sviluppato una caratteristica patina scura che tende ad assorbire la luce anziché rifletterla. Questo mutamento cromatico, pur lontano dall'aspetto solare e dorato dell'epoca greca, conferisce oggi alle sculture una solennità drammatica e un fascino monumentale del tutto nuovo.</p>
+
+            <h2>L'Illuminazione Dinamica al Museo (MArRC)</h2>
+            <p>Oggi i Bronzi sono conservati al Museo Archeologico Nazionale di Reggio Calabria (MArRC) all'interno di una sala ad aria filtrata e clima controllato, concepita per prevenire la corrosione. Per restituire alle opere l'originale interazione con la luce naturale, la stanza è stata dotata di uno specifico e innovativo sistema di illuminazione a LED dinamico, progettato dall'azienda illuminotecnica Targetti. Questo sistema modifica continuamente sia l'intensità luminosa sia la temperatura del colore della luce bianca, alternando toni più caldi a toni più freddi. La luce sfuma e muta gradualmente direttamente sulle sculture, imitando il naturale percorso del sole durante il corso della giornata. In questo modo, la luce "scivola" sulle anatomie, mette in risalto la tridimensionalità dei muscoli, le incisioni della barba e i dettagli dei diversi materiali intarsiati, permettendo al visitatore di percepire le statue non come manufatti statici, ma come opere in continua ed evolutiva trasformazione.</p>
+
+            <h2>Conclusione</h2>
+            <p>In conclusione, i Bronzi di Riace dimostrano che la luce nell'arte è un elemento vivo e in continua evoluzione. Dalla brillantezza del bronzo dorato sotto il sole greco, fino alle moderne tecnologie a LED del museo, la luce si conferma lo strumento fondamentale per dare forma, volume e vita all'opera d'arte.</p>
         </div>
-
     </main>
-
-    <footer style="text-align: center; margin-top: 60px; padding: 20px; font-size: 0.9em; opacity: 0.5;">
-        <p>Progetto "La Luce nell'Arte" - Tappa 1</p>
-    </footer>
 
 </body>
 </html>
