@@ -8,7 +8,7 @@
     <style>
         body.arte-antica {
             background-color: #0f172a;
-            color: #e2e8f0;
+            color: #1e293b;
             font-family: 'Montserrat', sans-serif;
             margin: 0;
             padding: 0;
@@ -19,7 +19,7 @@
             padding: 60px 20px 30px 20px;
         }
         header p {
-            opacity: 0.8;
+            opacity: 0.9;
             font-size: 14px;
             letter-spacing: 2px;
             text-transform: uppercase;
@@ -36,7 +36,7 @@
         }
         nav {
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
         }
         nav a {
             color: #d4af37;
@@ -60,39 +60,45 @@
             margin: 0 auto 60px auto; 
             padding: 20px;
         }
+        
+        /* Introduzione in risalto */
+        .intro-text {
+            font-size: 20px;
+            font-weight: 500;
+            color: #0f172a;
+            margin-bottom: 30px;
+            border-left: 5px solid #d4af37;
+            padding: 20px;
+            line-height: 1.6;
+            background: #ffffff;
+            border-radius: 0 12px 12px 0;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+
+        /* Contenitore principale chiaro con testo NERO per massima leggibilità */
+        .opera-box {
+            background: #ffffff; 
+            padding: 40px; 
+            border-radius: 15px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+            color: #1e293b;
+        }
+
         h2 {
             font-family: 'Playfair Display', serif;
-            color: #d4af37;
+            color: #b48a1d;
             font-size: 26px;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+            border-bottom: 2px solid #f1f5f9;
             padding-bottom: 8px;
             margin-top: 35px;
             margin-bottom: 15px;
         }
+        
         p {
-            color: #cbd5e1;
+            color: #334155; /* Testo nero / grigio scuro leggibile */
             font-size: 16px;
             margin-bottom: 20px;
-        }
-        .intro-text {
-            font-size: 20px;
-            font-weight: 500;
-            color: #ffffff;
-            margin-bottom: 30px;
-            border-left: 4px solid #d4af37;
-            padding-left: 20px;
-            line-height: 1.6;
-            background: rgba(212, 175, 55, 0.05);
-            padding-top: 15px;
-            padding-bottom: 15px;
-            border-radius: 0 10px 10px 0;
-        }
-        .opera-box {
-            background: rgba(255, 255, 255, 0.03); 
-            padding: 35px; 
-            border-radius: 15px;
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            margin-top: 20px;
         }
 
         /* Galleria Immagini Ingrandite */
@@ -103,10 +109,10 @@
             margin: 40px 0;
         }
         .image-container {
-            border-radius: 15px;
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
-            border: 1px solid rgba(212, 175, 55, 0.25);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            border: 1px solid #e2e8f0;
             background-color: #000;
         }
         .image-container img {
@@ -169,4 +175,3 @@
 
 </body>
 </html>
-
