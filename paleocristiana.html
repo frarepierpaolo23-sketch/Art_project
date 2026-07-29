@@ -1,23 +1,167 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-    <meta charset="UTF-8"><title>2. Paleocristiana e Medievale</title>
+    <meta charset="UTF-8">
+    <title>2. Arte Paleocristiana - Basilica di San Vitale</title>
     <link rel="stylesheet" href="stile.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body.arte-paleocristiana {
+            background-color: #0f172a;
+            color: #1e293b;
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+        }
+        header {
+            text-align: center; 
+            padding: 60px 20px 30px 20px;
+        }
+        header p {
+            opacity: 0.9;
+            font-size: 14px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #d4af37;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            color: #ffffff;
+            margin-top: 0;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+        nav {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        nav a {
+            color: #d4af37;
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 2px;
+            padding: 10px 20px;
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            background-color: rgba(15, 23, 42, 0.8);
+        }
+        nav a:hover {
+            background-color: #d4af37;
+            color: #0f172a;
+        }
+        main {
+            max-width: 850px; 
+            margin: 0 auto 60px auto; 
+            padding: 20px;
+        }
+        
+        /* Contenitore principale chiaro con testo NERO per massima leggibilità */
+        .opera-box {
+            background: #ffffff; 
+            padding: 40px; 
+            border-radius: 15px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+            color: #1e293b;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            color: #b48a1d;
+            font-size: 26px;
+            border-bottom: 2px solid #f1f5f9;
+            padding-bottom: 8px;
+            margin-top: 35px;
+            margin-bottom: 15px;
+        }
+        
+        p {
+            color: #334155; /* Testo nero / grigio scuro leggibile */
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        /* Galleria Immagini */
+        .image-gallery {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            margin: 40px 0;
+        }
+        .image-container {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            border: 1px solid #e2e8f0;
+            background-color: #000;
+        }
+        .image-container img {
+            width: 100%;
+            height: 380px;
+            display: block;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .image-container:hover img {
+            transform: scale(1.03);
+        }
+    </style>
 </head>
-<body class="pale-medievale">
-    <header style="text-align: center; padding: 30px;">
-        <p style="opacity: 0.7;">Tappa 2 di 8</p>
-        <h1>L'Oro e l'Assoluto: La Luce Divina</h1>
+<body class="arte-paleocristiana">
+
+    <header>
+        <p>Tappa 2 di 8</p>
+        <h1>Basilica di San Vitale: La Luce Divina dei Mosaici</h1>
     </header>
-    <nav style="text-align: center;"><a href="index.html">Home</a> | <a href="1-antica.html">Indietro</a> | <a href="3-gotico.html">Avanti</a></nav>
-    <main style="max-width: 800px; margin: 40px auto; padding: 20px;">
-        <h2>L'Essenza Incorporea</h2>
-        <p>In questo periodo la luce smette di essere fisica e diventa <strong>metafisica</strong>. Secondo la teologia dello Pseudo-Dionigi l'Areopagita, "Dio è Luce". Nell'arte dei mosaici (come a Ravenna), il fondo oro non serve a creare spazio, ma ad annullarlo, immergendo lo spettatore in una dimensione eterna e trascendente.</p>
-        <div style="background: rgba(255,255,255,0.05); padding: 20px; border-radius: 10px; margin-top: 20px;">
-            <h3>Opera: Mosaici di San Vitale (Ravenna)</h3>
-            <p>Le tessere di vetro e oro sono inclinate per riflettere la luce delle candele, creando un luccichio che sembra pulsare di vita propria.</p>
+
+    <nav>
+        <a href="index.html">Home</a>
+    </nav>
+
+    <main>
+        <div class="opera-box">
+            <h2>L'Architettura e lo Spazio Luminoso</h2>
+            <p>
+                Nella Basilica di San Vitale a Ravenna, la luce non è un semplice elemento atmosferico, ma il principio fondamentale attorno a cui si strutturano l'architettura, la teologia paleocristiana e la conservazione del patrimonio artistico. L'edificio presenta un forte contrasto visivo: se l'esterno in mattoni rossi appare severo, semplice ed essenziale, l'interno rivela uno spazio articolato e luminoso, dove la luce naturale penetra dalle ampie finestre della struttura ottagonale per diffondersi sulle esedre, sul deambulatorio e sulla cupola, smaterializzando la percezione della massa muraria.
+            </p>
+
+            <div class="image-gallery">
+                <div class="image-container">
+                    <img src="Medievale.jpg" alt="Imperatore Giustiniano e i mosaici di San Vitale">
+                </div>
+            </div>
+
+            <h2>Il Mosaico Bizantino e il Valore Politico-Teologico (Lux Nova)</h2>
+            <p>
+                Nelle celebri decorazioni musive dell'abside e del presbiterio, tra cui spiccano i ritratti ufficiali dell'imperatore Giustiniano e dell'imperatrice Teodora, la luce assume una profonda valenza teologica (Lux Nova). Nei mosaici bizantini, l'uso delle tessere dorate e colorate azzera la profondità spaziale e la prospettiva terrestre. Grazie alla disposizione volutamente inclinata ed irregolare delle tessere vitree, la luce naturale viene rifratta in molteplici direzioni, creando un bagliore diffuso che avvolge le figure umane e le proietta in un'atmosfera astratta, sacra ed eterna. Questa rifrazione luminosa non ha solo una funzione spirituale, ma serve anche a celebrare il potere politico: la luce riflessa fa risplendere i dettagli delle vesti di porpora, i gioielli e le corone imperiali, sottolineando la legittimazione divina dell'autorità di Giustiniano e Teodora.
+            </p>
+
+            <div class="image-gallery">
+                <div class="image-container">
+                    <img src="Medievale1.jpg" alt="Dettaglio dei mosaici bizantini a Ravenna">
+                </div>
+            </div>
+
+            <h2>L'Illuminazione Contemporanea a LED e la Tutela del Patrimonio</h2>
+            <p>
+                In epoca contemporanea, l'esperienza visiva e la comprensione di questa "luce divina" sono state rinnovate attraverso un rigoroso intervento di restauro illuminotecnico curato da DZ Engineering. Il progetto di revamping ha sostituito le vecchie tecnologie con un impianto a LED di ultima generazione, studiato per garantire un'illuminazione omogenea e ad alta resa cromatica. La nuova luce artificiale valorizza la tridimensionalità dell'architettura e la lucentezza delle tessere musive senza creare abbagliamenti o alterazioni dei colori originali.
+            </p>
+            <p>
+                Inoltre, l'impianto è stato progettato nel pieno rispetto dei criteri di conservazione preventiva (norma UNI 10829:1999): controllando rigorosamente l'emissione elettromagnetica e l'apporto termico per prevenire il deterioramento dei pigmenti e dei materiali storici, la tecnologia moderna riesce a bilanciare la fruizione estetica dei visitatori con la tutela a lungo termine di questo patrimonio UNESCO.
+            </p>
+
+            <h2>Conclusione</h2>
+            <p>
+                In conclusione, Nella Basilica di San Vitale la luce è al contempo teologia bizantina, capace di evocare il divino attraverso l'oro del mosaico, e tecnologia moderna al servizio della tutela e della fruizione dell'opera.
+            </p>
         </div>
-        <div style="text-align: center; margin-top: 30px;"><a href="3-gotico.html" class="wp-block-button__link">Continua verso il Gotico →</a></div>
     </main>
+
 </body>
 </html>
