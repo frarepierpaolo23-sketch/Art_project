@@ -2,13 +2,13 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-    <title>3. Romanico e Gotico</title>
+    <title>3. Arte Gotica - La Sainte-Chapelle</title>
     <link rel="stylesheet" href="stile.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        body.romanico-gotico {
+        body.arte-gotica {
             background-color: #0f172a;
-            color: #cbd5e1;
+            color: #1e293b;
             font-family: 'Montserrat', sans-serif;
             margin: 0;
             padding: 0;
@@ -19,22 +19,24 @@
             padding: 60px 20px 30px 20px;
         }
         header p {
-            opacity: 0.6;
+            opacity: 0.9;
             font-size: 14px;
             letter-spacing: 2px;
             text-transform: uppercase;
             color: #d4af37;
-            margin-bottom: 5px;
+            margin-bottom: 10px;
+            font-weight: 600;
         }
         header h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 38px;
-            color: #fafaf9;
+            font-size: 42px;
+            color: #ffffff;
             margin-top: 0;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
         }
         nav {
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
         }
         nav a {
             color: #d4af37;
@@ -43,87 +45,79 @@
             text-transform: uppercase;
             font-size: 12px;
             letter-spacing: 2px;
-            padding: 8px 16px;
-            border: 1px solid rgba(212, 175, 55, 0.3);
+            padding: 10px 20px;
+            border: 1px solid rgba(212, 175, 55, 0.4);
             border-radius: 20px;
             transition: all 0.3s ease;
+            background-color: rgba(15, 23, 42, 0.8);
         }
         nav a:hover {
             background-color: #d4af37;
             color: #0f172a;
         }
         main {
-            max-width: 800px; 
+            max-width: 850px; 
             margin: 0 auto 60px auto; 
             padding: 20px;
         }
-        h2, h3 {
-            font-family: 'Playfair Display', serif;
-            color: #d4af37;
-        }
-        h2 {
-            font-size: 28px;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
-            padding-bottom: 10px;
-            margin-top: 40px;
-        }
-        p strong {
-            color: #fafaf9;
-        }
+        
+        /* Contenitore principale chiaro con testo NERO per massima leggibilità */
         .opera-box {
-            background: rgba(255, 255, 255, 0.03); 
-            padding: 30px; 
+            background: #ffffff; 
+            padding: 40px; 
             border-radius: 15px;
-            border: 1px solid rgba(212, 175, 55, 0.15);
-            margin-top: 40px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+            color: #1e293b;
         }
-        .opera-box h3 {
-            margin-top: 0;
-            font-size: 22px;
-        }
-        .info-list {
-            list-style-type: none;
-            padding-left: 0;
-            margin: 20px 0;
-        }
-        .info-list li {
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            color: #b48a1d;
+            font-size: 26px;
+            border-bottom: 2px solid #f1f5f9;
+            padding-bottom: 8px;
+            margin-top: 35px;
             margin-bottom: 15px;
-            padding-left: 25px;
-            position: relative;
         }
-        .info-list li::before {
-            content: "✦";
-            position: absolute;
-            left: 0;
-            color: #d4af37;
+        
+        p {
+            color: #334155; /* Testo nero / grigio scuro leggibile */
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        /* Galleria Immagini */
+        .image-gallery {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            margin: 35px 0;
         }
         .image-container {
-            margin: 30px 0;
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            border: 1px solid #e2e8f0;
+            background-color: #000;
         }
         .image-container img {
             width: 100%;
-            height: auto;
+            height: 380px;
             display: block;
             object-fit: cover;
+            transition: transform 0.5s ease;
         }
-        .image-caption {
-            text-align: center;
-            font-size: 13px;
-            font-style: italic;
-            color: #94a3b8;
-            margin-top: 10px;
+        .image-container:hover img {
+            transform: scale(1.03);
         }
     </style>
 </head>
-<body class="romanico-gotico">
+<body class="arte-gotica">
 
     <header>
         <p>Tappa 3 di 8</p>
-        <h1>Dio è Luce che filtra</h1>
+        <h1>Sainte-Chapelle: L'Apoteosi della Luce Gotica</h1>
     </header>
 
     <nav>
@@ -131,8 +125,47 @@
     </nav>
 
     <main>
-        <h2>Dalla pietra al vetro</h2>
-        <p>L'Abate Suger, ideatore del Gotico, formula una nuova concezione teologica in cui la luce fisica diventa manifestazione visibile di Dio. Grazie all'introduzione dell'arco a sesto acuto e dei contrafforti esterni, le pareti in pietra perdono la loro funzione portante, svuotandosi progressivamente per lasciare spazio a immense superfici vetrate. La luce solare esterna viene così filtrata e trasformata in pura luce colorata e immateriale, concepita per trasfigurare lo spazio sacro e trasportare i fedeli direttamente all'interno della Gerusalemme Celeste.</p>
-        
         <div class="opera-box">
-            <h3>
+            <h2>L'Architettura del Gotico Radiante e la Nave di Cristallo</h2>
+            <p>
+                Nel cuore di Parigi, la Sainte-Chapelle (fatta erigere nel XIII secolo da re Luigi IX per custodire le Reliquie della Passione, tra cui la Corona di Spine) rappresenta il punto d'arrivo dell'architettura gotica e l'apoteosi della luce intesa come materia divina. Con lo sviluppo dello stile Gotico Radiante (Rayonnant), l'edificio abbandona la massa imponente delle pareti in pietra per trasformarsi in uno "scheletro" architettonico sottilissimo, dove pilastri e costolature servono unicamente a sorreggere oltre 600 metri quadrati di superficie vetrata.
+            </p>
+            <p>
+                Nella cappella superiore, le pareti sbarrano la vista al mondo terreno e si dissolvono: il vetro occupa circa il 75% dell'intera superficie, creando la sensazione di trovarsi all'interno di una monumentale "nave di cristallo". Le 15 imponenti vetrate istoriate, alte oltre 15 metri, illustrano 1.113 scene bibliche ed evangeliche (dalla Genesi all'Apocalisse raffigurata nel rosone occidentale). Tuttavia, il vero significato di questo ciclo non risiede soltanto nella sua funzione didattica, ma nell'esperienza luminosa che produce: la luce solare esterna, attraversando le vetrate domate dalle tonalità intense del blu cobalto, del rosso rubino, del viola e dell'oro, perde la sua connotazione terrestre per trasformarsi in vera e propria luce spirituale.
+            </p>
+
+            <div class="image-gallery">
+                <div class="image-container">
+                    <img src="Gotico.jpg" alt="Sainte-Chapelle - Interno e Vetrate">
+                </div>
+                <div class="image-container">
+                    <img src="Gotico1.jpg" alt="Sainte-Chapelle - Dettaglio Architettonico">
+                </div>
+            </div>
+
+            <h2>La Luce Spaziale e la Gerusalemme Celeste</h2>
+            <p>
+                La luce che inonda lo spazio sacro smaterializza la pietra, rifrangendosi sulle dorature delle colonne e sulle coperte stellate delle volte celesti, proiettando il fedele e l'osservatore direttamente nella "Gerusalemme Celeste". In quest'opera, la luce non si limita a illuminare uno spazio preesistente, ma crea lo spazio stesso, sublimando l'architettura in un immenso reliquario di colore trasparente e dimostrando come il Gotico sia riuscito a piegare la scienza strutturale dell'ingegneria al servizio di una visione mistica e trascendente dell'universo.
+            </p>
+
+            <div class="image-gallery">
+                <div class="image-container">
+                    <img src="Gotico2.jpg" alt="Sainte-Chapelle - Splendore delle Vetrate">
+                </div>
+            </div>
+
+            <h2>L'Abate Suger e la Teologia della Lux Nova</h2>
+            <p>
+                Alla base di questa straordinaria concezione dello spazio e della luce vi è l'eredità teorica dell'Abate Suger di Saint-Denis (1081–1151). Considerato il padre spirituale dell'architettura gotica, Suger elaborò per primo una teologia della luce fondata sugli scritti dello Pseudo-Dionigi l'Areopagita e della filosofia neoplatonica. Secondo Suger, la luce fisica non è una semplice entità naturale, ma il riflesso visibile della Luce Divina. Attraverso il concetto di Lux Nova ("Luce Nuova"), teorizzò che l'anima umana, catturata dallo splendore dei colori e dai bagliori delle vetrate decorate, potesse elevarsi dal piano materiale a quello immateriale e spirituale. La Sainte-Chapelle rappresenta la massima realizzazione pratica di questo pensiero: la luce colorata filtrata dal vetro diventa il mezzo plastico e filosofico capace di condurre il fedele direttamente verso la conoscenza di Dio.
+            </p>
+
+            <div class="image-gallery">
+                <div class="image-container">
+                    <img src="Sugerio.jpg" alt="Abate Suger di Saint-Denis">
+                </div>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>
