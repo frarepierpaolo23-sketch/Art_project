@@ -6,12 +6,12 @@
     <title>Luce - L'Evoluzione della Luce nella Storia dell'Arte</title>
     <!-- Collegamento al foglio di stile generale -->
     <link rel="stylesheet" href="stile.css">
-    <!-- Google Fonts per una tipografia elegante e coerente -->
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         body {
-            background-color: #0f172a; /* Sfondo scuro uguale alle altre pagine */
-            color: #cbd5e1;            /* Testo chiaro */
+            background-color: #0f172a;
+            color: #cbd5e1;
             font-family: 'Montserrat', sans-serif;
             margin: 0;
             padding: 0;
@@ -61,7 +61,7 @@
             margin-bottom: 25px;
         }
 
-        /* Contenitore a SCORRIMENTO LATERALE (Orizzontale) */
+        /* Contenitore a SCORRIMENTO LATERALE */
         .horizontal-scroll-container {
             display: flex;
             gap: 20px;
@@ -72,7 +72,6 @@
             -webkit-overflow-scrolling: touch;
         }
 
-        /* Personalizzazione della barra di scorrimento laterale */
         .horizontal-scroll-container::-webkit-scrollbar {
             height: 8px;
         }
@@ -85,9 +84,9 @@
             border-radius: 10px;
         }
 
-        /* Card delle Tappe a scorrimento orizzontale */
+        /* Card delle Tappe */
         .epoch-card {
-            flex: 0 0 280px; /* Larghezza fissa per lo scorrimento */
+            flex: 0 0 280px;
             background-color: rgba(30, 41, 59, 0.6);
             border: 1px solid rgba(212, 175, 55, 0.3);
             border-radius: 12px;
@@ -124,53 +123,60 @@
             margin: 0;
         }
 
-        /* Card per i Collegamenti Interdisciplinari (Scorrimento orizzontale) */
-        .discipline-card {
-            flex: 0 0 260px;
-            background-color: rgba(30, 41, 59, 0.4);
-            border: 1px solid rgba(212, 175, 55, 0.25);
+        /* Griglia a 3 Riquadri sotto le tappe */
+        .bottom-boxes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .info-box, a.clickable-box {
+            background-color: rgba(30, 41, 59, 0.5);
+            border: 1px solid rgba(212, 175, 55, 0.3);
             border-radius: 12px;
-            padding: 20px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            padding: 30px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            text-decoration: none;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            box-sizing: border-box;
         }
-        .discipline-tag {
-            color: #d4af37;
-            font-size: 11px;
-            font-weight: 600;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            margin-bottom: 6px;
+
+        a.clickable-box {
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
         }
-        .discipline-card h3 {
+
+        a.clickable-box:hover {
+            transform: translateY(-5px);
+            border-color: #d4af37;
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.25);
+        }
+
+        .box-title {
             font-family: 'Playfair Display', serif;
             color: #ffffff;
-            font-size: 20px;
-            margin: 0 0 8px 0;
+            font-size: 22px;
+            margin: 0 0 15px 0;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            padding-bottom: 8px;
         }
-        .discipline-card p {
-            color: #94a3b8;
-            font-size: 13.5px;
+
+        .box-content {
+            color: #e2e8f0;
+            font-size: 15px;
             margin: 0;
         }
 
-        /* Sezione Info */
-        .info-section {
-            background-color: rgba(30, 41, 59, 0.4);
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            border-radius: 12px;
-            padding: 30px;
+        .box-link-text {
+            color: #d4af37;
+            font-weight: 600;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
             margin-top: 20px;
-        }
-        .info-section p {
-            color: #e2e8f0;
-            font-size: 15.5px;
-            margin-bottom: 12px;
-        }
-        .info-section p:last-child {
-            margin-bottom: 0;
+            display: inline-block;
         }
     </style>
 </head>
@@ -254,48 +260,44 @@
             </a>
         </div>
 
-        <!-- Sezione Collegamenti Interdisciplinari (prima di Info) -->
-        <h2>Collegamenti Interdisciplinari</h2>
-        <div class="horizontal-scroll-container">
-            <div class="discipline-card">
+        <!-- Sezione a 3 Riquadri -->
+        <h2>Approfondimenti e Informazioni</h2>
+        <div class="bottom-boxes-grid">
+            
+            <!-- Riquadro 1: Info (Realizzatore e Scuola) -->
+            <div class="info-box">
                 <div>
-                    <div class="discipline-tag">Materia 1</div>
-                    <h3>Fisica</h3>
+                    <h3 class="box-title">Info Progetto</h3>
+                    <p class="box-content">
+                        <strong>Realizzato da:</strong> [Nome e Cognome]<br>
+                        <strong>Scuola:</strong> [Nome della Scuola / Istituto]<br>
+                        <strong>Classe:</strong> [Classe]
+                    </p>
                 </div>
-                <p>La natura della luce, ottica e spettro visibile.</p>
             </div>
 
-            <div class="discipline-card">
+            <!-- Riquadro 2: Cliccabile verso crediti.html -->
+            <a href="crediti.html" class="clickable-box">
                 <div>
-                    <div class="discipline-tag">Materia 2</div>
-                    <h3>Filosofia</h3>
+                    <h3 class="box-title">Crediti</h3>
+                    <p class="box-content">
+                        Consulta i crediti, le fonti bibliografiche e i ringraziamenti per le risorse utilizzate nel progetto.
+                    </p>
                 </div>
-                <p>La luce come simbolo di verità, conoscenza e trascendenza.</p>
-            </div>
+                <span class="box-link-text">Vai ai Crediti &rarr;</span>
+            </a>
 
-            <div class="discipline-card">
+            <!-- Riquadro 3: Cliccabile verso collegamenti.html -->
+            <a href="collegamenti.html" class="clickable-box">
                 <div>
-                    <div class="discipline-tag">Materia 3</div>
-                    <h3>Storia</h3>
+                    <h3 class="box-title">Collegamenti</h3>
+                    <p class="box-content">
+                        Esplora i collegamenti interdisciplinari tra la luce artistica, la fisica, la filosofia e la storia.
+                    </p>
                 </div>
-                <p>Il valore allegorico e politico della luce nel Risorgimento.</p>
-            </div>
+                <span class="box-link-text">Vai ai Collegamenti &rarr;</span>
+            </a>
 
-            <div class="discipline-card">
-                <div>
-                    <div class="discipline-tag">Materia 4</div>
-                    <h3>Letteratura</h3>
-                </div>
-                <p>La metafora della luce nella poesia e nella prosa.</p>
-            </div>
-        </div>
-
-        <!-- Sezione Info -->
-        <h2>Info sul Progetto</h2>
-        <div class="info-section">
-            <p><strong>Progetto:</strong> L'Evoluzione della Luce nella Storia dell'Arte</p>
-            <p><strong>Obiettivo:</strong> Analizzare le trasformazioni tecniche, filosofiche e simboliche dell'uso della luce dall'antichità al Romanticismo.</p>
-            <p><strong>Struttura:</strong> Percorso multidisciplinare articolato in 8 moduli tematici e approfondimenti interdisciplinari.</p>
         </div>
     </main>
 
