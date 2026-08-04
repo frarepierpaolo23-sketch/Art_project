@@ -66,8 +66,8 @@
             display: flex;
             gap: 20px;
             overflow-x: auto;
-            padding-bottom: 20px;
-            padding-top: 5px;
+            padding-bottom: 25px;
+            padding-top: 10px;
             scroll-behavior: smooth;
             -webkit-overflow-scrolling: touch;
         }
@@ -84,43 +84,72 @@
             border-radius: 10px;
         }
 
-        /* Card delle Tappe */
+        /* Card delle Tappe con Anteprima Immagine al passaggio del mouse */
         .epoch-card {
             flex: 0 0 280px;
             background-color: rgba(30, 41, 59, 0.6);
             border: 1px solid rgba(212, 175, 55, 0.3);
             border-radius: 12px;
-            padding: 25px;
+            padding: 20px;
             text-decoration: none;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+            box-sizing: border-box;
         }
         .epoch-card:hover {
             transform: translateY(-5px);
             border-color: #d4af37;
-            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.2);
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.25);
         }
+
         .epoch-number {
             color: #d4af37;
             font-size: 12px;
             font-weight: 600;
             letter-spacing: 2px;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
             text-transform: uppercase;
         }
         .epoch-card h3 {
             font-family: 'Playfair Display', serif;
             color: #ffffff;
             font-size: 22px;
-            margin: 0 0 10px 0;
+            margin: 0 0 6px 0;
         }
         .epoch-card p {
             color: #cbd5e1;
             font-size: 14px;
-            margin: 0;
+            margin: 0 0 12px 0;
+        }
+
+        /* Riquadro immagine d'anteprima (Hover Effect) */
+        .card-image-preview {
+            width: 100%;
+            height: 140px;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            background-color: #000;
+            opacity: 0.3; /* Parzialmente trasparente di base */
+            filter: grayscale(80%);
+            transition: all 0.4s ease;
+        }
+        .card-image-preview img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Quando si passa il mouse, l'immagine appare brillante e a colori */
+        .epoch-card:hover .card-image-preview {
+            opacity: 1;
+            filter: grayscale(0%);
+            border-color: #d4af37;
+            transform: scale(1.02);
         }
 
         /* Griglia a 3 Riquadri sotto le tappe */
@@ -195,72 +224,106 @@
         <h2>Le Tappe del Percorso</h2>
         <!-- Contenitore a scorrimento laterale per le 8 tappe -->
         <div class="horizontal-scroll-container">
+            
+            <!-- Tappa 1: Arte Antica -->
             <a href="antica.html" class="epoch-card">
                 <div>
                     <div class="epoch-number">Tappa 1</div>
                     <h3>Arte Antica</h3>
+                    <p>Bronzi di Riace</p>
                 </div>
-                <p>Bronzi di Riace</p>
+                <div class="card-image-preview">
+                    <img src="Roma.jpg" alt="Arte Antica - Bronzi di Riace">
+                </div>
             </a>
 
+            <!-- Tappa 2: Paleocristiana -->
             <a href="paleocristiana.html" class="epoch-card">
                 <div>
                     <div class="epoch-number">Tappa 2</div>
                     <h3>Paleocristiana</h3>
+                    <p>San Vitale (Ravenna)</p>
                 </div>
-                <p>San Vitale (Ravenna)</p>
+                <div class="card-image-preview">
+                    <img src="Medievale.jpg" alt="Arte Paleocristiana - San Vitale">
+                </div>
             </a>
 
+            <!-- Tappa 3: Gotica -->
             <a href="gotico.html" class="epoch-card">
                 <div>
                     <div class="epoch-number">Tappa 3</div>
                     <h3>Arte Gotica</h3>
+                    <p>Sainte-Chapelle</p>
                 </div>
-                <p>Sainte-Chapelle</p>
+                <div class="card-image-preview">
+                    <img src="Gotico.jpg" alt="Arte Gotica - Sainte-Chapelle">
+                </div>
             </a>
 
+            <!-- Tappa 4: Rinascimento -->
             <a href="rinascimento.html" class="epoch-card">
                 <div>
                     <div class="epoch-number">Tappa 4</div>
                     <h3>Rinascimento</h3>
+                    <p>La Gioconda</p>
                 </div>
-                <p>La Gioconda</p>
+                <div class="card-image-preview">
+                    <img src="Rinascimento.jpg" alt="Rinascimento - La Gioconda">
+                </div>
             </a>
 
+            <!-- Tappa 5: Manierismo -->
             <a href="manierismo.html" class="epoch-card">
                 <div>
                     <div class="epoch-number">Tappa 5</div>
                     <h3>Manierismo</h3>
+                    <p>La Luce Manierista</p>
                 </div>
-                <p>La Luce Manierista</p>
+                <div class="card-image-preview">
+                    <img src="Manierismo.jpg" alt="Manierismo">
+                </div>
             </a>
 
+            <!-- Tappa 6: Barocco -->
             <a href="barocco.html" class="epoch-card">
                 <div>
                     <div class="epoch-number">Tappa 6</div>
                     <h3>Il Barocco</h3>
+                    <p>Estasi di Santa Teresa</p>
                 </div>
-                <p>Estasi di Santa Teresa</p>
+                <div class="card-image-preview">
+                    <img src="Barocco.jpg" alt="Barocco - Estasi di Santa Teresa">
+                </div>
             </a>
 
+            <!-- Tappa 7: Neoclassicismo -->
             <a href="neoclassicismo.html" class="epoch-card">
                 <div>
                     <div class="epoch-number">Tappa 7</div>
                     <h3>Neoclassicismo</h3>
+                    <p>La Morte di Marat</p>
                 </div>
-                <p>La Morte di Marat</p>
+                <div class="card-image-preview">
+                    <img src="Neoclassicismo.jpg" alt="Neoclassicismo - La Morte di Marat">
+                </div>
             </a>
 
+            <!-- Tappa 8: Romanticismo -->
             <a href="romanticismo.html" class="epoch-card">
                 <div>
                     <div class="epoch-number">Tappa 8</div>
                     <h3>Romanticismo</h3>
+                    <p>Il Bacio di Hayez</p>
                 </div>
-                <p>Il Bacio di Hayez</p>
+                <div class="card-image-preview">
+                    <img src="Bacio.jpg" alt="Romanticismo - Il Bacio di Hayez">
+                </div>
             </a>
+
         </div>
 
-        <!-- Sezione a 3 Riquadri -->
+        <!-- Sezione a 3 Riquadri sotto le tappe -->
         <h2>Approfondimenti e Informazioni</h2>
         <div class="bottom-boxes-grid">
             
