@@ -87,7 +87,7 @@
 
         /* Card delle Tappe a scorrimento orizzontale */
         .epoch-card {
-            flex: 0 0 280px; /* Larghezza fissa delle schede per lo scorrimento */
+            flex: 0 0 280px; /* Larghezza fissa per lo scorrimento */
             background-color: rgba(30, 41, 59, 0.6);
             border: 1px solid rgba(212, 175, 55, 0.3);
             border-radius: 12px;
@@ -124,36 +124,36 @@
             margin: 0;
         }
 
-        /* Card della sezione Collegamenti (Scorrimento orizzontale) */
-        .link-card {
-            flex: 0 0 300px;
+        /* Card per i Collegamenti Interdisciplinari (Scorrimento orizzontale) */
+        .discipline-card {
+            flex: 0 0 260px;
             background-color: rgba(30, 41, 59, 0.4);
-            border: 1px solid rgba(212, 175, 55, 0.2);
+            border: 1px solid rgba(212, 175, 55, 0.25);
             border-radius: 12px;
             padding: 20px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
-        .link-card h4 {
+        .discipline-tag {
+            color: #d4af37;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+        }
+        .discipline-card h3 {
             font-family: 'Playfair Display', serif;
             color: #ffffff;
-            font-size: 18px;
-            margin: 0 0 10px 0;
+            font-size: 20px;
+            margin: 0 0 8px 0;
         }
-        .link-card p {
+        .discipline-card p {
             color: #94a3b8;
             font-size: 13.5px;
-            margin: 0 0 15px 0;
-        }
-        .link-card a {
-            color: #d4af37;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 13px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        .link-card a:hover {
-            text-decoration: underline;
+            margin: 0;
         }
 
         /* Sezione Info */
@@ -162,12 +162,12 @@
             border: 1px solid rgba(212, 175, 55, 0.2);
             border-radius: 12px;
             padding: 30px;
-            margin-top: 30px;
+            margin-top: 20px;
         }
         .info-section p {
             color: #e2e8f0;
             font-size: 15.5px;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
         .info-section p:last-child {
             margin-bottom: 0;
@@ -254,31 +254,39 @@
             </a>
         </div>
 
-        <!-- Nuova Sezione Collegamenti (prima di Info) a scorrimento orizzontale -->
-        <h2>Collegamenti ed Approfondimenti</h2>
+        <!-- Sezione Collegamenti Interdisciplinari (prima di Info) -->
+        <h2>Collegamenti Interdisciplinari</h2>
         <div class="horizontal-scroll-container">
-            <div class="link-card">
-                <h4>Pinacoteca di Brera</h4>
-                <p>Esplora la collezione e la storia de "Il Bacio" di Francesco Hayez a Milano.</p>
-                <a href="https://pinacotecabrera.org/" target="_blank" rel="noopener">Visita il Sito &rarr;</a>
+            <div class="discipline-card">
+                <div>
+                    <div class="discipline-tag">Materia 1</div>
+                    <h3>Fisica</h3>
+                </div>
+                <p>La natura della luce, ottica e spettro visibile.</p>
             </div>
 
-            <div class="link-card">
-                <h4>Sainte-Chapelle Parigi</h4>
-                <p>Approfondisci la struttura gotica e le celebri vetrate istoriate a Parigi.</p>
-                <a href="https://www.sainte-chapelle.fr/" target="_blank" rel="noopener">Visita il Sito &rarr;</a>
+            <div class="discipline-card">
+                <div>
+                    <div class="discipline-tag">Materia 2</div>
+                    <h3>Filosofia</h3>
+                </div>
+                <p>La luce come simbolo di verità, conoscenza e trascendenza.</p>
             </div>
 
-            <div class="link-card">
-                <h4>Ravenna Mosaici</h4>
-                <p>Scopri i mosaici bizantini e la Basilica di San Vitale.</p>
-                <a href="https://www.ravennamosaici.it/" target="_blank" rel="noopener">Visita il Sito &rarr;</a>
+            <div class="discipline-card">
+                <div>
+                    <div class="discipline-tag">Materia 3</div>
+                    <h3>Storia</h3>
+                </div>
+                <p>Il valore allegorico e politico della luce nel Risorgimento.</p>
             </div>
 
-            <div class="link-card">
-                <h4>Museo del Louvre</h4>
-                <p>Scheda dettagliata su La Gioconda di Leonardo da Vinci.</p>
-                <a href="https://www.louvre.fr/" target="_blank" rel="noopener">Visita il Sito &rarr;</a>
+            <div class="discipline-card">
+                <div>
+                    <div class="discipline-tag">Materia 4</div>
+                    <h3>Letteratura</h3>
+                </div>
+                <p>La metafora della luce nella poesia e nella prosa.</p>
             </div>
         </div>
 
@@ -287,7 +295,7 @@
         <div class="info-section">
             <p><strong>Progetto:</strong> L'Evoluzione della Luce nella Storia dell'Arte</p>
             <p><strong>Obiettivo:</strong> Analizzare le trasformazioni tecniche, filosofiche e simboliche dell'uso della luce dall'antichità al Romanticismo.</p>
-            <p><strong>Struttura:</strong> Percorso multidisciplinare articolato in 8 moduli tematici.</p>
+            <p><strong>Struttura:</strong> Percorso multidisciplinare articolato in 8 moduli tematici e approfondimenti interdisciplinari.</p>
         </div>
     </main>
 
