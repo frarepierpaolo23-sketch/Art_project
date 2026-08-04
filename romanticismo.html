@@ -1,23 +1,153 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-    <meta charset="UTF-8"><title>8. Romanticismo e Realismo</title>
+    <meta charset="UTF-8">
+    <title>8. Il Romanticismo - Il Bacio di Hayez</title>
+    <!-- Collegamento al foglio di stile generale -->
     <link rel="stylesheet" href="stile.css">
+    <!-- Google Fonts per una tipografia elegante e coerente -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body.arte-romantica {
+            background-color: #0f172a; /* Sfondo scuro */
+            color: #cbd5e1;            /* Testo chiaro in contrasto */
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+        }
+        header {
+            text-align: center; 
+            padding: 60px 20px 30px 20px;
+        }
+        header p {
+            opacity: 0.9;
+            font-size: 14px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #d4af37;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            color: #ffffff;
+            margin-top: 0;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+        nav {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        nav a {
+            color: #d4af37;
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 2px;
+            padding: 10px 20px;
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            background-color: rgba(15, 23, 42, 0.8);
+        }
+        nav a:hover {
+            background-color: #d4af37;
+            color: #0f172a;
+        }
+        main {
+            max-width: 850px; 
+            margin: 0 auto 60px auto; 
+            padding: 20px;
+        }
+
+        /* Titoli in ORO brillante e BIANCO */
+        h2 {
+            font-family: 'Playfair Display', serif;
+            color: #d4af37;
+            font-size: 28px;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+            padding-bottom: 8px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+        
+        /* Testo dei paragrafi */
+        p {
+            color: #e2e8f0; 
+            font-size: 16.5px;
+            margin-bottom: 22px;
+        }
+
+        /* Galleria Immagini - Tutta la scena visibile (senza tagli/zoom) */
+        .image-gallery {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            margin: 40px 0;
+        }
+        .image-container {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            background-color: #000000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+        }
+        .image-container img {
+            width: 100%;
+            max-height: 550px;
+            display: block;
+            object-fit: contain; /* Proporzioni originali SENZA tagli né zoom */
+        }
+    </style>
 </head>
-<body class="romanticismo-realismo">
-    <header style="text-align: center; padding: 30px;">
-        <p style="opacity: 0.7;">Tappa 8 di 8</p>
-        <h1>Il Sublime e il Vero: Luci di Tempesta</h1>
+<body class="arte-romantica">
+
+    <header>
+        <p>Tappa 8 di 8</p>
+        <h1>Il Bacio: Luce, Sentimento e Risorgimento</h1>
     </header>
-    <nav style="text-align: center;"><a href="index.html">Home</a> | <a href="7-neoclassicismo.html">Indietro</a></nav>
-    <main style="max-width: 800px; margin: 40px auto; padding: 20px;">
-        <h2>L'Emozione della Luce</h2>
-        <p>Con il Romanticismo la luce diventa emozione pura. In <strong>Turner</strong> la luce dissolve le forme in tempeste di fuoco e mare (anticipando l'impressionismo). Nel Realismo di <strong>Courbet</strong>, invece, la luce è cruda e senza filtri, serve a mostrare la fatica e la realtà sociale senza abbellimenti.</p>
-        <div style="background: rgba(255,255,255,0.05); padding: 20px; border-radius: 10px;">
-            <h3>Opera: Viandante sul mare di nebbia (Friedrich)</h3>
-            <p>La luce mattutina e la nebbia creano l'effetto del "Sublime": l'uomo piccolo di fronte all'immensità luminosa della natura.</p>
+
+    <nav>
+        <a href="index.html">Home</a>
+    </nav>
+
+    <main>
+        <h2>L'Intimità Romantica e il Valore Allegorico</h2>
+        <p>
+            Ne Il Bacio (dipinto nel 1859 da Francesco Hayez e conservato alla Pinacoteca di Brera a Milano), la luce si consolida come lo strumento espressivo fondamentale per coniugare l'intimità del sentimento romantico con il profondo valore allegorico del Risorgimento italiano. Realizzata alla vigilia della Seconda Guerra d'Indipendenza, l'opera svela come la luce pittorica possa farsi vettore di passione emotiva e al contempo di propaganda politica risorgimentale.
+        </p>
+
+        <!-- Prima foto Bacio.jpg -->
+        <div class="image-gallery">
+            <div class="image-container">
+                <img src="Bacio.jpg" alt="Il Bacio di Francesco Hayez">
+            </div>
         </div>
-        <div style="text-align: center; margin-top: 30px;"><a href="index.html" class="wp-block-button__link">Torna alla Home</a></div>
+
+        <h2>Il Chiaroscuro Drammatico e la Resa dei Tessuti</h2>
+        <p>
+            La scena è ambientata all'interno di un'architettura medievale essenziale, dominata da mura in pietra grigia che creano uno sfondo scuro e privo di elementi decorativi di disturbo. Da sinistra, una fonte luminosa radente investe l'abbraccio dei due giovani amanti, lasciando nell'ombra i gradini sulla destra, dove si intravede la figura indistinta di una domestica o di una guardia, per concentrare l'intera forza visiva sul contatto dei protagonisti. Questa scelta illuminotecnica valorizza la straordinaria maestria di Hayez nella resa dei materiali e dei tessuti: la luce sulla veste in seta azzurra della donna crea riflessi lucidi e cangianti che ne evidenziano le pieghe morbide, mentre si fonde con i toni caldi del mantello marrone e della calzamaglia rossa del giovane.
+        </p>
+
+        <!-- Seconda foto Bacio1.jpg -->
+        <div class="image-gallery">
+            <div class="image-container">
+                <img src="Bacio1.jpg" alt="Dettaglio dei riflessi sulla veste e dell'abbraccio">
+            </div>
+        </div>
+
+        <h2>Simbolismo Politico e Patriottismo</h2>
+        <p>
+            Attraverso questo sofisticato gioco di riflessi e contrasti cromatici, la luce non si limita a plasmare i corpi in un abbraccio travolgente e furtivo, ma accende le valenze simboliche dell'opera. Il contrasto tra l'azzurro della veste femminile e il rosso della calzatura del giovane evoca l'alleanza tra la Francia (il tricolore francese) e l'Italia nella lotta contro il dominio austriaco. In questo modo, l'illuminazione di Hayez trasforma un fugace momento sentimentale in un'icona del Romanticismo italiano, in cui la luce riscalda la passione dei due amanti e risveglia la speranza e il patriottismo dell'intera nazione.
+        </p>
     </main>
+
 </body>
 </html>
