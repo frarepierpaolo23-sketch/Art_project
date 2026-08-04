@@ -3,336 +3,293 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luce: Arte, Scienza e Pensiero</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>Luce - L'Evoluzione della Luce nella Storia dell'Arte</title>
+    <!-- Collegamento al foglio di stile generale -->
+    <link rel="stylesheet" href="stile.css">
+    <!-- Google Fonts per una tipografia elegante e coerente -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        :root {
-            --gold: #d4af37;
-            --dark: #0f172a;
-            --light: #fafaf9;
-            --text-dark: #1c1917;
-            --navbar-height: 70px;
+        body {
+            background-color: #0f172a; /* Sfondo scuro uguale alle altre pagine */
+            color: #cbd5e1;            /* Testo chiaro */
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+        }
+        header {
+            text-align: center;
+            padding: 60px 20px 30px 20px;
+        }
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 52px;
+            color: #ffffff;
+            margin: 0 0 10px 0;
+            letter-spacing: 2px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+        header p {
+            color: #d4af37;
+            font-size: 15px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-weight: 600;
+            margin: 0;
+        }
+        main {
+            max-width: 1200px;
+            margin: 0 auto 60px auto;
+            padding: 0 20px;
+        }
+        .intro-text {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 40px auto;
+            font-size: 16.5px;
+            color: #e2e8f0;
         }
 
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        html { scroll-behavior: smooth; scroll-padding-top: var(--navbar-height); }
-        body { background-color: var(--dark); color: var(--text-dark); font-family: 'Montserrat', sans-serif; overflow-x: hidden; }
-
-        .navbar {
-            position: fixed; top: 0; left: 0; width: 100%; height: var(--navbar-height);
-            background: rgba(15, 23, 42, 0.95); backdrop-filter: blur(10px);
-            z-index: 1000; padding: 0 50px; display: flex; justify-content: space-between; align-items: center;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
-        }
-        .navbar .logo { font-family: 'Playfair Display', serif; color: var(--gold); font-size: 26px; font-weight: 700; text-decoration: none; }
-        .nav-links { display: flex; gap: 15px; list-style: none; }
-        .nav-links a {
-            color: #94a3b8; text-decoration: none; font-size: 11px; font-weight: 600; 
-            text-transform: uppercase; letter-spacing: 1px; padding: 8px 12px; transition: all 0.3s ease;
-            border-radius: 4px;
-        }
-        .nav-links a:hover, .nav-links a.active { color: var(--gold); background: rgba(212, 175, 55, 0.1); }
-
-        section {
-            width: 100%; min-height: 100vh; display: flex; flex-direction: column;
-            justify-content: center; padding: 100px 10%; position: relative;
-            background-color: var(--light); border-bottom: 1px solid #e2e8f0;
+        /* Titoli delle sezioni */
+        h2 {
+            font-family: 'Playfair Display', serif;
+            color: #d4af37;
+            font-size: 28px;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+            padding-bottom: 8px;
+            margin-top: 50px;
+            margin-bottom: 25px;
         }
 
-        .reveal { opacity: 0; transform: translateY(50px); transition: all 1s cubic-bezier(0.2, 0.8, 0.2, 1); }
-        .reveal.visible { opacity: 1; transform: translateY(0); }
-
-        h1, h2 { font-family: 'Playfair Display', serif; }
-        .slide-title { font-size: 45px; margin-bottom: 30px; border-bottom: 3px solid var(--gold); padding-bottom: 10px; width: fit-content; color: var(--text-dark); }
-        
-        .bullet-notes { list-style-type: none; margin-bottom: 35px; }
-        .bullet-notes li { font-size: 18px; line-height: 1.8; color: #444; margin-bottom: 12px; position: relative; padding-left: 25px; }
-        .bullet-notes li::before { content: "✦"; position: absolute; left: 0; color: var(--gold); font-size: 16px; }
-        
-        .dark-section .bullet-notes li { color: #cbd5e1; }
-
-        .btn-explore {
-            display: inline-block; padding: 14px 28px; font-size: 13px; font-weight: 600;
-            text-transform: uppercase; letter-spacing: 2px; color: var(--dark);
-            background-color: var(--gold); border: 2px solid var(--gold); border-radius: 50px;
-            text-decoration: none; transition: all 0.3s ease; box-shadow: 0 10px 20px rgba(212, 175, 55, 0.15);
+        /* Contenitore a SCORRIMENTO LATERALE (Orizzontale) */
+        .horizontal-scroll-container {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            padding-bottom: 20px;
+            padding-top: 5px;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
         }
-        .btn-explore:hover {
-            background-color: transparent; color: var(--gold); transform: translateY(-3px);
-            box-shadow: 0 15px 25px rgba(212, 175, 55, 0.3);
+
+        /* Personalizzazione della barra di scorrimento laterale */
+        .horizontal-scroll-container::-webkit-scrollbar {
+            height: 8px;
         }
-        
-        .dark-section .btn-explore { background-color: var(--gold); color: var(--dark); }
-        .dark-section .btn-explore:hover { background-color: transparent; color: var(--gold); }
-
-        .btn-info-sm {
-            display: inline-block; padding: 10px 20px; font-size: 11px; font-weight: 600;
-            text-transform: uppercase; letter-spacing: 1px; color: var(--dark);
-            background-color: var(--gold); border: 2px solid var(--gold); border-radius: 40px;
-            text-decoration: none; transition: all 0.3s ease; margin-top: 15px;
+        .horizontal-scroll-container::-webkit-scrollbar-track {
+            background: rgba(30, 41, 59, 0.5);
+            border-radius: 10px;
         }
-        .btn-info-sm:hover { background-color: transparent; color: var(--gold); }
-
-        .two-column { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; width: 100%; }
-        
-        .image-wrapper { 
-            border-radius: 15px; overflow: hidden; height: 450px; 
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15); border: 1px solid #ddd;
-            transition: transform 0.5s ease;
+        .horizontal-scroll-container::-webkit-scrollbar-thumb {
+            background: #d4af37;
+            border-radius: 10px;
         }
-        .image-wrapper:hover { transform: translateY(-10px); }
-        .image-wrapper img { width: 100%; height: 100%; object-fit: cover; }
 
-        #home { background-color: var(--dark); color: #fff; text-align: center; border: none; }
-        #home h1 { font-size: 120px; color: var(--gold); margin-bottom: 10px; }
-        #home p { color: #94a3b8; font-size: 26px; }
-
-        .dark-section { background-color: #0a0a0a; color: #fff; border-bottom: 1px solid #1a1a1a; }
-        .dark-section .slide-title { color: var(--gold); }
-
-        .info-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 40px; }
-        .info-card { 
-            padding: 40px; border: 1px solid var(--gold); border-radius: 20px; text-align: center; 
-            background: rgba(255,255,255,0.03); transition: background 0.3s;
-            display: flex; flex-direction: column; justify-content: space-between; align-items: center;
+        /* Card delle Tappe a scorrimento orizzontale */
+        .epoch-card {
+            flex: 0 0 280px; /* Larghezza fissa delle schede per lo scorrimento */
+            background-color: rgba(30, 41, 59, 0.6);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 12px;
+            padding: 25px;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
         }
-        .info-card:hover { background: rgba(212, 175, 55, 0.05); }
-        .info-card i { font-size: 45px; color: var(--gold); margin-bottom: 25px; }
-        .info-card h3 { font-family: 'Playfair Display', serif; margin-bottom: 15px; font-size: 24px; color: var(--gold); }
-        .info-card p { color: #cbd5e1; font-size: 16px; line-height: 1.6; width: 100%; }
+        .epoch-card:hover {
+            transform: translateY(-5px);
+            border-color: #d4af37;
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.2);
+        }
+        .epoch-number {
+            color: #d4af37;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+        .epoch-card h3 {
+            font-family: 'Playfair Display', serif;
+            color: #ffffff;
+            font-size: 22px;
+            margin: 0 0 10px 0;
+        }
+        .epoch-card p {
+            color: #cbd5e1;
+            font-size: 14px;
+            margin: 0;
+        }
 
-        @media (max-width: 1024px) {
-            .two-column { grid-template-columns: 1fr; }
-            .image-wrapper { height: 300px; }
-            .nav-links { display: none; }
-            .info-grid { grid-template-columns: 1fr; }
+        /* Card della sezione Collegamenti (Scorrimento orizzontale) */
+        .link-card {
+            flex: 0 0 300px;
+            background-color: rgba(30, 41, 59, 0.4);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        .link-card h4 {
+            font-family: 'Playfair Display', serif;
+            color: #ffffff;
+            font-size: 18px;
+            margin: 0 0 10px 0;
+        }
+        .link-card p {
+            color: #94a3b8;
+            font-size: 13.5px;
+            margin: 0 0 15px 0;
+        }
+        .link-card a {
+            color: #d4af37;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .link-card a:hover {
+            text-decoration: underline;
+        }
+
+        /* Sezione Info */
+        .info-section {
+            background-color: rgba(30, 41, 59, 0.4);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 12px;
+            padding: 30px;
+            margin-top: 30px;
+        }
+        .info-section p {
+            color: #e2e8f0;
+            font-size: 15.5px;
+            margin-bottom: 10px;
+        }
+        .info-section p:last-child {
+            margin-bottom: 0;
         }
     </style>
 </head>
 <body>
 
-    <nav class="navbar">
-        <a href="#home" class="logo">LUCE</a>
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#antica">Antica</a></li>
-            <li><a href="#paleocristiana">Paleocristiana</a></li> 
-            <li><a href="#gotico">Gotico</a></li>
-            <li><a href="#rinascimento">Rinascimento</a></li>
-            <li><a href="#manierismo">Manierismo</a></li>
-            <li><a href="#barocco">Barocco</a></li>
-            <li><a href="#neoclassicismo">Neoclassicismo</a></li>
-            <li><a href="#romanticismo">Romanticismo</a></li>
-            <li><a href="#info">Info</a></li>
-        </ul>
-    </nav>
+    <header>
+        <h1>LUCE</h1>
+        <p>L'Evoluzione della Luce nella Storia dell'Arte</p>
+    </header>
 
-    <section id="home">
-        <div class="reveal">
-            <h1>LUCE</h1>
-            <p>Viaggio tra Arte, Scienza e Pensiero</p>
-            <div style="margin-top: 50px; font-size: 12px; letter-spacing: 5px; color: var(--gold); text-transform: uppercase;">Esplora l'Evoluzione della Visione</div>
+    <main>
+        <div class="intro-text">
+            <p>Un viaggio in 8 tappe attraverso i secoli per scoprire come la luce si sia trasformata da materia divina e metafisica a strumento scientifico, teatrale ed espressivo.</p>
         </div>
-    </section>
 
-    <section id="antica">
-        <div class="two-column reveal">
-            <div>
-                <h2 class="slide-title">Arte Greca e Romana</h2>
-                <ul class="bullet-notes">
-                    <li>La luce come elemento <strong>oggettivo e razionale</strong>.</li>
-                    <li>Definizione millimetrica del volume plastico e dell'anatomia.</li>
-                    <li>Nessun dramma emotivo: trionfa l'equilibrio del <em>Kòsmos</em>.</li>
-                </ul>
-                <a href="antica.html" class="btn-explore">Esplora l'Opera e la Luce <i class="fa-solid fa-arrow-right" style="margin-left: 8px;"></i></a>
-            </div>
-            <div class="image-wrapper">
-                <img src="http://googleusercontent.com/image_collection/image_retrieval/16357726398793917531" alt="Augusto di Prima Porta - Dettaglio Marmo">
-            </div>
-        </div>
-    </section>
-
-    <section id="paleocristiana" class="dark-section">
-        <div class="two-column reveal">
-            <div class="image-wrapper" style="border: 1px solid var(--gold);">
-                <img src="http://googleusercontent.com/image_collection/image_retrieval/16614073691177128400" alt="Mosaici di Ravenna - Luce Trascendente">
-            </div>
-            <div>
-                <h2 class="slide-title">Arte Paleocristiana e Medievale</h2>
-                <ul class="bullet-notes">
-                    <li>La luce si smaterializza e diventa <strong>Oro Divino</strong>.</li>
-                    <li>I mosaici di Ravenna annullano lo spazio fisico e prospettico.</li>
-                    <li>Luce anti-naturalistica: simbolo di eternità spirituale senza ombre.</li>
-                </ul>
-                <a href="paleocristiana.html" class="btn-explore">Esplora l'Opera e la Luce <i class="fa-solid fa-arrow-right" style="margin-left: 8px;"></i></a>
-            </div>
-        </div>
-    </section>
-
-    <section id="gotico">
-        <div class="two-column reveal">
-            <div>
-                <h2 class="slide-title">Arte Romanica e Gotica</h2>
-                <ul class="bullet-notes">
-                    <li>La luce fisica "attraversa" la materia e si fa architettura.</li>
-                    <li>Le grandi vetrate istoriate trasformano l'ambiente in uno spazio mistico.</li>
-                    <li>La cattedrale come prefigurazione della Gerusalemme Celeste.</li>
-                </ul>
-                <a href="gotico.html" class="btn-explore">Esplora l'Opera e la Luce <i class="fa-solid fa-arrow-right" style="margin-left: 8px;"></i></a>
-            </div>
-            <div class="image-wrapper">
-                <img src="chapelle.jpg" alt="Vetrate della Sainte-Chapelle">
-            </div>
-        </div>
-    </section>
-
-    <section id="rinascimento">
-        <div class="two-column reveal">
-            <div class="image-wrapper">
-                <img src="http://googleusercontent.com/image_collection/image_retrieval/16311664788026912264" alt="Piero della Francesca o Leonardo da Vinci">
-            </div>
-            <div>
-                <h2 class="slide-title">Il Rinascimento</h2>
-                <ul class="bullet-notes">
-                    <li>La luce diventa <strong>misurabile, matematica e naturale</strong>.</li>
-                    <li>Uso della prospettiva geometrica per ordinare lo spazio visivo.</li>
-                    <li>Lo <em>Sfumato</em> leonardesco: fusione perfetta tra uomo e atmosfera.</li>
-                </ul>
-                <a href="rinascimento.html" class="btn-explore">Esplora l'Opera e la Luce <i class="fa-solid fa-arrow-right" style="margin-left: 8px;"></i></a>
-            </div>
-        </div>
-    </section>
-
-    <section id="manierismo" class="dark-section" style="background-color: #1a1c1a;">
-        <div class="two-column reveal">
-            <div>
-                <h2 class="slide-title">Il Manierismo</h2>
-                <ul class="bullet-notes">
-                    <li>Crisi delle certezze rinascimentali e dello spazio geometrico.</li>
-                    <li>La luce si fa <strong>instabile, asimmetrica e fortemente teatrale</strong>.</li>
-                    <li>Bagliori acidi e cromaticamente irreali (Tintoretto, Pontormo).</li>
-                </ul>
-                <a href="manierismo.html" class="btn-explore">Esplora l'Opera e la Luce <i class="fa-solid fa-arrow-right" style="margin-left: 8px;"></i></a>
-            </div>
-            <div class="image-wrapper">
-                <img src="http://googleusercontent.com/image_collection/image_retrieval/16335198031301918349" alt="Il Manierismo di Tintoretto">
-            </div>
-        </div>
-    </section>
-
-    <section id="barocco" class="dark-section">
-        <div class="two-column reveal">
-            <div class="image-wrapper">
-                <img src="http://googleusercontent.com/image_collection/image_retrieval/8343567970090063389" alt="Caravaggio - Vocazione di San Matteo">
-            </div>
-            <div>
-                <h2 class="slide-title">Il Barocco</h2>
-                <ul class="bullet-notes">
-                    <li>La rivoluzione del chiaroscuro introdotta da <strong>Caravaggio</strong>.</li>
-                    <li>Luce direzionale e tagliente che squarcia l'oscurità dello sfondo.</li>
-                    <li>Valore fortemente simbolico: la luce come Grazia e rivelazione divina.</li>
-                </ul>
-                <a href="barocco.html" class="btn-explore">Esplora l'Opera e la Luce <i class="fa-solid fa-arrow-right" style="margin-left: 8px;"></i></a>
-            </div>
-        </div>
-    </section>
-
-    <section id="neoclassicismo">
-        <div class="two-column reveal">
-            <div>
-                <h2 class="slide-title">Neoclassicismo</h2>
-                <ul class="bullet-notes">
-                    <li>Ritorno a una luce <strong>nitida, diffusa, fredda e ferma</strong>.</li>
-                    <li>L'influenza del pensiero illuminista sulla razionalità compositiva.</li>
-                    <li>I corpi vengono modellati come sculture statiche ed eroiche (Jacques-Louis David).</li>
-                </ul>
-                <a href="neoclassicismo.html" class="btn-explore">Esplora l'Opera e la Luce <i class="fa-solid fa-arrow-right" style="margin-left: 8px;"></i></a>
-            </div>
-            <div class="image-wrapper">
-                <img src="http://googleusercontent.com/image_collection/image_retrieval/13913568184068445450" alt="David - Il Giuramento degli Orazi">
-            </div>
-        </div>
-    </section>
-
-    <section id="romanticismo">
-        <div class="two-column reveal">
-            <div class="image-wrapper">
-                <img src="http://googleusercontent.com/image_collection/image_retrieval/3445172198331826275" alt="William Turner - Luce e Colore">
-            </div>
-            <div>
-                <h2 class="slide-title">Romanticismo e Realismo</h2>
-                <ul class="bullet-notes">
-                    <li>In <strong>William Turner</strong> la luce atmosferica dissolve completamente la materia.</li>
-                    <li>La resa visiva del <strong>Sublime</strong>: terrore, infinito ed emozione pura.</li>
-                    <li>Contrasto successivo con la luce cruda e descrittiva dei pittori realisti.</li>
-                </ul>
-                <a href="romanticismo.html" class="btn-explore">Esplora l'Opera e la Luce <i class="fa-solid fa-arrow-right" style="margin-left: 8px;"></i></a>
-            </div>
-        </div>
-    </section>
-
-    <section id="info" class="dark-section" style="border: none;">
-        <div class="reveal">
-            <h2 class="slide-title">Informazioni sul Progetto</h2>
-            
-            <div class="info-grid">
-                <div class="info-card">
-                    <div>
-                        <i class="fa-solid fa-user-graduate"></i>
-                        <h3>Autore</h3>
-                        <p><strong>Studente:</strong> Pierpaolo Frare<br><strong>Classe:</strong> 4°BA<br><strong>Istituto:</strong> Duca degli Abruzzi, Treviso</p>
-                    </div>
+        <h2>Le Tappe del Percorso</h2>
+        <!-- Contenitore a scorrimento laterale per le 8 tappe -->
+        <div class="horizontal-scroll-container">
+            <a href="antica.html" class="epoch-card">
+                <div>
+                    <div class="epoch-number">Tappa 1</div>
+                    <h3>Arte Antica</h3>
                 </div>
-                <div class="info-card">
-                    <div>
-                        <i class="fa-solid fa-code"></i>
-                        <h3>Realizzazione</h3>
-                        <p>Dettagli sullo sviluppo del codice e la gestione della struttura web.</p>
-                    </div>
-                    <a href="crediti.html" class="btn-info-sm">Vedi Crediti Sviluppo</a>
+                <p>Bronzi di Riace</p>
+            </a>
+
+            <a href="paleocristiana.html" class="epoch-card">
+                <div>
+                    <div class="epoch-number">Tappa 2</div>
+                    <h3>Paleocristiana</h3>
                 </div>
-                <div class="info-card">
-                    <div>
-                        <i class="fa-solid fa-circle-info"></i>
-                        <h3>Il Progetto</h3>
-                        <p>Un percorso digitale interamente volto a esplorare l'evoluzione del concetto di luce nella storia dell'arte.</p>
-                    </div>
+                <p>San Vitale (Ravenna)</p>
+            </a>
+
+            <a href="gotico.html" class="epoch-card">
+                <div>
+                    <div class="epoch-number">Tappa 3</div>
+                    <h3>Arte Gotica</h3>
                 </div>
+                <p>Sainte-Chapelle</p>
+            </a>
+
+            <a href="rinascimento.html" class="epoch-card">
+                <div>
+                    <div class="epoch-number">Tappa 4</div>
+                    <h3>Rinascimento</h3>
+                </div>
+                <p>La Gioconda</p>
+            </a>
+
+            <a href="manierismo.html" class="epoch-card">
+                <div>
+                    <div class="epoch-number">Tappa 5</div>
+                    <h3>Manierismo</h3>
+                </div>
+                <p>La Luce Manierista</p>
+            </a>
+
+            <a href="barocco.html" class="epoch-card">
+                <div>
+                    <div class="epoch-number">Tappa 6</div>
+                    <h3>Il Barocco</h3>
+                </div>
+                <p>Estasi di Santa Teresa</p>
+            </a>
+
+            <a href="neoclassicismo.html" class="epoch-card">
+                <div>
+                    <div class="epoch-number">Tappa 7</div>
+                    <h3>Neoclassicismo</h3>
+                </div>
+                <p>La Morte di Marat</p>
+            </a>
+
+            <a href="romanticismo.html" class="epoch-card">
+                <div>
+                    <div class="epoch-number">Tappa 8</div>
+                    <h3>Romanticismo</h3>
+                </div>
+                <p>Il Bacio di Hayez</p>
+            </a>
+        </div>
+
+        <!-- Nuova Sezione Collegamenti (prima di Info) a scorrimento orizzontale -->
+        <h2>Collegamenti ed Approfondimenti</h2>
+        <div class="horizontal-scroll-container">
+            <div class="link-card">
+                <h4>Pinacoteca di Brera</h4>
+                <p>Esplora la collezione e la storia de "Il Bacio" di Francesco Hayez a Milano.</p>
+                <a href="https://pinacotecabrera.org/" target="_blank" rel="noopener">Visita il Sito &rarr;</a>
+            </div>
+
+            <div class="link-card">
+                <h4>Sainte-Chapelle Parigi</h4>
+                <p>Approfondisci la struttura gotica e le celebri vetrate istoriate a Parigi.</p>
+                <a href="https://www.sainte-chapelle.fr/" target="_blank" rel="noopener">Visita il Sito &rarr;</a>
+            </div>
+
+            <div class="link-card">
+                <h4>Ravenna Mosaici</h4>
+                <p>Scopri i mosaici bizantini e la Basilica di San Vitale.</p>
+                <a href="https://www.ravennamosaici.it/" target="_blank" rel="noopener">Visita il Sito &rarr;</a>
+            </div>
+
+            <div class="link-card">
+                <h4>Museo del Louvre</h4>
+                <p>Scheda dettagliata su La Gioconda di Leonardo da Vinci.</p>
+                <a href="https://www.louvre.fr/" target="_blank" rel="noopener">Visita il Sito &rarr;</a>
             </div>
         </div>
-    </section>
 
-    <script>
-        const observerOptions = { threshold: 0.15 };
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
+        <!-- Sezione Info -->
+        <h2>Info sul Progetto</h2>
+        <div class="info-section">
+            <p><strong>Progetto:</strong> L'Evoluzione della Luce nella Storia dell'Arte</p>
+            <p><strong>Obiettivo:</strong> Analizzare le trasformazioni tecniche, filosofiche e simboliche dell'uso della luce dall'antichità al Romanticismo.</p>
+            <p><strong>Struttura:</strong> Percorso multidisciplinare articolato in 8 moduli tematici.</p>
+        </div>
+    </main>
 
-        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-        window.addEventListener('scroll', () => {
-            let current = "";
-            document.querySelectorAll('section').forEach(section => {
-                const sectionTop = section.offsetTop;
-                if (pageYOffset >= sectionTop - 100) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            document.querySelectorAll('.nav-links a').forEach(a => {
-                a.classList.remove('active');
-                if (a.getAttribute('href').includes(current)) {
-                    a.classList.add('active');
-                }
-            });
-        });
-    </script>
 </body>
 </html>
