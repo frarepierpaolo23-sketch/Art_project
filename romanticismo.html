@@ -2,47 +2,92 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-    <title>8. Romanticismo - Il Bacio di Hayez</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8. Romanticismo - Il Bacio di Francesco Hayez</title>
+    <!-- Collegamento al foglio di stile generale -->
     <link rel="stylesheet" href="stile.css">
+    <!-- Google Fonts per una tipografia elegante e coerente -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        body.arte-romantica {
-            background-color: #0f172a;
-            color: #cbd5e1;
+        body.arte-romanticismo {
+            background-color: #0f172a; /* Sfondo scuro coerente */
+            color: #cbd5e1;            /* Testo chiaro ad alto contrasto */
             font-family: 'Montserrat', sans-serif;
             margin: 0;
             padding: 0;
             line-height: 1.8;
         }
-        header { text-align: center; padding: 60px 20px 30px 20px; }
-        header p { color: #d4af37; font-size: 14px; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; margin-bottom: 10px; }
-        header h1 { font-family: 'Playfair Display', serif; font-size: 42px; color: #ffffff; margin-top: 0; }
-        nav { text-align: center; margin-bottom: 30px; }
-        nav a { color: #d4af37; text-decoration: none; font-weight: 600; text-transform: uppercase; font-size: 12px; letter-spacing: 2px; padding: 10px 20px; border: 1px solid rgba(212, 175, 55, 0.4); border-radius: 20px; background-color: rgba(15, 23, 42, 0.8); }
-        nav a:hover { background-color: #d4af37; color: #0f172a; }
-        main { max-width: 900px; margin: 0 auto 60px auto; padding: 20px; }
-        h2 { font-family: 'Playfair Display', serif; color: #d4af37; font-size: 28px; border-bottom: 1px solid rgba(212, 175, 55, 0.3); padding-bottom: 8px; margin-top: 40px; margin-bottom: 20px; }
-        p { color: #e2e8f0; font-size: 16.5px; margin-bottom: 22px; }
-
-        /* Contenitore Immagine Verticale */
-        .img-vertical-container {
+        header {
+            text-align: center; 
+            padding: 60px 20px 30px 20px;
+        }
+        header p {
+            opacity: 0.9;
+            font-size: 14px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #d4af37;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            color: #ffffff;
+            margin-top: 0;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+        nav {
             text-align: center;
-            margin: 30px 0;
+            margin-bottom: 30px;
         }
-        .img-vertical {
-            max-height: 420px;
-            width: auto;
-            border-radius: 10px;
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+        nav a {
+            color: #d4af37;
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 2px;
+            padding: 10px 20px;
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            background-color: rgba(15, 23, 42, 0.8);
+        }
+        nav a:hover {
+            background-color: #d4af37;
+            color: #0f172a;
+        }
+        main {
+            max-width: 900px; 
+            margin: 0 auto 60px auto; 
+            padding: 20px;
         }
 
-        /* Layout Affiancato per Foto Orizzontale */
+        /* Titoli in ORO brillante */
+        h2 {
+            font-family: 'Playfair Display', serif;
+            color: #d4af37;
+            font-size: 28px;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+            padding-bottom: 8px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+        
+        /* Testo dei paragrafi */
+        p {
+            color: #e2e8f0; 
+            font-size: 16.5px;
+            margin-bottom: 22px;
+        }
+
+        /* Layout Affiancato per Immagini e Testo */
         .side-by-side {
             display: flex;
             gap: 25px;
             align-items: center;
-            margin: 30px 0;
+            margin: 35px 0;
         }
         .side-by-side img {
             width: 45%;
@@ -51,40 +96,96 @@
             box-shadow: 0 10px 20px rgba(0,0,0,0.5);
             object-fit: cover;
         }
-        .side-by-side div { width: 55%; }
+        .side-by-side div { 
+            width: 55%; 
+        }
+
+        /* Contenitore Immagine Verticale Centrata */
+        .img-vertical-container {
+            text-align: center;
+            margin: 35px 0;
+        }
+        .img-vertical {
+            max-height: 480px;
+            width: auto;
+            border-radius: 10px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+        }
+
+        /* Box evidenza allegorica */
+        .highlight-box {
+            background-color: rgba(30, 41, 59, 0.7);
+            border-left: 4px solid #d4af37;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .highlight-box p {
+            margin: 0;
+            font-style: italic;
+        }
+
         @media (max-width: 768px) {
-            .side-by-side { flex-direction: column; }
-            .side-by-side img, .side-by-side div { width: 100%; }
+            .side-by-side { 
+                flex-direction: column; 
+            }
+            .side-by-side img, .side-by-side div { 
+                width: 100%; 
+            }
         }
     </style>
 </head>
-<body class="arte-romantica">
+<body class="arte-romanticismo">
+
     <header>
         <p>Tappa 8 di 8</p>
-        <h1>Romanticismo: Il Bacio di Hayez</h1>
+        <h1>Il Romanticismo: Il Bacio di Francesco Hayez</h1>
     </header>
-    <nav><a href="index.html">Home</a></nav>
+
+    <nav>
+        <a href="index.html">Home</a>
+    </nav>
+
     <main>
-        <h2>Il Risplendere della Seta e il Valore Risorgimentale</h2>
-        <p>
-            Francesco Hayez utilizza una luce calda e radente per esaltare i riflessi della veste d'azzurro lucente della donna. La luce non serve solo a definire le forme, ma carica l'atmosfera di sensualità e di un profondo valore simbolico e patriottico risorgimentale.
-        </p>
-
-        <!-- Foto Verticale Bacio.jpg -->
-        <div class="img-vertical-container">
-            <img src="Bacio.jpg" alt="Il Bacio - Francesco Hayez" class="img-vertical">
-        </div>
-
-        <h2>Il Dramma dell'Addio e le Ombre del Mistero</h2>
+        <h2>Passione Intima e Allegoria Risorgimentale</h2>
         <div class="side-by-side">
             <div>
                 <p>
-                    L'ombra proiettata sulla parete e la figura misteriosa sullo sfondo a sinistra creano un senso di urgenza e di pericolo imminente, trasformando l'abbraccio dei due amanti nel saluto d'addio di un cospiratore patriota.
+                    Ne <em>Il Bacio</em> (dipinto nel 1859 da Francesco Hayez e conservato alla Pinacoteca di Brera a Milano), la luce si consolida come lo strumento espressivo fondamentale per coniugare l'intimità del sentimento romantico con il profondo valore allegorico del Risorgimento italiano.
+                </p>
+                <p>
+                    Realizzata alla vigilia della Seconda Guerra d'Indipendenza, l'opera svela come la luce pittorica possa farsi vettore di passione emotiva e al contempo di propaganda politica risorgimentale.
                 </p>
             </div>
-            <!-- Foto Orizzontale Bacio1.jpg -->
-            <img src="Bacio1.jpg" alt="Dettaglio dell'abbraccio e del vestito di seta">
+            <!-- Foto dell'opera intera (Romanticismo.jpg) -->
+            <img src="Romanticismo.jpg" alt="Il Bacio di Francesco Hayez conservato alla Pinacoteca di Brera" class="img-vertical">
+        </div>
+
+        <h2>Il Seta Cangiante e i Giochi di Ombra</h2>
+        <p>
+            La scena è ambientata all'interno di un'architettura medievale essenziale, dominata da mura in pietra grigia che creano uno sfondo scuro e privo di elementi decorativi di disturbo. Da sinistra, una fonte luminosa radente investe l'abbraccio dei due giovani amanti, lasciando nell'ombra i gradini sulla destra, dove si intravede la figura indistinta di una domestica o di una guardia, per concentrare l'intera forza visiva sul contatto dei protagonisti.
+        </p>
+        <p>
+            Questa scelta illuminotecnica valorizza la straordinaria maestria di Hayez nella resa dei materiali e dei tessuti: la luce sulla veste in seta azzurra della donna crea riflessi lucidi e cangianti che ne evidenziano le pieghe morbide, mentre si fonde con i toni caldi del mantello marrone e della calzamaglia rossa del giovane.
+        </p>
+
+        <!-- Dettaglio delle vesti in seta e dei colori (Romanticismo1.jpg) -->
+        <div class="img-vertical-container">
+            <img src="Romanticismo1.jpg" alt="Dettaglio della luce sui tessuti in seta azzurra e rossa dei due amanti" class="img-vertical">
+        </div>
+
+        <h2>L'Icona del Romanticismo Italiano</h2>
+        <p>
+            Attraverso questo sofisticato gioco di riflessi e contrasti cromatici, la luce non si limita a plasmare i corpi in un abbraccio travolgente e furtivo, ma accende le valenze simboliche dell'opera. Il contrasto tra l'azzurro della veste femminile e il rosso della calzatura del giovane evoca l'alleanza tra la Francia (il tricolore francese) e l'Italia nella lotta contro il dominio austriaco.
+        </p>
+
+        <div class="highlight-box">
+            <p>
+                In questo modo, l'illuminazione di Hayez trasforma un fugace momento sentimentale in un'icona del Romanticismo italiano, in cui la luce riscalda la passione dei due amanti e risveglia la speranza e il patriottismo dell'intera nazione.
+            </p>
         </div>
     </main>
+
 </body>
 </html>
