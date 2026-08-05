@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     
     <style>
-        /* --- RIPRISTINO DI BASE --- */
+        /* --- RESET DI BASE --- */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -74,27 +74,28 @@
             width: 320px !important;
             height: 440px !important;
             border-radius: 14px;
-            border: 1px solid rgba(212, 175, 55, 0.3);
+            border: 1px solid rgba(212, 175, 55, 0.4);
             overflow: hidden;
             text-decoration: none !important;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
             display: flex !important;
             flex-direction: column !important;
-            transition: transform 0.3s ease, border-color 0.3s ease;
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
         }
 
         .tappa-card:hover {
             transform: translateY(-8px);
             border-color: #d4af37;
+            box-shadow: 0 15px 30px rgba(212, 175, 55, 0.25);
         }
 
-        /* CONTENITORE E CONTROLLO DIMENSIONE IMMAGINE */
+        /* CONTENITORE IMMAGINE */
         .card-img-wrapper {
             position: relative;
             width: 100%;
             height: 330px !important;
             overflow: hidden;
-            background-color: #000;
+            background-color: #0b0f19;
         }
 
         .card-img-wrapper img {
@@ -113,7 +114,7 @@
         .card-overlay {
             position: absolute;
             inset: 0;
-            background: rgba(15, 23, 42, 0.85);
+            background: rgba(15, 23, 42, 0.88);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -133,41 +134,41 @@
             opacity: 1;
         }
 
-        /* --- STILI CROMATICI SPECIFICI PER LE ETICHETTE --- */
+        /* --- STILI RIQUADRO INFERIORE (BLU SCURO CON TESTO ORO) --- */
         .card-info {
             height: 110px !important;
             padding: 15px;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            border-top: 1px solid rgba(212, 175, 55, 0.2);
+            background-color: #1e293b !important; /* Riquadro Blu Scuro */
+            border-top: 1px solid rgba(212, 175, 55, 0.3);
         }
 
+        /* Numero / Etichetta della Tappa */
         .step-num {
             font-size: 11px;
             font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
             margin-bottom: 4px;
-            opacity: 0.8;
+            color: #d4af37 !important; /* Colore ORO */
+            opacity: 0.9;
         }
 
+        /* Titoli delle Tappe */
         .card-info h3 {
             font-family: 'Playfair Display', serif;
             font-size: 18px;
             margin: 0;
             line-height: 1.2;
+            color: #d4af37 !important; /* Colore ORO */
         }
 
-        /* COLORI CUSTUM DAL TUO CSS PER OGNI EPOCA */
-        .card-info.arte-antica { background-color: #f4f1ea !important; color: #2c3e50 !important; }
-        .card-info.paleocristiana-medievale { background-color: #2c2416 !important; color: #f1c40f !important; }
-        .card-info.romanico-gotico { background-color: #0b0f19 !important; color: #cbd5e1 !important; }
-        .card-info.rinascimento { background-color: #fffdf3 !important; color: #1a202c !important; }
-        .card-info.manierismo { background-color: #2d3748 !important; color: #a3e635 !important; }
-        .card-info.barocco { background-color: #000000 !important; color: #ffffff !important; }
-        .card-info.neoclassicismo { background-color: #f8fafc !important; color: #0f172a !important; }
-        .card-info.romanticismo-realismo { background-color: #1e1b18 !important; color: #fdba74 !important; }
+        /* SCHEDE SPECIALI: COLLEGAMENTI E CREDITI */
+        .tappa-card.special-card {
+            border-color: rgba(212, 175, 55, 0.7);
+        }
 
         /* FOOTER */
         .main-footer {
@@ -176,11 +177,6 @@
             border-top: 1px solid rgba(212, 175, 55, 0.2);
             font-size: 13px;
             color: #94a3b8;
-        }
-
-        .main-footer a {
-            color: #d4af37;
-            text-decoration: none;
         }
     </style>
 </head>
@@ -196,12 +192,12 @@
         <!-- TAPPA 1 -->
         <a href="antica.html" class="tappa-card">
             <div class="card-img-wrapper">
-                <img src="Antica.jpg" alt="Arte Antica">
+                <img src="Roma.jpg" alt="Arte Antica">
                 <div class="card-overlay">
                     <p class="intro-text">La luce solare che penetra dall'oculus del Pantheon trasforma lo spazio architettonico in un tempio cosmico.</p>
                 </div>
             </div>
-            <div class="card-info arte-antica">
+            <div class="card-info">
                 <span class="step-num">Tappa 01</span>
                 <h3>Arte Antica e Classica</h3>
             </div>
@@ -210,12 +206,12 @@
         <!-- TAPPA 2 -->
         <a href="paleocristiana.html" class="tappa-card">
             <div class="card-img-wrapper">
-                <img src="Paleocristiana.jpg" alt="Arte Paleocristiana">
+                <img src="Medievale.jpg" alt="Arte Paleocristiana">
                 <div class="card-overlay">
                     <p class="intro-text">L'oro dei mosaici bizantini riflette una luce mistica che smaterializza la parete e richiama la dimensione divina.</p>
                 </div>
             </div>
-            <div class="card-info paleocristiana-medievale">
+            <div class="card-info">
                 <span class="step-num">Tappa 02</span>
                 <h3>Paleocristiana e Bizantina</h3>
             </div>
@@ -229,7 +225,7 @@
                     <p class="intro-text">La "Lux Nova" delle cattedrali gotiche: le immense vetrate colorate trasformano la luce fisica in rivelazione teologica.</p>
                 </div>
             </div>
-            <div class="card-info romanico-gotico">
+            <div class="card-info">
                 <span class="step-num">Tappa 03</span>
                 <h3>Arte Gotica</h3>
             </div>
@@ -243,23 +239,23 @@
                     <p class="intro-text">La luce razionale e geometrica di Piero della Francesca unita allo sfumato atmosferico e naturale di Leonardo.</p>
                 </div>
             </div>
-            <div class="card-info rinascimento">
+            <div class="card-info">
                 <span class="step-num">Tappa 04</span>
                 <h3>Rinascimento</h3>
             </div>
         </a>
 
         <!-- TAPPA 5 -->
-        <a href="caravaggio.html" class="tappa-card">
+        <a href="manierismo.html" class="tappa-card">
             <div class="card-img-wrapper">
-                <img src="Caravaggio.jpg" alt="Caravaggio">
+                <img src="Manierismo.jpg" alt="Manierismo">
                 <div class="card-overlay">
-                    <p class="intro-text">Il chiaroscuro teatrale e drammatico: uno squarcio di luce radente che irrompe nell'oscurità per portare la Grazia.</p>
+                    <p class="intro-text">MANIERISMOiw2jie.</p>
                 </div>
             </div>
-            <div class="card-info manierismo">
+            <div class="card-info">
                 <span class="step-num">Tappa 05</span>
-                <h3>Caravaggio e il Seicento</h3>
+                <h3>Manierismo</h3>
             </div>
         </a>
 
@@ -271,7 +267,7 @@
                     <p class="intro-text">La spettacolare regia di luce del Bernini: raggi dorati e fonti nascoste che mettono in scena la gloria divina.</p>
                 </div>
             </div>
-            <div class="card-info barocco">
+            <div class="card-info">
                 <span class="step-num">Tappa 06</span>
                 <h3>Il Barocco</h3>
             </div>
@@ -285,7 +281,7 @@
                     <p class="intro-text">La luce fredda, chiara e razionale dell'Illuminismo che scolpisce le forme ed eleva gli eroi civili di David.</p>
                 </div>
             </div>
-            <div class="card-info neoclassicismo">
+            <div class="card-info">
                 <span class="step-num">Tappa 07</span>
                 <h3>Il Neoclassicismo</h3>
             </div>
@@ -294,21 +290,49 @@
         <!-- TAPPA 8 -->
         <a href="romanticismo.html" class="tappa-card">
             <div class="card-img-wrapper">
-                <img src="Romanticismo.jpg" alt="Romanticismo">
+                <img src="Bacio.jpg" alt="Romanticismo">
                 <div class="card-overlay">
                     <p class="intro-text">I bagliori dorati e i toni caldi delle sete nel Bacio di Hayez: la luce come espressione dei sentimenti e del Risorgimento.</p>
                 </div>
             </div>
-            <div class="card-info romanticismo-realismo">
+            <div class="card-info">
                 <span class="step-num">Tappa 08</span>
                 <h3>Il Romanticismo</h3>
+            </div>
+        </a>
+
+        <!-- DOPO LA 8a TAPPA: COLLEGAMENTI -->
+        <a href="collegamenti.html" class="tappa-card special-card">
+            <div class="card-img-wrapper">
+                <img src="Collegamento.jpg" alt="Collegamenti Interdisciplinari">
+                <div class="card-overlay">
+                    <p class="intro-text">Scopri le connessioni filosofiche, scientifiche e letterarie sul tema della luce attraverso i secoli.</p>
+                </div>
+            </div>
+            <div class="card-info">
+                <span class="step-num">Approfondimento</span>
+                <h3>Collegamenti</h3>
+            </div>
+        </a>
+
+        <!-- DOPO LA 8a TAPPA: CREDITI -->
+        <a href="crediti.html" class="tappa-card special-card">
+            <div class="card-img-wrapper">
+                <img src="Crediti.jpg" alt="Crediti del Progetto">
+                <div class="card-overlay">
+                    <p class="intro-text">Informazioni sugli autori, fonti utilizzate, licenze e note metodologiche del percorso espositivo.</p>
+                </div>
+            </div>
+            <div class="card-info">
+                <span class="step-num">Info Progetto</span>
+                <h3>Crediti</h3>
             </div>
         </a>
 
     </main>
 
     <footer class="main-footer">
-        <p>&copy; Progetto Luce nell'Arte | <a href="crediti.html">Crediti</a> | <a href="collegamenti.html">Collegamenti</a></p>
+        <p>&copy; Progetto Luce nell'Arte — Percorso Interattivo</p>
     </footer>
 
 </body>
