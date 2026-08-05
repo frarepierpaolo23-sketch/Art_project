@@ -2,68 +2,202 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-    <title>4. Rinascimento - La Gioconda</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4. Rinascimento - La Gioconda e la Scienza della Luce</title>
+    <!-- Collegamento al foglio di stile generale -->
     <link rel="stylesheet" href="stile.css">
+    <!-- Google Fonts per una tipografia elegante e coerente -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         body.arte-rinascimento {
-            background-color: #0f172a;
-            color: #cbd5e1;
+            background-color: #0f172a; /* Sfondo scuro elegante */
+            color: #cbd5e1;            /* Testo chiaro ad alto contrasto */
             font-family: 'Montserrat', sans-serif;
             margin: 0;
             padding: 0;
             line-height: 1.8;
         }
-        header { text-align: center; padding: 60px 20px 30px 20px; }
-        header p { color: #d4af37; font-size: 14px; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; margin-bottom: 10px; }
-        header h1 { font-family: 'Playfair Display', serif; font-size: 42px; color: #ffffff; margin-top: 0; }
-        nav { text-align: center; margin-bottom: 30px; }
-        nav a { color: #d4af37; text-decoration: none; font-weight: 600; text-transform: uppercase; font-size: 12px; letter-spacing: 2px; padding: 10px 20px; border: 1px solid rgba(212, 175, 55, 0.4); border-radius: 20px; background-color: rgba(15, 23, 42, 0.8); }
-        nav a:hover { background-color: #d4af37; color: #0f172a; }
-        main { max-width: 900px; margin: 0 auto 60px auto; padding: 20px; }
-        h2 { font-family: 'Playfair Display', serif; color: #d4af37; font-size: 28px; border-bottom: 1px solid rgba(212, 175, 55, 0.3); padding-bottom: 8px; margin-top: 40px; margin-bottom: 20px; }
-        p { color: #e2e8f0; font-size: 16.5px; margin-bottom: 22px; }
+        header {
+            text-align: center; 
+            padding: 60px 20px 30px 20px;
+        }
+        header p {
+            opacity: 0.9;
+            font-size: 14px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #d4af37;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            color: #ffffff;
+            margin-top: 0;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+        nav {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        nav a {
+            color: #d4af37;
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 2px;
+            padding: 10px 20px;
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            background-color: rgba(15, 23, 42, 0.8);
+        }
+        nav a:hover {
+            background-color: #d4af37;
+            color: #0f172a;
+        }
+        main {
+            max-width: 900px; 
+            margin: 0 auto 60px auto; 
+            padding: 20px;
+        }
 
-        /* Contenitore Immagini Verticali */
+        /* Titoli in ORO brillante */
+        h2 {
+            font-family: 'Playfair Display', serif;
+            color: #d4af37;
+            font-size: 28px;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+            padding-bottom: 8px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+        
+        /* Testo dei paragrafi */
+        p {
+            color: #e2e8f0; 
+            font-size: 16.5px;
+            margin-bottom: 22px;
+        }
+
+        /* Layout Affiancato per Immagini e Testo */
+        .side-by-side {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+            margin: 35px 0;
+        }
+        .side-by-side.reverse {
+            flex-direction: row-reverse;
+        }
+        .side-by-side img {
+            width: 45%;
+            border-radius: 10px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+            object-fit: cover;
+        }
+        .side-by-side div { 
+            width: 55%; 
+        }
+
+        /* Contenitore Immagine Verticale Centrata */
         .img-vertical-container {
             text-align: center;
-            margin: 30px 0;
+            margin: 35px 0;
         }
         .img-vertical {
-            max-height: 420px;
+            max-height: 480px;
             width: auto;
             border-radius: 10px;
             border: 1px solid rgba(212, 175, 55, 0.3);
             box-shadow: 0 10px 25px rgba(0,0,0,0.6);
         }
+
+        /* Box sintesi conclusiva */
+        .highlight-box {
+            background-color: rgba(30, 41, 59, 0.7);
+            border-left: 4px solid #d4af37;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .highlight-box p {
+            margin: 0;
+            font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            .side-by-side, .side-by-side.reverse { 
+                flex-direction: column; 
+            }
+            .side-by-side img, .side-by-side div { 
+                width: 100%; 
+            }
+        }
     </style>
 </head>
 <body class="arte-rinascimento">
+
     <header>
         <p>Tappa 4 di 8</p>
-        <h1>Rinascimento: La Gioconda di Leonardo</h1>
+        <h1>Il Rinascimento: La Gioconda e la Scienza della Luce</h1>
     </header>
-    <nav><a href="index.html">Home</a></nav>
-    <main>
-        <h2>Lo Sfumato e la Prospettiva Aerea</h2>
-        <p>
-            Nel Rinascimento mature, Leonardo da Vinci rivoluziona la resa atmosferica abbandonando i contorni netti del Primo Rinascimento. Con la tecnica dello sfumato, la luce si diffonde gradualmente ammorbidendo le transizioni tra luce e ombra sui volti e sul paesaggio.
-        </p>
 
-        <!-- Foto Verticale 1 -->
-        <div class="img-vertical-container">
-            <img src="Rinascimento.jpg" alt="La Gioconda - Leonardo da Vinci" class="img-vertical">
+    <nav>
+        <a href="index.html">Home</a>
+    </nav>
+
+    <main>
+        <h2>Lo Sfumato Leonardesco e la Prospettiva Aerea</h2>
+        
+        <!-- Sezione affiancata con ritratto della Gioconda -->
+        <div class="side-by-side">
+            <div>
+                <p>
+                    Nel panorama dell'arte rinascimentale, la Gioconda (Mona Lisa) di Leonardo da Vinci (custodita al Museo del Louvre) rappresenta il capolavoro assoluto per comprendere l'evoluzione scientifica della luce in pittura. Per Leonardo, la luce non era soltanto un fattore di illuminazione della scena, ma un fenomeno atmosferico ed ottico da indagare con rigore scientifico.
+                </p>
+                <p>
+                    Al centro della tecnica leonardesca vi è lo sfumato e la prospettiva aerea, sviluppati applicando strati sottilissimi e trasparenti di velature a olio. Eliminando i contorni netti e rigidi tipici del Primo Rinascimento, Leonardo fa sì che la luce si posizioni morbida ed avvolgente sui tratti di Monna Lisa.
+                </p>
+            </div>
+            <img src="Rinascimento.jpg" alt="La Gioconda di Leonardo da Vinci al Museo del Louvre" class="img-vertical">
         </div>
 
-        <h2>La Luce Atmosferica e la Continuità con la Natura</h2>
         <p>
-            La luce non è più un fascio artificiale, ma un fluido naturale che avvolge la figura di Monna Lisa, raccordandola armonicamente con lo sfondo montuoso e misterioso, dove la prospettiva aerea rende i rilievi più azzurri e sfocati man mano che si allontanano.
+            Il volto appare illuminato da una chiarità diffusa e serena, che risalta in forte e continuo contrasto con i toni scuri e tenui dello sfondo paesaggistico. Questo dosaggio calibrato di luci ed ombre (chiaroscuro) conferisce al soggetto un'incredibile sensazione di tridimensionalità e morbidezza anatomica, donando al tempo stesso al suo enigmatico sorriso quel carattere fugace e dinamico che sembra mutare al variare dell'angolo di osservazione.
+        </p>
+        <p>
+            Inoltre, la luce percepita sul paesaggio roccioso sfuma gradualmente nei toni dell'azzurro e del grigio man mano che ci si allontana verso l'orizzonte, simulando perfettamente l'interposizione dell'aria e dell'umidità atmosferica tra l'occhio umano e la natura.
         </p>
 
-        <!-- Foto Verticale 2 -->
+        <!-- Dettaglio delle velature o ambiente museale -->
         <div class="img-vertical-container">
-            <img src="Rinascimento1.jpg" alt="Dettaglio del volto e dello sfumato" class="img-vertical">
+            <img src="Rinascimento1.jpg" alt="Dettaglio dello sfumato atmosferico della Gioconda" class="img-vertical">
+        </div>
+
+        <h2>Tecnologia Illuminotecnica e Tutela al Museo del Louvre</h2>
+        <div class="side-by-side reverse">
+            <div>
+                <p>
+                    Oggi, l'esperienza di questa complessa tessitura luminosa al Museo del Louvre è affidata a una tecnologia illuminotecnica di altissima precisione. Per esporre l'opera in modo ottimale compensando le distorsioni cromatiche causate dal vetro protettivo frontale e dalla luce ambientale, è stato progettato uno speciale apparecchio d'illuminazione a LED personalizzato (finanziato da Toshiba Lighting e ingegnerizzato con tecnologie di ottica avanzata).
+                </p>
+                <p>
+                    La lampada, posta alla base della teca e dotata di 34 LED di potenza a tecnologia mista, impiega tre differenti sistemi ottici e un sagomatore per garantire una focalizzazione uniforme priva di abbagliamenti. Questo impianto garantisce un'eccellente resa cromatica (CRI > 95) ed elimina le radiazioni UV e infrarosse dannose. Inoltre, un sistema di raffreddamento integrato protegge la tavola di pioppo e stabilizza l'illuminazione nel tempo.
+                </p>
+            </div>
+            <img src="Rinascimento2.jpg" alt="Teca espositiva e illuminazione a LED della Gioconda al Louvre">
+        </div>
+
+        <h2>La Doppia Natura della Luce</h2>
+        <div class="highlight-box">
+            <p>
+                In conclusione, la Gioconda dimostra come il ruolo della luce nell'arte sia duplice e indissolubile: da un lato è fenomeno ottico e sensibilità poetica, sapientemente modellata dalle velature d'olio di Leonardo per fondere l'uomo con la natura; dall'altro è scienza ingegneristica e tutela moderna, capace di ricreare la perfetta fruizione visiva del capolavoro proteggendolo dall'usura del tempo.
+            </p>
         </div>
     </main>
+
 </body>
 </html>
