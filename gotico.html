@@ -82,6 +82,40 @@
             margin-bottom: 22px;
         }
 
+        /* Layout Affiancato per Immagini */
+        .side-by-side {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+            margin: 35px 0;
+        }
+        .side-by-side.reverse {
+            flex-direction: row-reverse;
+        }
+        .side-by-side img {
+            width: 45%;
+            border-radius: 10px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+            object-fit: cover;
+        }
+        .side-by-side div { 
+            width: 55%; 
+        }
+
+        /* Contenitore Immagine Verticale */
+        .img-vertical-container {
+            text-align: center;
+            margin: 35px 0;
+        }
+        .img-vertical {
+            max-height: 480px;
+            width: auto;
+            border-radius: 10px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+        }
+
         /* Box in evidenza per citazioni o concetti chiave */
         .highlight-box {
             background-color: rgba(30, 41, 59, 0.7);
@@ -93,6 +127,15 @@
         .highlight-box p {
             margin: 0;
             font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            .side-by-side, .side-by-side.reverse { 
+                flex-direction: column; 
+            }
+            .side-by-side img, .side-by-side div { 
+                width: 100%; 
+            }
         }
     </style>
 </head>
@@ -109,12 +152,23 @@
 
     <main>
         <h2>L'Apoteosi del Gotico Radiante e la Nave di Cristallo</h2>
-        <p>
-            Nel cuore di Parigi, la Sainte-Chapelle (fatta erigere nel XIII secolo da re Luigi IX per custodire le Reliquie della Passione, tra cui la Corona di Spine) rappresenta il punto d'arrivo dell'architettura gotica e l'apoteosi della luce intesa come materia divina. Con lo sviluppo dello stile Gotico Radiante (Rayonnant), l'edificio abbandona la massa imponente delle pareti in pietra per trasformarsi in uno "scheletro" architettonico sottilissimo, dove pilastri e costolature servono unicamente a sorreggere oltre 600 metri quadrati di superficie vetrata.
-        </p>
+        <div class="side-by-side">
+            <div>
+                <p>
+                    Nel cuore di Parigi, la Sainte-Chapelle (fatta erigere nel XIII secolo da re Luigi IX per custodire le Reliquie della Passione, tra cui la Corona di Spine) rappresenta il punto d'arrivo dell'architettura gotica e l'apoteosi della luz intesa come materia divina. Con lo sviluppo dello stile Gotico Radiante (Rayonnant), l'edificio abbandona la massa imponente delle pareti in pietra per trasformarsi in uno "scheletro" architettonico sottilissimo, dove pilastri e costolature servono unicamente a sorreggere oltre 600 metri quadrati di superficie vetrata.
+                </p>
+            </div>
+            <img src="Gotico.jpg" alt="Interno della Sainte-Chapelle di Parigi e le sue pareti vetrate">
+        </div>
+
         <p>
             Nella cappella superiore, le pareti sbarrano la vista al mondo terreno e si dissolvono: il vetro occupa circa il 75% dell'intera superficie, creando la sensazione di trovarsi all'interno di una monumentale "nave di cristallo". Le 15 imponenti vetrate istoriate, alte oltre 15 metri, illustrano 1.113 scene bibliche ed evangeliche (dalla Genesi all'Apocalisse raffigurata nel rosone occidentale). Tuttavia, il vero significato di questo ciclo non risiede soltanto nella sua funzione didattica, ma nell'esperienza luminosa che produce: la luce solare esterna, attraversando le vetrate domate dalle tonalità intense del blu cobalto, del rosso rubino, del viola e dell'oro, perde la sua connotazione terrestre per trasformarsi in vera e propria luce spirituale.
         </p>
+
+        <!-- Immagine centrale di dettaglio -->
+        <div class="img-vertical-container">
+            <img src="Gotico1.jpg" alt="Dettaglio della luce filtrata dalle vetrate cromatiche della Sainte-Chapelle" class="img-vertical">
+        </div>
 
         <h2>La Gerusalemme Celeste e lo Spazio Luce</h2>
         <p>
@@ -127,12 +181,19 @@
                 «Catturata dallo splendore dei colori e dai bagliori delle vetrate, l'anima umana si eleva dal piano materiale a quello immateriale e spirituale.»
             </p>
         </div>
-        <p>
-            Alla base di questa straordinaria concezione dello spazio e della luce vi è l'eredità teorica dell'Abate Suger di Saint-Denis (1081–1151). Considerato il padre spirituale dell'architettura gotica, Suger elaborò per primo una teologia della luce fondata sugli scritti dello Pseudo-Dionigi l'Areopagita e della filosofia neoplatonica.
-        </p>
-        <p>
-            Secondo Suger, la luce fisica non è una semplice entità naturale, ma il riflesso visibile della Luce Divina. Attraverso il concetto di <strong>Lux Nova</strong> ("Luce Nuova"), teorizzò che l'anima umana, catturata dallo splendore dei colori e dai bagliori delle vetrate decorate, potesse elevarsi dal piano materiale a quello immateriale e spirituale. La Sainte-Chapelle rappresenta la massima realizzazione pratica di questo pensiero: la luce colorata filtrata dal vetro diventa il mezzo plastico e filosofico capace di condurre il fedele direttamente verso la conoscenza di Dio.
-        </p>
+
+        <!-- Sezione affiancata con la foto dell'Abate Suger (Sugerio.jpg) -->
+        <div class="side-by-side reverse">
+            <div>
+                <p>
+                    Alla base di questa straordinaria concezione dello spazio e della luce vi è l'eredità teorica dell'Abate Suger di Saint-Denis (1081–1151). Considerato il padre spirituale dell'architettura gotica, Suger elaborò per primo una teologia della luce fondata sugli scritti dello Pseudo-Dionigi l'Areopagita e della filosofia neoplatonica.
+                </p>
+                <p>
+                    Secondo Suger, la luce fisica non è una semplice entità naturale, ma il riflesso visibile della Luce Divina. Attraverso il concetto di <strong>Lux Nova</strong> ("Luce Nuova"), teorizzò che l'anima umana, catturata dallo splendore dei colori e dai bagliori delle vetrate decorate, potesse elevarsi dal piano materiale a quello immateriale e spirituale. La Sainte-Chapelle rappresenta la massima realizzazione pratica di questo pensiero: la luce colorata filtrata dal vetro diventa il mezzo plastico e filosofico capace di condurre il fedele direttamente verso la conoscenza di Dio.
+                </p>
+            </div>
+            <img src="Sugerio.jpg" alt="Raffigurazione dell'Abate Suger di Saint-Denis" class="img-vertical">
+        </div>
     </main>
 
 </body>
