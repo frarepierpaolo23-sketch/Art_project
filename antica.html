@@ -2,34 +2,95 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-    <title>1. Arte Antica - Bronzi di Riace</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1. Arte Antica - I Bronzi di Riace</title>
+    <!-- Collegamento al foglio di stile generale -->
     <link rel="stylesheet" href="stile.css">
+    <!-- Google Fonts per una tipografia elegante e coerente -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         body.arte-antica {
-            background-color: #0f172a;
-            color: #cbd5e1;
+            background-color: #0f172a; /* Sfondo blu scuro coordinato */
+            color: #cbd5e1;            /* Testo chiaro ad alto contrasto */
             font-family: 'Montserrat', sans-serif;
             margin: 0;
             padding: 0;
             line-height: 1.8;
         }
-        header { text-align: center; padding: 60px 20px 30px 20px; }
-        header p { color: #d4af37; font-size: 14px; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; margin-bottom: 10px; }
-        header h1 { font-family: 'Playfair Display', serif; font-size: 42px; color: #ffffff; margin-top: 0; }
-        nav { text-align: center; margin-bottom: 30px; }
-        nav a { color: #d4af37; text-decoration: none; font-weight: 600; text-transform: uppercase; font-size: 12px; letter-spacing: 2px; padding: 10px 20px; border: 1px solid rgba(212, 175, 55, 0.4); border-radius: 20px; background-color: rgba(15, 23, 42, 0.8); }
-        nav a:hover { background-color: #d4af37; color: #0f172a; }
-        main { max-width: 900px; margin: 0 auto 60px auto; padding: 20px; }
-        h2 { font-family: 'Playfair Display', serif; color: #d4af37; font-size: 28px; border-bottom: 1px solid rgba(212, 175, 55, 0.3); padding-bottom: 8px; margin-top: 40px; margin-bottom: 20px; }
-        p { color: #e2e8f0; font-size: 16.5px; margin-bottom: 22px; }
+        header {
+            text-align: center; 
+            padding: 60px 20px 30px 20px;
+        }
+        header p {
+            opacity: 0.9;
+            font-size: 14px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #d4af37;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            color: #ffffff;
+            margin-top: 0;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+        nav {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        nav a {
+            color: #d4af37;
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 2px;
+            padding: 10px 20px;
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            background-color: rgba(15, 23, 42, 0.8);
+        }
+        nav a:hover {
+            background-color: #d4af37;
+            color: #0f172a;
+        }
+        main {
+            max-width: 900px; 
+            margin: 0 auto 60px auto; 
+            padding: 20px;
+        }
 
-        /* Layout Testo + Foto Orizzontale Affiancata */
+        /* Titoli in ORO brillante */
+        h2 {
+            font-family: 'Playfair Display', serif;
+            color: #d4af37;
+            font-size: 28px;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+            padding-bottom: 8px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+        
+        /* Testo dei paragrafi */
+        p {
+            color: #e2e8f0; 
+            font-size: 16.5px;
+            margin-bottom: 22px;
+        }
+
+        /* Layout Affiancato per Foto Orizzontali (Roma.jpg e Roma2.jpg) */
         .side-by-side {
             display: flex;
             gap: 25px;
             align-items: center;
-            margin: 30px 0;
+            margin: 35px 0;
+        }
+        .side-by-side.reverse {
+            flex-direction: row-reverse;
         }
         .side-by-side img {
             width: 45%;
@@ -38,34 +99,93 @@
             box-shadow: 0 10px 20px rgba(0,0,0,0.5);
             object-fit: cover;
         }
-        .side-by-side div { width: 55%; }
+        .side-by-side div { 
+            width: 55%; 
+        }
+
+        /* Banner Foto Orizzontale Singola (Roma1.jpg) */
+        .full-width-img {
+            margin: 35px 0;
+            text-align: center;
+        }
+        .full-width-img img {
+            width: 100%;
+            max-height: 480px;
+            border-radius: 10px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+            object-fit: cover;
+        }
+
         @media (max-width: 768px) {
-            .side-by-side { flex-direction: column; }
-            .side-by-side img, .side-by-side div { width: 100%; }
+            .side-by-side, .side-by-side.reverse { 
+                flex-direction: column; 
+            }
+            .side-by-side img, .side-by-side div { 
+                width: 100%; 
+            }
         }
     </style>
 </head>
 <body class="arte-antica">
+
     <header>
         <p>Tappa 1 di 8</p>
-        <h1>Arte Antica: I Bronzi di Riace</h1>
+        <h1>Arte Antica: I Bronzi di Riace e la Luce</h1>
     </header>
-    <nav><a href="index.html">Home</a></nav>
+
+    <nav>
+        <a href="index.html">Home</a>
+    </nav>
+
     <main>
-        <h2>La Scultura Greca e la Riflessione della Luce</h2>
+        <h2>Materia, Bronzo e la Luce dell'Antichità</h2>
+        <p>
+            Spesso considerati solo come imponenti sculture di bronzo scuro, i Bronzi di Riace nascondono un legame profondo con la luce, dove l'arte antica, la chimica della materia e l'illuminotecnica moderna si incontrano.
+        </p>
+
+        <!-- Sezione Affiancata con Roma.jpg -->
         <div class="side-by-side">
             <div>
                 <p>
-                    Nell'Arte Antica, e in particolare nella scultura greca del V secolo a.C., la luce non veniva dipinta, ma era un elemento fisico che interagiva direttamente con la superficie dei materiali. I Bronzi di Riace offrono una testimonianza straordinaria di come gli scultori dell'antichità sfruttassero le proprietà riflettenti del bronzo e la luce naturale del sole per infondere vita, anatomia e dinamismo alle opere.
+                    Per gli scultori dell'età classica, attribuibili a grandi maestri come Policleto, Fidia o la loro cerchia, la luce non era un vero elemento decorativo, ma il fattore fondamentale per dare volume e vita alla scultura anatomica. Realizzati con la raffinata tecnica della fusione a cera persa cava, in cui veniva colata una lega di bronzo composta prevalentemente da rame e stagno, i Bronzi non avevano originariamente l'aspetto scuro con cui li conosciamo oggi.
+                </p>
+                <p>
+                    Una volta completati, venivano accuratamente levigati e lucidati fino a raggiungere un colore biondo-dorato e una superficie quasi specchiante. Collocate all'aperto nei santuari e negli spazi pubblici dell'antica Grecia, le statue riflettevano direttamente i raggi del sole: il gioco di bagliori luminosi e ombre esaltava la plasticità della muscolatura e la tensione dei corpi, facendole apparire maestose, dinamiche e incredibilmente vive.
                 </p>
             </div>
-            <img src="Roma.jpg" alt="I Bronzi di Riace - Scultura Greca">
+            <img src="Roma.jpg" alt="I Bronzi di Riace - Fusione a cera persa e luce dorata">
         </div>
 
-        <h2>Anatomia, Chiaroscuro e Materiali</h2>
+        <h2>Intarsi Policromi e Contrasti Cromatici</h2>
         <p>
-            La modanatura muscolare accurata, la lucentezza della lega bronzea e l'inserimento di materiali differenti (come l'avorio per gli occhi, il rame per le labbra e i capezzoli, e l'argento per i denti) venivano studiati per catturare la luce del sole mediterraneo. La luce naturale, scivolando sui volumi del corpo e creando ombre naturali nei solchi muscolari, dava all'osservatore la percezione di un corpo vivo, palpitante e in continuo movimento.
+            Per creare un netto contrasto cromatico e luminoso con il corpo dorato, gli artigiani applicarono inoltre materiali differenti in punti strategici delle sculture. Utilizzarono rame puro, caratterizzato da una tonalità più calda e rossastra, per modellare le labbra e i capezzoli; intrecciarono sottili lamine d'argento per i denti socchiusi della Statua A, pensate per catturare improvvisi bagliori di luce al variare dell'angolazione dell'osservatore; infine, impiegarono avorio, calcite e pietra scura per gli occhi, lavorati finemente per rifrangere la luce e conferire allo sguardo uno straordinario realismo e una profonda espressività.
         </p>
+
+        <!-- Foto Banner Orizzontale Roma1.jpg -->
+        <div class="full-width-img">
+            <img src="Roma1.jpg" alt="Dettaglio dei materiali intarsiati e della patina dei Bronzi">
+        </div>
+
+        <h2>La Patina del Mare e l'Ossidazione Chimica</h2>
+        <p>
+            Tuttavia, il rapporto primario tra queste sculture e la luce solare si interruppe bruscamente con il naufragio della nave romana che le trasportava e con i duemila anni trascorsi sul fondo del mare Ionio, prima del loro casuale ritrovamento il 16 agosto 1972 a Riace Marina da parte del subacqueo Stefano Mariottini. L'interazione prolungata tra la lega metallica, l'ossigeno e i sali dell'acqua marina ha innescato complessi processi chimici di ossidazione. Il metallo ha così sviluppato una caratteristica patina scura che tende ad assorbire la luce anziché rifletterla. Questo mutamento cromatico, pur lontano dall'aspetto solare e dorato dell'epoca greca, conferisce oggi alle sculture una solennità drammatica e un fascino monumentale del tutto nuovo.
+        </p>
+
+        <!-- Sezione Affiancata Invertita con Roma2.jpg -->
+        <h2>Il Risveglio Moderno: L'Illuminazione a LED Dinamica</h2>
+        <div class="side-by-side reverse">
+            <div>
+                <p>
+                    Oggi i Bronzi sono conservati al Museo Archeologico Nazionale di Reggio Calabria (MArRC) all'interno di una sala ad aria filtrata e clima controllato, concepita per prevenire la corrosione. Per restituire alle opere l'originale interazione con la luce naturale, la stanza è stata dotata di uno specifico e innovativo sistema di illuminazione a LED dinamico, progettato dall'azienda illuminotecnica Targetti.
+                </p>
+                <p>
+                    Questo sistema modifica continuamente sia l'intensità luminosa sia la temperatura del colore della luce bianca, alternando toni più caldi a toni più freddi. La luce sfuma e muta gradualmente direttamente sulle sculture, imitando il naturale percorso del sole durante il corso della giornata. In questo modo, la luce "scivola" sulle anatomie, mette in risalto la tridimensionalità dei muscoli, le incisioni della barba e i dettagli dei diversi materiali intarsiati, permettendo al visitatore di percepire le statue non come manufatti statici, ma come opere in continua ed evolutiva trasformazione.
+                </p>
+            </div>
+            <img src="Roma2.jpg" alt="Allestimento al Museo di Reggio Calabria con luce LED dinamica">
+        </div>
     </main>
+
 </body>
 </html>
