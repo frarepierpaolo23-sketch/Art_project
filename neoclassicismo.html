@@ -2,152 +2,68 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-    <title>7. Il Neoclassicismo - La Morte di Marat</title>
-    <!-- Collegamento al foglio di stile generale -->
+    <title>7. Neoclassicismo - La Morte di Marat</title>
     <link rel="stylesheet" href="stile.css">
-    <!-- Google Fonts per una tipografia elegante e coerente -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         body.arte-neoclassica {
-            background-color: #0f172a; /* Sfondo scuro */
-            color: #cbd5e1;            /* Testo chiaro in contrasto */
+            background-color: #0f172a;
+            color: #cbd5e1;
             font-family: 'Montserrat', sans-serif;
             margin: 0;
             padding: 0;
             line-height: 1.8;
         }
-        header {
-            text-align: center; 
-            padding: 60px 20px 30px 20px;
-        }
-        header p {
-            opacity: 0.9;
-            font-size: 14px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: #d4af37;
-            margin-bottom: 10px;
-            font-weight: 600;
-        }
-        header h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 42px;
-            color: #ffffff;
-            margin-top: 0;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
-        }
-        nav {
+        header { text-align: center; padding: 60px 20px 30px 20px; }
+        header p { color: #d4af37; font-size: 14px; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; margin-bottom: 10px; }
+        header h1 { font-family: 'Playfair Display', serif; font-size: 42px; color: #ffffff; margin-top: 0; }
+        nav { text-align: center; margin-bottom: 30px; }
+        nav a { color: #d4af37; text-decoration: none; font-weight: 600; text-transform: uppercase; font-size: 12px; letter-spacing: 2px; padding: 10px 20px; border: 1px solid rgba(212, 175, 55, 0.4); border-radius: 20px; background-color: rgba(15, 23, 42, 0.8); }
+        nav a:hover { background-color: #d4af37; color: #0f172a; }
+        main { max-width: 900px; margin: 0 auto 60px auto; padding: 20px; }
+        h2 { font-family: 'Playfair Display', serif; color: #d4af37; font-size: 28px; border-bottom: 1px solid rgba(212, 175, 55, 0.3); padding-bottom: 8px; margin-top: 40px; margin-bottom: 20px; }
+        p { color: #e2e8f0; font-size: 16.5px; margin-bottom: 22px; }
+
+        /* Contenitore Immagini Verticali */
+        .img-vertical-container {
             text-align: center;
-            margin-bottom: 30px;
+            margin: 30px 0;
         }
-        nav a {
-            color: #d4af37;
-            text-decoration: none;
-            font-weight: 600;
-            text-transform: uppercase;
-            font-size: 12px;
-            letter-spacing: 2px;
-            padding: 10px 20px;
-            border: 1px solid rgba(212, 175, 55, 0.4);
-            border-radius: 20px;
-            transition: all 0.3s ease;
-            background-color: rgba(15, 23, 42, 0.8);
-        }
-        nav a:hover {
-            background-color: #d4af37;
-            color: #0f172a;
-        }
-        main {
-            max-width: 850px; 
-            margin: 0 auto 60px auto; 
-            padding: 20px;
-        }
-
-        /* Titoli in ORO brillante e BIANCO */
-        h2 {
-            font-family: 'Playfair Display', serif;
-            color: #d4af37;
-            font-size: 28px;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
-            padding-bottom: 8px;
-            margin-top: 40px;
-            margin-bottom: 20px;
-        }
-        
-        /* Testo dei paragrafi */
-        p {
-            color: #e2e8f0; 
-            font-size: 16.5px;
-            margin-bottom: 22px;
-        }
-
-        /* Galleria Immagini - Tutta la scena visibile (senza tagli/zoom) */
-        .image-gallery {
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-            margin: 40px 0;
-        }
-        .image-container {
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            background-color: #000000;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 10px;
-        }
-        .image-container img {
-            width: 100%;
-            max-height: 550px;
-            display: block;
-            object-fit: contain; /* Mantiene le proporzioni originali SENZA tagliare o zoomare l'immagine */
+        .img-vertical {
+            max-height: 420px;
+            width: auto;
+            border-radius: 10px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.6);
         }
     </style>
 </head>
 <body class="arte-neoclassica">
-
     <header>
         <p>Tappa 7 di 8</p>
-        <h1>La Morte di Marat: La Luce e il Martire Laico</h1>
+        <h1>Neoclassicismo: La Morte di Marat</h1>
     </header>
-
-    <nav>
-        <a href="index.html">Home</a>
-    </nav>
-
+    <nav><a href="index.html">Home</a></nav>
     <main>
-        <h2>Il Dispositivo Formale e la Luce Radente</h2>
+        <h2>La Luce Razionale e l'Eroe Laico</h2>
         <p>
-            Ne La morte di Marat, opera realizzata nel 1793 da Jacques-Louis David su commissione della Convenzione Nazionale e conservata ai Musées Royaux des Beaux-Arts de Belgique a Bruxelles, la luce si attesta come il principale dispositivo formale e ideologico per trasformare un drammatico evento di cronaca della Rivoluzione Francese in un'icona sacra e laica del Neoclassicismo. Incaricato di immortalare Jean-Paul Marat, leader giacobino assassinato nella sua vasca da bagno dalla girondina Charlotte Corday, David sceglie di non dipingere l'azione violenta del delitto, bensì il momento immediatamente successivo: l'assoluto silenzio della morte. Per compiere questa operazione di sublimazione, l'artista ricorre a una luce radente e fortemente direzionata, che proviene da sinistra e colpisce la scena con un taglio severo e conciso.
+            Jacques-Louis David impiega una luce radente provenienti da sinistra che illumina il corpo senza vita di Marat. La luce neoclassica non è più mistica, ma etica e razionale: consacra il martire della Rivoluzione con una dignità scultorea che ricorda il Cristo della Pietà.
         </p>
 
-        <!-- Prima foto Neoclassicismo.jpg -->
-        <div class="image-gallery">
-            <div class="image-container">
-                <img src="Neoclassicismo.jpg" alt="La Morte di Marat di Jacques-Louis David">
-            </div>
+        <!-- Foto Verticale 1 -->
+        <div class="img-vertical-container">
+            <img src="Neoclassicismo.jpg" alt="La Morte di Marat - David" class="img-vertical">
         </div>
 
-        <h2>Il Chiaroscuro Caravaggesco e la Sacralizzazione del Soggetto</h2>
+        <h2>Rigore, Vuoto e Chiaroscuro Etico</h2>
         <p>
-            L'uso del chiaroscuro risponde a rigorose scelte geometriche e concettuali. La parte superiore della tela è occupata da uno sfondo scuro e quasi del tutto vuoto, fatto vibrare soltanto da una modulazione di pennellate dorate che intercettano la luce. Questo fondo indistinto ed essenziale azzera qualsiasi sovrastruttura o ambientazione reale, isolando la figura del defunto e concentrando l'attenzione dell'osservatore sul corpo esanime. La luce battente mette in forte risalto l'incarnato di Marat, il lenzuolo macchiato di sangue e la lettera di Charlotte Corday ancora stretta nella mano. Tale resa illuminotecnica attinge direttamente alla lezione del chiaroscuro di Caravaggio, richiamando in modo esplicito la postura del braccio abbandonato verso il basso della Deposizione di Cristo, conferendo alla figura una solennità quasi religiosa.
+            La metà superiore del dipinto è lasciata volutamente vuota, immersa in un'ombra dorata e vibrante che concentra tutta l'attenzione emotiva sulla figura riversa nella vasca e sulla cassetta di legno trasformata in tomba laica.
         </p>
 
-        <!-- Seconda foto Neoclassicismo1.jpg -->
-        <div class="image-gallery">
-            <div class="image-container">
-                <img src="Neoclassicismo1.jpg" alt="Dettaglio del volto e del braccio esanime di Marat">
-            </div>
+        <!-- Foto Verticale 2 -->
+        <div class="img-vertical-container">
+            <img src="Neoclassicismo1.jpg" alt="Dettaglio del martire rivoluzionario" class="img-vertical">
         </div>
-
-        <h2>Idealizzazione, Politica ed Essenzialità Neoclassica</h2>
-        <p>
-            Attraverso questo filtro luminoso, Marat non viene rappresentato con i segni deturpanti della malattia cutanea che lo costringeva a lunghi bagni terapeutici, ma con un corpo idealizzato, disteso e sereno. La luce pulita e razionale purifica la scena del delitto, trasformando la vasca da bagno in un moderno sarcofago e la semplice cassa di legno adibita a scrittoio in una sorta di stele funeraria recante la celebre dedica «À MARAT, DAVID». In questo modo, la luce neoclassica si fa severa ed essenziale: un raggio che spoglia la politica contemporanea del superfluo per elevare un personaggio della cronaca a martire laico della Rivoluzione.
-        </p>
     </main>
-
 </body>
 </html>
