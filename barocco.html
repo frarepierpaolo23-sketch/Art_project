@@ -2,158 +2,78 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-    <title>6. Il Barocco - L'Estasi di Santa Teresa</title>
+    <title>6. Barocco - Estasi di Santa Teresa</title>
     <link rel="stylesheet" href="stile.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         body.arte-barocca {
-            background-color: #0f172a; /* Sfondo scuro */
-            color: #cbd5e1;            /* Testo chiaro in contrasto */
+            background-color: #0f172a;
+            color: #cbd5e1;
             font-family: 'Montserrat', sans-serif;
             margin: 0;
             padding: 0;
             line-height: 1.8;
         }
-        header {
-            text-align: center; 
-            padding: 60px 20px 30px 20px;
-        }
-        header p {
-            opacity: 0.9;
-            font-size: 14px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: #d4af37;
-            margin-bottom: 10px;
-            font-weight: 600;
-        }
-        header h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 42px;
-            color: #ffffff;
-            margin-top: 0;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
-        }
-        nav {
+        header { text-align: center; padding: 60px 20px 30px 20px; }
+        header p { color: #d4af37; font-size: 14px; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; margin-bottom: 10px; }
+        header h1 { font-family: 'Playfair Display', serif; font-size: 42px; color: #ffffff; margin-top: 0; }
+        nav { text-align: center; margin-bottom: 30px; }
+        nav a { color: #d4af37; text-decoration: none; font-weight: 600; text-transform: uppercase; font-size: 12px; letter-spacing: 2px; padding: 10px 20px; border: 1px solid rgba(212, 175, 55, 0.4); border-radius: 20px; background-color: rgba(15, 23, 42, 0.8); }
+        nav a:hover { background-color: #d4af37; color: #0f172a; }
+        main { max-width: 900px; margin: 0 auto 60px auto; padding: 20px; }
+        h2 { font-family: 'Playfair Display', serif; color: #d4af37; font-size: 28px; border-bottom: 1px solid rgba(212, 175, 55, 0.3); padding-bottom: 8px; margin-top: 40px; margin-bottom: 20px; }
+        p { color: #e2e8f0; font-size: 16.5px; margin-bottom: 22px; }
+
+        /* Contenitore Immagini Verticali */
+        .img-vertical-container {
             text-align: center;
-            margin-bottom: 30px;
+            margin: 30px 0;
         }
-        nav a {
-            color: #d4af37;
-            text-decoration: none;
-            font-weight: 600;
-            text-transform: uppercase;
-            font-size: 12px;
-            letter-spacing: 2px;
-            padding: 10px 20px;
-            border: 1px solid rgba(212, 175, 55, 0.4);
-            border-radius: 20px;
-            transition: all 0.3s ease;
-            background-color: rgba(15, 23, 42, 0.8);
-        }
-        nav a:hover {
-            background-color: #d4af37;
-            color: #0f172a;
-        }
-        main {
-            max-width: 850px; 
-            margin: 0 auto 60px auto; 
-            padding: 20px;
-        }
-
-        /* Titoli in ORO brillante e BIANCO */
-        h2 {
-            font-family: 'Playfair Display', serif;
-            color: #d4af37;
-            font-size: 28px;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
-            padding-bottom: 8px;
-            margin-top: 40px;
-            margin-bottom: 20px;
-        }
-        
-        /* Testo dei paragrafi */
-        p {
-            color: #e2e8f0; 
-            font-size: 16.5px;
-            margin-bottom: 22px;
-        }
-
-        /* Galleria Immagini - Tutta la scena visibile (senza tagli/zoom) */
-        .image-gallery {
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-            margin: 40px 0;
-        }
-        .image-container {
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            background-color: #000000;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 10px;
-        }
-        .image-container img {
-            width: 100%;
-            max-height: 550px;
-            display: block;
-            object-fit: contain; /* Mantiene le proporzioni originali SENZA tagliare né zoomare l'immagine */
+        .img-vertical {
+            max-height: 420px;
+            width: auto;
+            border-radius: 10px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.6);
         }
     </style>
 </head>
 <body class="arte-barocca">
-
     <header>
         <p>Tappa 6 di 8</p>
-        <h1>L'Estasi di Santa Teresa: Il Teatro della Luce</h1>
+        <h1>Il Barocco: L'Estasi di Santa Teresa</h1>
     </header>
-
-    <nav>
-        <a href="index.html">Home</a>
-    </nav>
-
+    <nav><a href="index.html">Home</a></nav>
     <main>
-        <h2>La Scenografia Teatrale e la Macchina di Luce di Bernini</h2>
+        <h2>La Scenografia della Luce e il Teatro Barocco</h2>
         <p>
-            Nell’Estasi di Santa Teresa d’Avila (realizzata da Gian Lorenzo Bernini tra il 1647 e il 1652 all’interno della Cappella Cornaro nella Chiesa di Santa Maria della Vittoria a Roma), la luce non è soltanto un elemento di illuminazione visiva, ma il vero e proprio fulcro espressivo e narrativo dell'opera. Bernini trasforma l'architettura della cappella in un vero e proprio palcoscenico teatrale: la Santa ed l'angelo non poggiano su una base tradizionale, ma sembra che levitino su una nuvola di marmo collocata all'interno dell'edicola centrale (che funziona come un boccascena), mentre ai lati i membri della famiglia Cornaro assistono alla scena affacciati dai loro palchetti, proprio come spettatori a teatro.
+            Gian Lorenzo Bernini trasforma la Cappella Cornaro in una vera e propria scena teatrale. La luce naturale penetra da una finestra nascosta di vetro giallo posta in alto, scivolando sui raggi dorati di bronzo per riflettersi sulle pieghe tumultuose del marmo.
         </p>
 
-        <div class="image-gallery">
-            <div class="image-container">
-                <img src="Barocco.jpg" alt="L'Estasi di Santa Teresa di Gian Lorenzo Bernini">
-            </div>
+        <!-- Foto Verticale 1 -->
+        <div class="img-vertical-container">
+            <img src="Barocco.jpg" alt="Estasi di Santa Teresa - Bernini" class="img-vertical">
         </div>
 
-        <h2>La Luce Naturale, i Raggi Dorati e il Marmo</h2>
+        <h2>Il Dramma dell'Estasi Mistica</h2>
         <p>
-            Per rendere tangibile e reale l'evento divino della transverberazione — il trafiggimento del cuore della Santa da parte dell'angelo con una freccia dorata — Bernini progetta una straordinaria "macchina di luce". L'opera viene infatti illuminata dall'alto e dall'esterno attraverso una finestra nascosta incassata sulla parete di fondo dell'edicola, del tutto invisibile all'osservatore che si trova nella navata della chiesa. Da questa fonte luminosa, originariamente dotata di un vetro giallo o ambrato, la luce solare penetra in modo radente e va a colpire direttamente il gruppo scultoreo. Questa luce naturale viene materializzata ed esaltata dai raggi in bronzo dorato collocati dietro le figure, che riflettono i bagliori solari e dissolvono visivamente lo sfondo, isolando la scena in un'atmosfera celeste e fuori dal tempo.
+            L'effetto chiaroscurale scavato con profonda maestria nel marmo enfatizza la concitazione del momento: l'angelo trafigge il cuore della Santa con una freccia dorata, traducendo l'emozione interiore in un evento fisico travolgente.
         </p>
 
-        <div class="image-gallery">
-            <div class="image-container">
-                <img src="Barocco1.jpg" alt="Dettaglio dei raggi dorati e del gruppo scultoreo dell'Estasi">
-            </div>
+        <!-- Foto Verticale 2 -->
+        <div class="img-vertical-container">
+            <img src="Barocco1.jpg" alt="Dettaglio dell'Angelo e Santa Teresa" class="img-vertical">
         </div>
 
+        <h2>L'Integrazione delle Arti</h2>
         <p>
-            La luce interagisce inoltre in modo differenziato con le superfici in marmo di Carrara, accuratamente lavorate da Bernini: la finitura liscia ed eburnea della pelle dell'angelo e del volto della Santa diffonde un chiarore morbido, mentre il panneggio convulso e profondo della veste di Teresa crea un gioco continuo di ombre e riflessi per rappresentare la forza del travaglio spirituale.
+            Architettura, scultura e pittura si fondono in un unicum illuminato in modo mirato, dove l'osservatore diviene spettatore del miracolo divino.
         </p>
 
-        <div class="image-gallery">
-            <div class="image-container">
-                <img src="Barocco2.jpg" alt="Particolare del volto di Santa Teresa e dell'Angelo">
-            </div>
+        <!-- Foto Verticale 3 -->
+        <div class="img-vertical-container">
+            <img src="Barocco2.jpg" alt="I raggi dorati della Cappella Cornaro" class="img-vertical">
         </div>
-
-        <h2>Il Restauro della Cappella Cornaro e la Valorizzazione dell'Opera</h2>
-        <p>
-            Con il recente restauro dell'intera Cappella Cornaro condotto dalla Soprintendenza Speciale di Roma, l'illuminazione dell'opera è stata pienamente valorizzata grazie al ripristino della vetrata del cupolino superiore che canalizza la luce naturale, affiancata da un sistema artificiale discreto concepito per accompagnare e preservare l'effetto scenografico originale ideato da Bernini.
-        </p>
     </main>
-
 </body>
 </html>
