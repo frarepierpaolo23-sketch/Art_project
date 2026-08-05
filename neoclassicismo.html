@@ -2,68 +2,193 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-    <title>7. Neoclassicismo - La Morte di Marat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7. Neoclassicismo - La morte di Marat di Jacques-Louis David</title>
+    <!-- Collegamento al foglio di stile generale -->
     <link rel="stylesheet" href="stile.css">
+    <!-- Google Fonts per una tipografia elegante e coerente -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        body.arte-neoclassica {
-            background-color: #0f172a;
-            color: #cbd5e1;
+        body.arte-neoclassicismo {
+            background-color: #0f172a; /* Sfondo scuro coerente */
+            color: #cbd5e1;            /* Testo chiaro ad alto contrasto */
             font-family: 'Montserrat', sans-serif;
             margin: 0;
             padding: 0;
             line-height: 1.8;
         }
-        header { text-align: center; padding: 60px 20px 30px 20px; }
-        header p { color: #d4af37; font-size: 14px; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; margin-bottom: 10px; }
-        header h1 { font-family: 'Playfair Display', serif; font-size: 42px; color: #ffffff; margin-top: 0; }
-        nav { text-align: center; margin-bottom: 30px; }
-        nav a { color: #d4af37; text-decoration: none; font-weight: 600; text-transform: uppercase; font-size: 12px; letter-spacing: 2px; padding: 10px 20px; border: 1px solid rgba(212, 175, 55, 0.4); border-radius: 20px; background-color: rgba(15, 23, 42, 0.8); }
-        nav a:hover { background-color: #d4af37; color: #0f172a; }
-        main { max-width: 900px; margin: 0 auto 60px auto; padding: 20px; }
-        h2 { font-family: 'Playfair Display', serif; color: #d4af37; font-size: 28px; border-bottom: 1px solid rgba(212, 175, 55, 0.3); padding-bottom: 8px; margin-top: 40px; margin-bottom: 20px; }
-        p { color: #e2e8f0; font-size: 16.5px; margin-bottom: 22px; }
+        header {
+            text-align: center; 
+            padding: 60px 20px 30px 20px;
+        }
+        header p {
+            opacity: 0.9;
+            font-size: 14px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #d4af37;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            color: #ffffff;
+            margin-top: 0;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+        nav {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        nav a {
+            color: #d4af37;
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 2px;
+            padding: 10px 20px;
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            background-color: rgba(15, 23, 42, 0.8);
+        }
+        nav a:hover {
+            background-color: #d4af37;
+            color: #0f172a;
+        }
+        main {
+            max-width: 900px; 
+            margin: 0 auto 60px auto; 
+            padding: 20px;
+        }
 
-        /* Contenitore Immagini Verticali */
+        /* Titoli in ORO brillante */
+        h2 {
+            font-family: 'Playfair Display', serif;
+            color: #d4af37;
+            font-size: 28px;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+            padding-bottom: 8px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+        
+        /* Testo dei paragrafi */
+        p {
+            color: #e2e8f0; 
+            font-size: 16.5px;
+            margin-bottom: 22px;
+        }
+
+        /* Layout Affiancato per Immagini e Testo */
+        .side-by-side {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+            margin: 35px 0;
+        }
+        .side-by-side.reverse {
+            flex-direction: row-reverse;
+        }
+        .side-by-side img {
+            width: 45%;
+            border-radius: 10px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+            object-fit: cover;
+        }
+        .side-by-side div { 
+            width: 55%; 
+        }
+
+        /* Contenitore Immagine Verticale Centrata */
         .img-vertical-container {
             text-align: center;
-            margin: 30px 0;
+            margin: 35px 0;
         }
         .img-vertical {
-            max-height: 420px;
+            max-height: 480px;
             width: auto;
             border-radius: 10px;
             border: 1px solid rgba(212, 175, 55, 0.3);
             box-shadow: 0 10px 25px rgba(0,0,0,0.6);
         }
+
+        /* Box evidenza ideologica */
+        .highlight-box {
+            background-color: rgba(30, 41, 59, 0.7);
+            border-left: 4px solid #d4af37;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .highlight-box p {
+            margin: 0;
+            font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            .side-by-side, .side-by-side.reverse { 
+                flex-direction: column; 
+            }
+            .side-by-side img, .side-by-side div { 
+                width: 100%; 
+            }
+        }
     </style>
 </head>
-<body class="arte-neoclassica">
+<body class="arte-neoclassicismo">
+
     <header>
         <p>Tappa 7 di 8</p>
-        <h1>Neoclassicismo: La Morte di Marat</h1>
+        <h1>Il Neoclassicismo: La morte di Marat di David</h1>
     </header>
-    <nav><a href="index.html">Home</a></nav>
-    <main>
-        <h2>La Luce Razionale e l'Eroe Laico</h2>
-        <p>
-            Jacques-Louis David impiega una luce radente provenienti da sinistra che illumina il corpo senza vita di Marat. La luce neoclassica non è più mistica, ma etica e razionale: consacra il martire della Rivoluzione con una dignità scultorea che ricorda il Cristo della Pietà.
-        </p>
 
-        <!-- Foto Verticale 1 -->
-        <div class="img-vertical-container">
-            <img src="Neoclassicismo.jpg" alt="La Morte di Marat - David" class="img-vertical">
+    <nav>
+        <a href="index.html">Home</a>
+    </nav>
+
+    <main>
+        <h2>La Sublimazione della Cronaca in Icona Laica</h2>
+        <div class="side-by-side">
+            <div>
+                <p>
+                    Ne <em>La morte di Marat</em>, opera realizzata nel 1793 da Jacques-Louis David su commissione della Convenzione Nazionale e conservata ai Musées Royaux des Beaux-Arts de Belgique a Bruxelles, la luce si attesta come il principale dispositivo formale e ideologico per trasformare un drammatico evento di cronaca della Rivoluzione Francese in un'icona sacra e laica del Neoclassicismo.
+                </p>
+                <p>
+                    Incaricato di immortalare Jean-Paul Marat, leader giacobino assassinato nella sua vasca da bagno dalla girondina Charlotte Corday, David sceglie di non dipingere l'azione violenta del delitto, bensì il momento immediatamente successivo: l'assoluto silenzio della morte. Per compiere questa operazione di sublimazione, l'artista ricorre a una luce radente e fortemente direzionata, che proviene da sinistra e colpisce la scena con un taglio severo e conciso.
+                </p>
+            </div>
+            <!-- Foto dell'opera intera (Neoclassicismo.jpg) -->
+            <img src="Neoclassicismo.jpg" alt="La morte di Marat di Jacques-Louis David" class="img-vertical">
         </div>
 
-        <h2>Rigore, Vuoto e Chiaroscuro Etico</h2>
+        <h2>Il Chiaroscuro e l'Eredità Caravaggesca</h2>
         <p>
-            La metà superiore del dipinto è lasciata volutamente vuota, immersa in un'ombra dorata e vibrante che concentra tutta l'attenzione emotiva sulla figura riversa nella vasca e sulla cassetta di legno trasformata in tomba laica.
+            L'uso del chiaroscuro risponde a rigorose scelte geometriche e concettuali. La parte superiore della tela è occupata da uno sfondo scuro e quasi del tutto vuoto, fatto vibrare soltanto da una modulazione di pennellate dorate che intercettano la luce. Questo fondo indistinto ed essenziale azzera qualsiasi sovrastruttura o ambientazione reale, isolando la figura del defunto e concentrando l'attenzione dell'osservatore sul corpo esanime.
+        </p>
+        <p>
+            La luce battente mette in forte risalto l'incarnato di Marat, il lenzuolo macchiato di sangue e la lettera di Charlotte Corday ancora stretta nella mano. Tale resa illuminotecnica attinge direttamente alla lezione del chiaroscuro di Caravaggio, richiamando in modo esplicito la postura del braccio abbandonato verso il basso della <em>Deposizione di Cristo</em>, conferendo alla figura una solennità quasi religiosa.
         </p>
 
-        <!-- Foto Verticale 2 -->
+        <!-- Dettaglio della cassetta di legno o della mano (Neoclassicismo1.jpg) -->
         <div class="img-vertical-container">
-            <img src="Neoclassicismo1.jpg" alt="Dettaglio del martire rivoluzionario" class="img-vertical">
+            <img src="Neoclassicismo1.jpg" alt="Dettaglio della cassa di legno recante la scritta À MARAT, DAVID" class="img-vertical">
+        </div>
+
+        <h2>L'Idealizzazione Neoclassica e il Martire della Rivoluzione</h2>
+        <p>
+            Attraverso questo filtro luminoso, Marat non viene rappresentato con i segni deturpanti della malattia cutanea che lo costringeva a lunghi bagni terapeutici, ma con un corpo idealizzato, disteso e sereno. La luce pulita e razionale purifica la scena del delitto, trasformando la vasca da bagno in un moderno sarcofago e la semplice cassa di legno adibita a scrittoio in una sorta di stele funeraria recante la celebre dedica «À MARAT, DAVID».
+        </p>
+
+        <div class="highlight-box">
+            <p>
+                In questo modo, la luce neoclassica si fa severa ed essenziale: un raggio che spoglia la politica contemporanea del superfluo per elevare un personaggio della cronaca a martire laico della Rivoluzione.
+            </p>
         </div>
     </main>
+
 </body>
 </html>
