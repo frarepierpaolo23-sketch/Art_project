@@ -3,363 +3,137 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luce - L'Evoluzione della Luce nella Storia dell'Arte</title>
-    <!-- Collegamento al foglio di stile generale -->
+    <title>Luce nell'Arte - Home</title>
     <link rel="stylesheet" href="stile.css">
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
-    <style>
-        body {
-            background-color: #0f172a;
-            color: #cbd5e1;
-            font-family: 'Montserrat', sans-serif;
-            margin: 0;
-            padding: 0;
-            line-height: 1.8;
-        }
-        header {
-            text-align: center;
-            padding: 60px 20px 30px 20px;
-        }
-        header h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 52px;
-            color: #ffffff;
-            margin: 0 0 10px 0;
-            letter-spacing: 2px;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
-        }
-        header p {
-            color: #d4af37;
-            font-size: 15px;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            font-weight: 600;
-            margin: 0;
-        }
-        main {
-            max-width: 1200px;
-            margin: 0 auto 60px auto;
-            padding: 0 20px;
-        }
-        .intro-text {
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto 40px auto;
-            font-size: 16.5px;
-            color: #e2e8f0;
-        }
-
-        /* Titoli delle sezioni */
-        h2 {
-            font-family: 'Playfair Display', serif;
-            color: #d4af37;
-            font-size: 28px;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
-            padding-bottom: 8px;
-            margin-top: 50px;
-            margin-bottom: 25px;
-        }
-
-        /* Contenitore a SCORRIMENTO LATERALE */
-        .horizontal-scroll-container {
-            display: flex;
-            gap: 20px;
-            overflow-x: auto;
-            padding-bottom: 25px;
-            padding-top: 10px;
-            scroll-behavior: smooth;
-            -webkit-overflow-scrolling: touch;
-        }
-
-        .horizontal-scroll-container::-webkit-scrollbar {
-            height: 8px;
-        }
-        .horizontal-scroll-container::-webkit-scrollbar-track {
-            background: rgba(30, 41, 59, 0.5);
-            border-radius: 10px;
-        }
-        .horizontal-scroll-container::-webkit-scrollbar-thumb {
-            background: #d4af37;
-            border-radius: 10px;
-        }
-
-        /* Card delle Tappe con Anteprima Immagine al passaggio del mouse */
-        .epoch-card {
-            flex: 0 0 280px;
-            background-color: rgba(30, 41, 59, 0.6);
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            border-radius: 12px;
-            padding: 20px;
-            text-decoration: none;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
-            box-sizing: border-box;
-        }
-        .epoch-card:hover {
-            transform: translateY(-5px);
-            border-color: #d4af37;
-            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.25);
-        }
-
-        .epoch-number {
-            color: #d4af37;
-            font-size: 12px;
-            font-weight: 600;
-            letter-spacing: 2px;
-            margin-bottom: 6px;
-            text-transform: uppercase;
-        }
-        .epoch-card h3 {
-            font-family: 'Playfair Display', serif;
-            color: #ffffff;
-            font-size: 22px;
-            margin: 0 0 6px 0;
-        }
-        .epoch-card p {
-            color: #cbd5e1;
-            font-size: 14px;
-            margin: 0 0 12px 0;
-        }
-
-        /* Riquadro immagine d'anteprima (Hover Effect) */
-        .card-image-preview {
-            width: 100%;
-            height: 140px;
-            border-radius: 8px;
-            overflow: hidden;
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            background-color: #000;
-            opacity: 0.3; /* Parzialmente trasparente di base */
-            filter: grayscale(80%);
-            transition: all 0.4s ease;
-        }
-        .card-image-preview img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-
-        /* Quando si passa il mouse, l'immagine appare brillante e a colori */
-        .epoch-card:hover .card-image-preview {
-            opacity: 1;
-            filter: grayscale(0%);
-            border-color: #d4af37;
-            transform: scale(1.02);
-        }
-
-        /* Griglia a 3 Riquadri sotto le tappe */
-        .bottom-boxes-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            margin-top: 40px;
-        }
-
-        .info-box, a.clickable-box {
-            background-color: rgba(30, 41, 59, 0.5);
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            border-radius: 12px;
-            padding: 30px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-            text-decoration: none;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            box-sizing: border-box;
-        }
-
-        a.clickable-box {
-            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        a.clickable-box:hover {
-            transform: translateY(-5px);
-            border-color: #d4af37;
-            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.25);
-        }
-
-        .box-title {
-            font-family: 'Playfair Display', serif;
-            color: #ffffff;
-            font-size: 22px;
-            margin: 0 0 15px 0;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
-            padding-bottom: 8px;
-        }
-
-        .box-content {
-            color: #e2e8f0;
-            font-size: 15px;
-            margin: 0;
-        }
-
-        .box-link-text {
-            color: #d4af37;
-            font-weight: 600;
-            font-size: 13px;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            margin-top: 20px;
-            display: inline-block;
-        }
-    </style>
 </head>
-<body>
+<body class="home-page">
 
-    <header>
-        <h1>LUCE</h1>
-        <p>L'Evoluzione della Luce nella Storia dell'Arte</p>
+    <header class="main-header">
+        <h1>LUCE NELL'ARTE</h1>
+        <p class="subtitle">Un viaggio attraverso le epoche, dall'Antichità al Romanticismo</p>
     </header>
 
-    <main>
-
-        <h2>Le Tappe del Percorso</h2>
-        <!-- Contenitore a scorrimento laterale per le 8 tappe -->
-        <div class="horizontal-scroll-container">
-            
-            <!-- Tappa 1: Arte Antica -->
-            <a href="antica.html" class="epoch-card">
-                <div>
-                    <div class="epoch-number">Tappa 1</div>
-                    <h3>Arte Antica</h3>
-                    <p>Bronzi di Riace</p>
-                </div>
-                <div class="card-image-preview">
-                    <img src="Roma.jpg" alt="Arte Antica - Bronzi di Riace">
-                </div>
-            </a>
-
-            <!-- Tappa 2: Paleocristiana -->
-            <a href="paleocristiana.html" class="epoch-card">
-                <div>
-                    <div class="epoch-number">Tappa 2</div>
-                    <h3>Paleocristiana</h3>
-                    <p>San Vitale (Ravenna)</p>
-                </div>
-                <div class="card-image-preview">
-                    <img src="Medievale.jpg" alt="Arte Paleocristiana - San Vitale">
-                </div>
-            </a>
-
-            <!-- Tappa 3: Gotica -->
-            <a href="gotico.html" class="epoch-card">
-                <div>
-                    <div class="epoch-number">Tappa 3</div>
-                    <h3>Arte Gotica</h3>
-                    <p>Sainte-Chapelle</p>
-                </div>
-                <div class="card-image-preview">
-                    <img src="Gotico.jpg" alt="Arte Gotica - Sainte-Chapelle">
-                </div>
-            </a>
-
-            <!-- Tappa 4: Rinascimento -->
-            <a href="rinascimento.html" class="epoch-card">
-                <div>
-                    <div class="epoch-number">Tappa 4</div>
-                    <h3>Rinascimento</h3>
-                    <p>La Gioconda</p>
-                </div>
-                <div class="card-image-preview">
-                    <img src="Rinascimento.jpg" alt="Rinascimento - La Gioconda">
-                </div>
-            </a>
-
-            <!-- Tappa 5: Manierismo -->
-            <a href="manierismo.html" class="epoch-card">
-                <div>
-                    <div class="epoch-number">Tappa 5</div>
-                    <h3>Manierismo</h3>
-                    <p>La Luce Manierista</p>
-                </div>
-                <div class="card-image-preview">
-                    <img src="Manierismo.jpg" alt="Manierismo">
-                </div>
-            </a>
-
-            <!-- Tappa 6: Barocco -->
-            <a href="barocco.html" class="epoch-card">
-                <div>
-                    <div class="epoch-number">Tappa 6</div>
-                    <h3>Il Barocco</h3>
-                    <p>Estasi di Santa Teresa</p>
-                </div>
-                <div class="card-image-preview">
-                    <img src="Barocco.jpg" alt="Barocco - Estasi di Santa Teresa">
-                </div>
-            </a>
-
-            <!-- Tappa 7: Neoclassicismo -->
-            <a href="neoclassicismo.html" class="epoch-card">
-                <div>
-                    <div class="epoch-number">Tappa 7</div>
-                    <h3>Neoclassicismo</h3>
-                    <p>La Morte di Marat</p>
-                </div>
-                <div class="card-image-preview">
-                    <img src="Neoclassicismo.jpg" alt="Neoclassicismo - La Morte di Marat">
-                </div>
-            </a>
-
-            <!-- Tappa 8: Romanticismo -->
-            <a href="romanticismo.html" class="epoch-card">
-                <div>
-                    <div class="epoch-number">Tappa 8</div>
-                    <h3>Romanticismo</h3>
-                    <p>Il Bacio di Hayez</p>
-                </div>
-                <div class="card-image-preview">
-                    <img src="Bacio.jpg" alt="Romanticismo - Il Bacio di Hayez">
-                </div>
-            </a>
-
-        </div>
-
-        <!-- Sezione a 3 Riquadri sotto le tappe -->
-        <h2>Approfondimenti e Informazioni</h2>
-        <div class="bottom-boxes-grid">
-            
-            <!-- Riquadro 1: Info (Realizzatore e Scuola) -->
-            <div class="info-box">
-                <div>
-                    <h3 class="box-title">Info Progetto</h3>
-                    <p class="box-content">
-                        <strong>Realizzato da:</strong>Frare Pierpaolo<br>
-                        <strong>Scuola:</strong>Liceo Statale Duca degli Abruzzi<br>
-                        <strong>Anno:</strong> 2025/2026
-                    </p>
+    <!-- CONTENITORE A SCORRIMENTO LATERALE / HORIZONTAL SCROLL -->
+    <main class="timeline-slider">
+        
+        <!-- TAPPA 1 -->
+        <a href="antica.html" class="tappa-card">
+            <div class="card-img-wrapper">
+                <img src="Antica.jpg" alt="Arte Antica">
+                <div class="card-overlay">
+                    <p class="intro-text">Scopri come la luce solare e l'oculus del Pantheon trasformavano l'architettura in un tempio cosmico e divino.</p>
                 </div>
             </div>
+            <div class="card-info">
+                <span class="step-num">Tappa 01</span>
+                <h3>Antica e Classica</h3>
+            </div>
+        </a>
 
-            <!-- Riquadro 2: Cliccabile verso crediti.html -->
-            <a href="crediti.html" class="clickable-box">
-                <div>
-                    <h3 class="box-title">Crediti</h3>
-                    <p class="box-content">
-                        Consulta i crediti, le fonti bibliografiche e i ringraziamenti per le risorse utilizzate nel progetto.
-                    </p>
+        <!-- TAPPA 2 -->
+        <a href="paleocristiana.html" class="tappa-card">
+            <div class="card-img-wrapper">
+                <img src="Paleocristiana.jpg" alt="Arte Paleocristiana e Bizantina">
+                <div class="card-overlay">
+                    <p class="intro-text">L'oro dei mosaici bizantini e la luce metafisica che smaterializza lo spazio per evocare il trascendente.</p>
                 </div>
-                <span class="box-link-text">Vai ai Crediti &rarr;</span>
-            </a>
+            </div>
+            <div class="card-info">
+                <span class="step-num">Tappa 02</span>
+                <h3>Paleocristiana e Bizantina</h3>
+            </div>
+        </a>
 
-            <!-- Riquadro 3: Cliccabile verso collegamenti.html -->
-            <a href="collegamenti.html" class="clickable-box">
-                <div>
-                    <h3 class="box-title">Collegamenti</h3>
-                    <p class="box-content">
-                        Esplora i collegamenti interdisciplinari tra la luce artistica, la fisica, la filosofia e la storia.
-                    </p>
+        <!-- TAPPA 3 -->
+        <a href="gotico.html" class="tappa-card">
+            <div class="card-img-wrapper">
+                <img src="Gotico.jpg" alt="Arte Gotica">
+                <div class="card-overlay">
+                    <p class="intro-text">La Lux Nova delle cattedrali: le maestose vetrate colorate che trasformano la luce divina in teofania visibile.</p>
                 </div>
-                <span class="box-link-text">Vai ai Collegamenti &rarr;</span>
-            </a>
+            </div>
+            <div class="card-info">
+                <span class="step-num">Tappa 03</span>
+                <h3>Gotica</h3>
+            </div>
+        </a>
 
-        </div>
+        <!-- TAPPA 4 -->
+        <a href="rinascimento.html" class="tappa-card">
+            <div class="card-img-wrapper">
+                <img src="Rinascimento.jpg" alt="Rinascimento">
+                <div class="card-overlay">
+                    <p class="intro-text">La luce razionale e prospettica di Piero della Francesca e lo sfumato atmosferico di Leonardo da Vinci.</p>
+                </div>
+            </div>
+            <div class="card-info">
+                <span class="step-num">Tappa 04</span>
+                <h3>Rinascimento</h3>
+            </div>
+        </a>
+
+        <!-- TAPPA 5 -->
+        <a href="manierismo.html" class="tappa-card">
+            <div class="card-img-wrapper">
+                <img src="Manierismo.jpg" alt="Manierismo">
+                <div class="card-overlay">
+                    <p class="intro-text">???????.</p>
+                </div>
+            </div>
+            <div class="card-info">
+                <span class="step-num">Tappa 05</span>
+                <h3>Manierismo</h3>
+            </div>
+        </a>
+
+        <!-- TAPPA 6 -->
+        <a href="barocco.html" class="tappa-card">
+            <div class="card-img-wrapper">
+                <img src="Barocco.jpg" alt="Il Barocco">
+                <div class="card-overlay">
+                    <p class="intro-text">La straordinaria macchina di luce e i raggi dorati dell'Estasi di Santa Teresa d'Avila del Bernini.</p>
+                </div>
+            </div>
+            <div class="card-info">
+                <span class="step-num">Tappa 06</span>
+                <h3>Barocco</h3>
+            </div>
+        </a>
+
+        <!-- TAPPA 7 -->
+        <a href="neoclassicismo.html" class="tappa-card">
+            <div class="card-img-wrapper">
+                <img src="Neoclassicismo.jpg" alt="Il Neoclassicismo">
+                <div class="card-overlay">
+                    <p class="intro-text">La luce severa e razionale di Jacques-Louis David che eleva Marat a martire laico della Rivoluzione.</p>
+                </div>
+            </div>
+            <div class="card-info">
+                <span class="step-num">Tappa 07</span>
+                <h3>Neoclassicismo</h3>
+            </div>
+        </a>
+
+        <!-- TAPPA 8 -->
+        <a href="romanticismo.html" class="tappa-card">
+            <div class="card-img-wrapper">
+                <img src="Romanticismo.jpg" alt="Il Romanticismo">
+                <div class="card-overlay">
+                    <p class="intro-text">Il Bacio di Francesco Hayez: la luce sulle sete cangianti tra passione intima e patriottismo risorgimentale.</p>
+                </div>
+            </div>
+            <div class="card-info">
+                <span class="step-num">Tappa 08</span>
+                <h3>Romanticismo</h3>
+            </div>
+        </a>
+
     </main>
+
+    <footer class="main-footer">
+        <p>&copy; Progetto Luce nell'Arte | <a href="crediti.html">Crediti</a> | <a href="collegamenti.html">Collegamenti</a></p>
+    </footer>
 
 </body>
 </html>
