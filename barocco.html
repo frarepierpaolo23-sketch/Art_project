@@ -2,78 +2,199 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-    <title>6. Barocco - Estasi di Santa Teresa</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3. Arte Gotica - La Sainte-Chapelle</title>
+    <!-- Collegamento al foglio di stile generale -->
     <link rel="stylesheet" href="stile.css">
+    <!-- Google Fonts per una tipografia elegante e coerente -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        body.arte-barocca {
-            background-color: #0f172a;
-            color: #cbd5e1;
+        body.arte-gotica {
+            background-color: #0f172a; /* Sfondo scuro elegante */
+            color: #cbd5e1;            /* Testo chiaro ad alto contrasto */
             font-family: 'Montserrat', sans-serif;
             margin: 0;
             padding: 0;
             line-height: 1.8;
         }
-        header { text-align: center; padding: 60px 20px 30px 20px; }
-        header p { color: #d4af37; font-size: 14px; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; margin-bottom: 10px; }
-        header h1 { font-family: 'Playfair Display', serif; font-size: 42px; color: #ffffff; margin-top: 0; }
-        nav { text-align: center; margin-bottom: 30px; }
-        nav a { color: #d4af37; text-decoration: none; font-weight: 600; text-transform: uppercase; font-size: 12px; letter-spacing: 2px; padding: 10px 20px; border: 1px solid rgba(212, 175, 55, 0.4); border-radius: 20px; background-color: rgba(15, 23, 42, 0.8); }
-        nav a:hover { background-color: #d4af37; color: #0f172a; }
-        main { max-width: 900px; margin: 0 auto 60px auto; padding: 20px; }
-        h2 { font-family: 'Playfair Display', serif; color: #d4af37; font-size: 28px; border-bottom: 1px solid rgba(212, 175, 55, 0.3); padding-bottom: 8px; margin-top: 40px; margin-bottom: 20px; }
-        p { color: #e2e8f0; font-size: 16.5px; margin-bottom: 22px; }
+        header {
+            text-align: center; 
+            padding: 60px 20px 30px 20px;
+        }
+        header p {
+            opacity: 0.9;
+            font-size: 14px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #d4af37;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            color: #ffffff;
+            margin-top: 0;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+        nav {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        nav a {
+            color: #d4af37;
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 2px;
+            padding: 10px 20px;
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            background-color: rgba(15, 23, 42, 0.8);
+        }
+        nav a:hover {
+            background-color: #d4af37;
+            color: #0f172a;
+        }
+        main {
+            max-width: 900px; 
+            margin: 0 auto 60px auto; 
+            padding: 20px;
+        }
 
-        /* Contenitore Immagini Verticali */
+        /* Titoli in ORO brillante */
+        h2 {
+            font-family: 'Playfair Display', serif;
+            color: #d4af37;
+            font-size: 28px;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+            padding-bottom: 8px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+        
+        /* Testo dei paragrafi */
+        p {
+            color: #e2e8f0; 
+            font-size: 16.5px;
+            margin-bottom: 22px;
+        }
+
+        /* Layout Affiancato per Immagini */
+        .side-by-side {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+            margin: 35px 0;
+        }
+        .side-by-side.reverse {
+            flex-direction: row-reverse;
+        }
+        .side-by-side img {
+            width: 45%;
+            border-radius: 10px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+            object-fit: cover;
+        }
+        .side-by-side div { 
+            width: 55%; 
+        }
+
+        /* Contenitore Immagine Verticale */
         .img-vertical-container {
             text-align: center;
-            margin: 30px 0;
+            margin: 35px 0;
         }
         .img-vertical {
-            max-height: 420px;
+            max-height: 480px;
             width: auto;
             border-radius: 10px;
             border: 1px solid rgba(212, 175, 55, 0.3);
             box-shadow: 0 10px 25px rgba(0,0,0,0.6);
         }
+
+        /* Box in evidenza per citazioni o concetti chiave */
+        .highlight-box {
+            background-color: rgba(30, 41, 59, 0.7);
+            border-left: 4px solid #d4af37;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .highlight-box p {
+            margin: 0;
+            font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            .side-by-side, .side-by-side.reverse { 
+                flex-direction: column; 
+            }
+            .side-by-side img, .side-by-side div { 
+                width: 100%; 
+            }
+        }
     </style>
 </head>
-<body class="arte-barocca">
+<body class="arte-gotica">
+
     <header>
-        <p>Tappa 6 di 8</p>
-        <h1>Il Barocco: L'Estasi di Santa Teresa</h1>
+        <p>Tappa 3 di 8</p>
+        <h1>Arte Gotica: La Sainte-Chapelle e la Lux Nova</h1>
     </header>
-    <nav><a href="index.html">Home</a></nav>
+
+    <nav>
+        <a href="index.html">Home</a>
+    </nav>
+
     <main>
-        <h2>La Scenografia della Luce e il Teatro Barocco</h2>
-        <p>
-            Gian Lorenzo Bernini trasforma la Cappella Cornaro in una vera e propria scena teatrale. La luce naturale penetra da una finestra nascosta di vetro giallo posta in alto, scivolando sui raggi dorati di bronzo per riflettersi sulle pieghe tumultuose del marmo.
-        </p>
-
-        <!-- Foto Verticale 1 -->
-        <div class="img-vertical-container">
-            <img src="Barocco.jpg" alt="Estasi di Santa Teresa - Bernini" class="img-vertical">
+        <h2>L'Apoteosi del Gotico Radiante e la Nave di Cristallo</h2>
+        <div class="side-by-side">
+            <div>
+                <p>
+                    Nel cuore di Parigi, la Sainte-Chapelle (fatta erigere nel XIII secolo da re Luigi IX per custodire le Reliquie della Passione, tra cui la Corona di Spine) rappresenta il punto d'arrivo dell'architettura gotica e l'apoteosi della luz intesa come materia divina. Con lo sviluppo dello stile Gotico Radiante (Rayonnant), l'edificio abbandona la massa imponente delle pareti in pietra per trasformarsi in uno "scheletro" architettonico sottilissimo, dove pilastri e costolature servono unicamente a sorreggere oltre 600 metri quadrati di superficie vetrata.
+                </p>
+            </div>
+            <img src="Gotico.jpg" alt="Interno della Sainte-Chapelle di Parigi e le sue pareti vetrate">
         </div>
 
-        <h2>Il Dramma dell'Estasi Mistica</h2>
         <p>
-            L'effetto chiaroscurale scavato con profonda maestria nel marmo enfatizza la concitazione del momento: l'angelo trafigge il cuore della Santa con una freccia dorata, traducendo l'emozione interiore in un evento fisico travolgente.
+            Nella cappella superiore, le pareti sbarrano la vista al mondo terreno e si dissolvono: il vetro occupa circa il 75% dell'intera superficie, creando la sensazione di trovarsi all'interno di una monumentale "nave di cristallo". Le 15 imponenti vetrate istoriate, alte oltre 15 metri, illustrano 1.113 scene bibliche ed evangeliche (dalla Genesi all'Apocalisse raffigurata nel rosone occidentale). Tuttavia, il vero significato di questo ciclo non risiede soltanto nella sua funzione didattica, ma nell'esperienza luminosa che produce: la luce solare esterna, attraversando le vetrate domate dalle tonalità intense del blu cobalto, del rosso rubino, del viola e dell'oro, perde la sua connotazione terrestre per trasformarsi in vera e propria luce spirituale.
         </p>
 
-        <!-- Foto Verticale 2 -->
+        <!-- Immagine centrale di dettaglio -->
         <div class="img-vertical-container">
-            <img src="Barocco1.jpg" alt="Dettaglio dell'Angelo e Santa Teresa" class="img-vertical">
+            <img src="Gotico1.jpg" alt="Dettaglio della luce filtrata dalle vetrate cromatiche della Sainte-Chapelle" class="img-vertical">
         </div>
 
-        <h2>L'Integrazione delle Arti</h2>
+        <h2>La Gerusalemme Celeste e lo Spazio Luce</h2>
         <p>
-            Architettura, scultura e pittura si fondono in un unicum illuminato in modo mirato, dove l'osservatore diviene spettatore del miracolo divino.
+            La luce che inonda lo spazio sacro smaterializza la pietra, rifrangendosi sulle dorature delle colonne e sulle coperte stellate delle volte celesti, proiettando il fedele e l'osservatore direttamente nella "Gerusalemme Celeste". In quest'opera, la luce non si limita a illuminare uno spazio preesistente, ma crea lo spazio stesso, sublimando l'architettura in un immenso reliquario di colore trasparente e dimostrando come il Gotico sia riuscito a piegare la scienza strutturale dell'ingegneria al servizio di una visione mistica e trascendente dell'universo.
         </p>
 
-        <!-- Foto Verticale 3 -->
-        <div class="img-vertical-container">
-            <img src="Barocco2.jpg" alt="I raggi dorati della Cappella Cornaro" class="img-vertical">
+        <h2>L'Abate Suger e la Teologia della Lux Nova</h2>
+        <div class="highlight-box">
+            <p>
+                «Catturata dallo splendore dei colori e dai bagliori delle vetrate, l'anima umana si eleva dal piano materiale a quello immateriale e spirituale.»
+            </p>
+        </div>
+
+        <!-- Sezione affiancata con la foto dell'Abate Suger (Sugerio.jpg) -->
+        <div class="side-by-side reverse">
+            <div>
+                <p>
+                    Alla base di questa straordinaria concezione dello spazio e della luce vi è l'eredità teorica dell'Abate Suger di Saint-Denis (1081–1151). Considerato il padre spirituale dell'architettura gotica, Suger elaborò per primo una teologia della luce fondata sugli scritti dello Pseudo-Dionigi l'Areopagita e della filosofia neoplatonica.
+                </p>
+                <p>
+                    Secondo Suger, la luce fisica non è una semplice entità naturale, ma il riflesso visibile della Luce Divina. Attraverso il concetto di <strong>Lux Nova</strong> ("Luce Nuova"), teorizzò che l'anima umana, catturata dallo splendore dei colori e dai bagliori delle vetrate decorate, potesse elevarsi dal piano materiale a quello immateriale e spirituale. La Sainte-Chapelle rappresenta la massima realizzazione pratica di questo pensiero: la luce colorata filtrata dal vetro diventa il mezzo plastico e filosofico capace di condurre il fedele direttamente verso la conoscenza di Dio.
+                </p>
+            </div>
+            <img src="Sugerio.jpg" alt="Raffigurazione dell'Abate Suger di Saint-Denis" class="img-vertical">
         </div>
     </main>
+
 </body>
 </html>
