@@ -2,153 +2,70 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>5. Manierismo - L'Ultima Cena di Tintoretto</title>
-
+    <title>1. Arte Antica - Bronzi di Riace</title>
     <link rel="stylesheet" href="stile.css">
-
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        body.arte-manierista {
-            background-color: #0f172a; /* Sfondo scuro coerente */
-            color: #cbd5e1;            /* Testo chiaro in alto contrasto */
+        body.arte-antica {
+            background-color: #0f172a;
+            color: #cbd5e1;
             font-family: 'Montserrat', sans-serif;
             margin: 0;
             padding: 0;
             line-height: 1.8;
         }
-        header {
-            text-align: center; 
-            padding: 60px 20px 30px 20px;
-        }
-        header p {
-            opacity: 0.9;
-            font-size: 14px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: #d4af37;
-            margin-bottom: 10px;
-            font-weight: 600;
-        }
-        header h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 42px;
-            color: #ffffff;
-            margin-top: 0;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
-        }
-        nav {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        nav a {
-            color: #d4af37;
-            text-decoration: none;
-            font-weight: 600;
-            text-transform: uppercase;
-            font-size: 12px;
-            letter-spacing: 2px;
-            padding: 10px 20px;
-            border: 1px solid rgba(212, 175, 55, 0.4);
-            border-radius: 20px;
-            transition: all 0.3s ease;
-            background-color: rgba(15, 23, 42, 0.8);
-        }
-        nav a:hover {
-            background-color: #d4af37;
-            color: #0f172a;
-        }
-        main {
-            max-width: 850px; 
-            margin: 0 auto 60px auto; 
-            padding: 20px;
-        }
+        header { text-align: center; padding: 60px 20px 30px 20px; }
+        header p { color: #d4af37; font-size: 14px; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; margin-bottom: 10px; }
+        header h1 { font-family: 'Playfair Display', serif; font-size: 42px; color: #ffffff; margin-top: 0; }
+        nav { text-align: center; margin-bottom: 30px; }
+        nav a { color: #d4af37; text-decoration: none; font-weight: 600; text-transform: uppercase; font-size: 12px; letter-spacing: 2px; padding: 10px 20px; border: 1px solid rgba(212, 175, 55, 0.4); border-radius: 20px; background-color: rgba(15, 23, 42, 0.8); }
+        nav a:hover { background-color: #d4af37; color: #0f172a; }
+        main { max-width: 900px; margin: 0 auto 60px auto; padding: 20px; }
+        h2 { font-family: 'Playfair Display', serif; color: #d4af37; font-size: 28px; border-bottom: 1px solid rgba(212, 175, 55, 0.3); padding-bottom: 8px; margin-top: 40px; margin-bottom: 20px; }
+        p { color: #e2e8f0; font-size: 16.5px; margin-bottom: 22px; }
 
-     
-        h2 {
-            font-family: 'Playfair Display', serif;
-            color: #d4af37;
-            font-size: 28px;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
-            padding-bottom: 8px;
-            margin-top: 40px;
-            margin-bottom: 20px;
-        }
-        
-     
-        p {
-            color: #e2e8f0; 
-            font-size: 16.5px;
-            margin-bottom: 22px;
-        }
-
-        
-        .image-gallery {
+        /* Layout Testo + Foto Orizzontale Affiancata */
+        .side-by-side {
             display: flex;
-            flex-direction: column;
-            gap: 30px;
-            margin: 40px 0;
-        }
-        .image-container {
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            background-color: #000000;
-            display: flex;
-            justify-content: center;
+            gap: 25px;
             align-items: center;
-            padding: 10px;
+            margin: 30px 0;
         }
-        .image-container img {
-            width: 100%;
-            max-height: 550px;
-            display: block;
-            object-fit: contain; 
+        .side-by-side img {
+            width: 45%;
+            border-radius: 10px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+            object-fit: cover;
+        }
+        .side-by-side div { width: 55%; }
+        @media (max-width: 768px) {
+            .side-by-side { flex-direction: column; }
+            .side-by-side img, .side-by-side div { width: 100%; }
         }
     </style>
 </head>
-<body class="arte-manierista">
-
+<body class="arte-antica">
     <header>
-        <p>Tappa 5 di 8</p>
-        <h1>Il Manierismo: L'Ultima Cena di Tintoretto</h1>
+        <p>Tappa 1 di 8</p>
+        <h1>Arte Antica: I Bronzi di Riace</h1>
     </header>
-
-    <nav>
-        <a href="index.html">Home</a>
-    </nav>
-
+    <nav><a href="index.html">Home</a></nav>
     <main>
-        <h2>Dalla Simmetria al Dramma Luminoso</h2>
-        <p>
-            Nell’Ultima Cena (realizzata da Jacopo Robusti, detto il Tintoretto, tra il 1592 e il 1594 per la Basilica di San Giorgio Maggiore a Venezia), la luce abbandona definitivamente la compostezza e la simmetria del Rinascimento per farsi elemento dinamico, mistico e drammatico. Collocata sul confine tra Manierismo e prima sensibilità barocca, l'opera sfrutta il contrasto luminoso per trasformare il momento dell'istituzione dell'Eucaristia in un evento spirituale travolgente e visionario.
-        </p>
-
-      
-        <div class="image-gallery">
-            <div class="image-container">
-                <img src="Manierismo.jpg" alt="L'Ultima Cena di Tintoretto">
+        <h2>La Scultura Greca e la Riflessione della Luce</h2>
+        <div class="side-by-side">
+            <div>
+                <p>
+                    Nell'Arte Antica, e in particolare nella scultura greca del V secolo a.C., la luce non veniva dipinta, ma era un elemento fisico che interagiva direttamente con la superficie dei materiali. I Bronzi di Riace offrono una testimonianza straordinaria di come gli scultori dell'antichità sfruttassero le proprietà riflettenti del bronzo e la luce naturale del sole per infondere vita, anatomia e dinamismo alle opere.
+                </p>
             </div>
+            <img src="Roma.jpg" alt="I Bronzi di Riace - Scultura Greca">
         </div>
 
-        <h2>Prospettiva Diagonale e la Doppia Fonte Luminosa</h2>
+        <h2>Anatomia, Chiaroscuro e Materiali</h2>
         <p>
-            A differenza delle tradizionali composizioni frontali, la scena è impostata su una diagonale vertiginosa che spinge il lungo tavolo verso la profondità dello spazio. La stanza, che ricorda una locanda o una osteria veneziana dell'epoca popolata da inservienti, animali e stoviglie, è avvolta da un'oscurità profonda, rotta soltanto da due distinte ed eccezionali fonti di luce. La prima è una sorgente di luce naturale e terrena: una lampada ad olio sospesa al soffitto che sprigiona un fumo denso. Questo fumo, a contatto con l'atmosfera carica della stanza, si smaterializza prendendo miracolosamente la forma di creature angeliche e trasparenti.
-        </p>
-
-       
-        <div class="image-gallery">
-            <div class="image-container">
-                <img src="Manierismo1.jpg" alt="Dettaglio del chiaroscuro ed emanazione di luce divina nell'Ultima Cena">
-            </div>
-        </div>
-
-        <h2>Il Tenebrismo e la Luce della Grazia</h2>
-        <p>
-            La seconda e ben più potente sorgente è la luce divina e spirituale che emana direttamente dalla testa di Cristo. L'aureola di Gesù non è un semplice simbolo figurativo, ma una vera e propria fonte luminosa autonoma e abbagliante che squarcia il buio della locanda, irradiandosi sugli apostoli e risaltando il gesto dell'offerta del pane e del vino. Questa sovrapposizione di chiaroscuri violenti, il drammatico tenebrismo tipico di Tintoretto, dematerializza lo spazio reale per far irrompere il soprannaturale nella vita quotidiana. La luce, dunque, non serve più solo a rivelare la forma dei corpi o la prospettiva, ma diventa il veicolo primario della Grazia e della rivelazione divina.
+            La modanatura muscolare accurata, la lucentezza della lega bronzea e l'inserimento di materiali differenti (come l'avorio per gli occhi, il rame per le labbra e i capezzoli, e l'argento per i denti) venivano studiati per catturare la luce del sole mediterraneo. La luce naturale, scivolando sui volumi del corpo e creando ombre naturali nei solchi muscolari, dava all'osservatore la percezione di un corpo vivo, palpitante e in continuo movimento.
         </p>
     </main>
-
 </body>
 </html>
