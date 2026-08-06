@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luce nell'Arte - Collegamenti Scientifci</title>
+    <title>Luce nell'Arte - Collegamenti Interdisciplinari</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     
     <style>
-        /* --- RESET E BASE --- */
+        /* --- RESET DI BASE --- */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -15,20 +15,19 @@
         }
 
         body {
-            background-color: #0f172a !important;
+            background-color: #0f172a;
             color: #cbd5e1;
             font-family: 'Montserrat', sans-serif;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            line-height: 1.6;
         }
 
         /* --- INTESTAZIONE --- */
         .main-header {
             text-align: center;
-            padding: 50px 20px 30px 20px;
+            padding: 40px 20px 20px 20px;
         }
 
         .main-header h1 {
@@ -46,9 +45,9 @@
             text-transform: uppercase;
         }
 
-        /* --- PULSANTE TORNA ALLA HOME --- */
+        /* --- NAVIGAZIONE HOME --- */
         .nav-container {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
             padding: 0 20px;
             width: 100%;
@@ -71,45 +70,164 @@
             transform: translateX(-5px);
         }
 
-        /* --- CONTENUTO PRINCIPALE --- */
-        .content-container {
-            max-width: 900px;
+        /* --- CONTAINER PRINCIPALE --- */
+        .sections-wrapper {
+            max-width: 1000px;
             margin: 0 auto 50px auto;
             padding: 0 20px;
             width: 100%;
+            transition: all 0.5s ease-in-out;
         }
 
-        /* CARD SEZIONE --- */
+        /* --- BARRA SEGNALIBRI (NASCOSTA ALL'INIZIO) --- */
+        .tabs-bar {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .tab-btn {
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            background-color: #0f172a; /* Colore Blu Sfondo per i non selezionati */
+            color: #ffffff;            /* Testo Bianco per i non selezionati */
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .tab-btn:hover {
+            border-color: #d4af37;
+            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.2);
+        }
+
+        /* STATO ATTIVO / SELEZIONATO: Tasto Giallo/Oro con Scritta Bianca */
+        .tab-btn.active {
+            background-color: #d4af37 !important; 
+            color: #ffffff !important;           
+            border-color: #d4af37 !important;
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+        }
+
+        /* --- VISTA 1: SCHEDE VERTICALI INIZIALI --- */
+        .cards-list {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            transition: all 0.5s ease;
+        }
+
         .section-card {
-            background-color: #1e293b;
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            border-radius: 12px;
-            padding: 30px;
-            margin-bottom: 30px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+            position: relative;
+            height: 180px;
+            border-radius: 14px;
+            overflow: hidden;
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            cursor: pointer;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+            background-size: cover;
+            background-position: center;
         }
 
-        .section-card h2 {
+        .section-card:hover {
+            transform: translateY(-5px);
+            border-color: #d4af37;
+            box-shadow: 0 12px 30px rgba(212, 175, 55, 0.3);
+        }
+
+        /* EFFETTO AZZURRATO SULL'IMMAGINE DI SFONDO */
+        .section-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(15, 23, 42, 0.5); /* Tinta azzurrata/scura sopra l'immagine */
+            backdrop-filter: blur(1px);
+            transition: background 0.3s ease;
+        }
+
+        .section-card:hover::before {
+            background: rgba(15, 23, 42, 0.3);
+        }
+
+        /* CUBO BLU TRASPARENTE (GLASSMORPHISM) IN SOVRAPPOSIZIONE */
+        .glass-box {
+            position: absolute;
+            inset: 20px;
+            background: rgba(30, 41, 59, 0.75); /* Cubo blu semitrasparente (#1e293b) */
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .section-card:hover .glass-box {
+            background: rgba(30, 41, 59, 0.85);
+            border-color: #d4af37;
+        }
+
+        .glass-box h2 {
+            font-family: 'Playfair Display', serif;
+            color: #ffffff;
+            font-size: 26px;
+            letter-spacing: 1px;
+        }
+
+        /* IMMAGINI DI SFONDO PER OGNI SEZIONE (Sostituisci i file se hanno nomi diversi) */
+        .card-fisica { background-image: url('fisica.jpg'); }
+        .card-italiano { background-image: url('italiano.jpg'); }
+        .card-filosofia { background-image: url('filosofia.jpg'); }
+        .card-energia { background-image: url('energia.jpg'); }
+
+        /* --- VISTA 2: CONTAINER TESTI DETTAGLIO --- */
+        .text-content-box {
+            display: none;
+            background-color: #1e293b;
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            border-radius: 12px;
+            padding: 35px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+            animation: fadeIn 0.4s ease-in-out;
+        }
+
+        .text-panel {
+            display: none;
+        }
+
+        .text-panel.active {
+            display: block;
+        }
+
+        .text-panel h2 {
             font-family: 'Playfair Display', serif;
             color: #d4af37;
-            font-size: 24px;
-            margin-bottom: 15px;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            font-size: 28px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
             padding-bottom: 10px;
         }
 
-        .section-card p {
+        .text-panel p {
             color: #e2e8f0;
             font-size: 15px;
+            line-height: 1.8;
             margin-bottom: 15px;
             text-align: justify;
         }
 
-        .section-card p:last-child {
-            margin-bottom: 0;
-        }
-
-        /* STILE PER LE FORMULE MATEMATICHE */
+        /* STILI PER FORMULE IN FISICA */
         .formula {
             font-family: 'Playfair Display', serif;
             font-style: italic;
@@ -124,10 +242,15 @@
             display: block;
             text-align: center;
             margin: 15px 0;
-            padding: 10px;
+            padding: 12px;
             background-color: rgba(15, 23, 42, 0.8);
             border-left: 3px solid #d4af37;
             font-size: 16px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         /* FOOTER */
@@ -144,71 +267,133 @@
 
     <header class="main-header">
         <h1>LUCE NELL'ARTE</h1>
-        <p class="subtitle">Approfondimento Scientifico e Fisico della Luce</p>
+        <p class="subtitle">Collegamenti Interdisciplinari</p>
     </header>
 
     <div class="nav-container">
         <a href="index.html" class="back-btn">&#8592; Torna alla Home</a>
     </div>
 
-    <main class="content-container">
+    <main class="sections-wrapper">
 
-        <!-- SEZIONE 1: LA RIFRAZIONE -->
-        <section class="section-card">
-            <h2>La Rifrazione e i Principi Ottici</h2>
-            <p>
-                La rifrazione si verifica quando un raggio luminoso cambia direzione nel passare da un mezzo trasparente a un altro. La velocità della luce cambia a seconda del mezzo (<span class="formula">v = c / n</span>), e la deviazione è regolata dalla legge di Snell:
-            </p>
-            <div class="formula-block">
-                <span class="formula">(sin <i>î</i>) / (sin <i>r̂</i>) = n<sub>2</sub> / n<sub>1</sub> = v<sub>1</sub> / v<sub>2</sub></span>
+        <!-- BARRA SEGNALIBRI (SPOSTATA IN ALTO DOPO IL PRIMO CLICK) -->
+        <div class="tabs-bar" id="tabsBar" style="display: none;">
+            <button class="tab-btn" onclick="showSection('fisica')">Fisica</button>
+            <button class="tab-btn" onclick="showSection('italiano')">Italiano</button>
+            <button class="tab-btn" onclick="showSection('filosofia')">Filosofia</button>
+            <button class="tab-btn" onclick="showSection('energia')">Energia</button>
+        </div>
+
+        <!-- SCHEDE INIZIALI CON IMMAGINE AZZURRATA E CUBO TRASPARENTE -->
+        <div class="cards-list" id="cardsList">
+            
+            <!-- SEZIONE FISICA -->
+            <div class="section-card card-fisica" onclick="showSection('fisica')">
+                <div class="glass-box">
+                    <h2>Fisica</h2>
+                </div>
             </div>
-            <p>
-                Quando la luce passa a un mezzo più denso (<span class="formula">n<sub>2</sub> &gt; n<sub>1</sub></span>), si piega verso la perpendicolare (<span class="formula"><i>r̂</i> &lt; <i>î</i></span>), mentre nel caso opposto (<span class="formula">n<sub>2</sub> &lt; n<sub>1</sub></span>) si allontana da essa (<span class="formula"><i>r̂</i> &gt; <i>î</i></span>). 
-            </p>
-            <p>
-                Per <span class="formula">n<sub>2</sub> &lt; n<sub>1</sub></span>, esiste un angolo limite <span class="formula"><i>î</i><sub>L</sub></span> definito da <span class="formula">sin <i>î</i><sub>L</sub> = n<sub>2</sub> / n<sub>1</sub></span> per cui l'angolo di rifrazione raggiunge <span class="formula"><i>r̂</i> = 90°</span>; se l'angolo di incidenza supera <span class="formula"><i>î</i><sub>L</sub></span>, la luce subisce una riflessione totale. 
-            </p>
-            <p>
-                Attraverso il principio di Huygens-Fresnel, si dimostra che ciascun punto del fronte d'onda si comporta come una sorgente di onde sferiche secondarie e che nel secondo mezzo la diversa velocità di propagazione modifica la direzione del fronte d'onda finale.
-            </p>
-        </section>
 
-        <!-- SEZIONE 2: ESPERIMENTO DI YOUNG -->
-        <section class="section-card">
-            <h2>Esperimento di Young (Interferometro a doppia fenditura)</h2>
-            <p>
-                L'esperimento eseguito da Thomas Young nel 1801 dimostra la natura ondulatoria della luce producendo una figura di interferenza composta da frange chiare e scure. Una sorgente di luce monocromatica investe uno schermo con due fenditure sottili e vicine (<i>S</i><sub>1</sub> e <i>S</i><sub>2</sub>), distanziate di <i>d</i>, che per diffrazione diventano sorgenti di onde sferiche coerenti ed in fase. 
-            </p>
-            <p>
-                Per misurare la lunghezza d'onda <i>&lambda;</i> nota la distanza &Delta;<i>y</i> tra due frange luminose consecutive su uno schermo a distanza <i>l</i>, si usa la formula:
-            </p>
-            <div class="formula-block">
-                <span class="formula">&lambda; = (d &middot; &Delta;y) / l</span>
+            <!-- SEZIONE ITALIANO -->
+            <div class="section-card card-italiano" onclick="showSection('italiano')">
+                <div class="glass-box">
+                    <h2>Italiano</h2>
+                </div>
             </div>
-            <p>
-                Le frange luminose si ottengono per interferenza costruttiva quando le onde arrivano in fase con differenza di cammino multipla di <i>&lambda;</i>, descritta dalla formula <span class="formula">sin &alpha;<sub>k</sub> = k (&lambda; / d)</span> con <span class="formula">k = 0, 1, 2...</span>, mentre le frange scure derivano da interferenza distruttiva con onde in opposizione di fase, secondo la formula <span class="formula">sin &alpha;<sub>m</sub> = (m + 1/2) (&lambda; / d)</span> con <span class="formula">m = 0, 1, 2...</span>.
-            </p>
-        </section>
 
-        <!-- SEZIONE 3: SPETTRO DEI COLORI E DISPERSIONE -->
-        <section class="section-card">
-            <h2>Spettro dei Colori e Dispersione</h2>
-            <p>
-                L'occhio umano percepisce onde luminose di diversa frequenza come colori distinti. Lo spettro visibile comprende le frequenze percepite con lunghezze d'onda nel vuoto tra 380 nm (violetto) e 750 nm (rosso), con una sensibilità visiva massima per la luce giallo-verde a 5,40 &times; 10<sup>14</sup> Hz. 
-            </p>
-            <p>
-                La dispersione della luce si verifica perché l'indice di rifrazione <i>n</i> di un mezzo trasparente dipende dalla frequenza della luce, come nel caso del vetro flint dove <span class="formula">n = 1,522</span> per il violetto e <span class="formula">n = 1,507</span> per il rosso. 
-            </p>
-            <p>
-                Per questo motivo un prisma scompone la luce bianca nelle sue componenti monocromatiche, in quanto la luce violetta ad alta frequenza viene deviata maggiormente rispetto a quella rossa a bassa frequenza. Questo stesso fenomeno genera l'arcobaleno attraverso la dispersione della luce solare all'interno delle gocce di pioggia mediante un ciclo di rifrazione all'ingresso, riflessione interna e seconda rifrazione all'uscita.
-            </p>
-        </section>
+            <!-- SEZIONE FILOSOFIA -->
+            <div class="section-card card-filosofia" onclick="showSection('filosofia')">
+                <div class="glass-box">
+                    <h2>Filosofia</h2>
+                </div>
+            </div>
+
+            <!-- SEZIONE ENERGIA -->
+            <div class="section-card card-energia" onclick="showSection('energia')">
+                <div class="glass-box">
+                    <h2>Energia</h2>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- RIQUADRO CHE MOSTRA IL TESTO DELLA MATERIA SELEZIONATA -->
+        <div class="text-content-box" id="textContentBox">
+            
+            <!-- TESTO FISICA -->
+            <article class="text-panel" id="panel-fisica">
+                <h2>Fisica: Ottica, Ondulatoria e Spettro Luminoso</h2>
+                <p>La rifrazione si verifica quando un raggio luminoso cambia direzione nel passare da un mezzo trasparente a un altro. La velocità della luce cambia a seconda del mezzo (<span class="formula">v = c / n</span>), e la deviazione è regolata dalla legge di Snell: <span class="formula">(sin î) / (sin r̂) = n₂ / n₁ = v₁ / v₂</span>.</p>
+                <p>Quando la luce passa a un mezzo più denso (<span class="formula">n₂ &gt; n₁</span>), si piega verso la perpendicolare (<span class="formula">r̂ &lt; î</span>), mentre nel caso opposto (<span class="formula">n₂ &lt; n₁</span>) si allontana da essa (<span class="formula">r̂ &gt; î</span>). Per <span class="formula">n₂ &lt; n₁</span>, esiste un angolo limite <span class="formula">î<sub>L</sub></span> definito da <span class="formula">sin î<sub>L</sub> = n₂ / n₁</span> per cui l'angolo di rifrazione raggiunge <span class="formula">r̂ = 90°</span>; se l'angolo di incidenza supera <span class="formula">î<sub>L</sub></span>, la luce subisce una riflessione totale. Attraverso il principio di Huygens-Fresnel, si dimostra che ciascun punto del fronte d'onda si comporta come una sorgente di onde sferiche secondarie.</p>
+                
+                <div class="formula-block">
+                    <span class="formula">Esperimento di Young: &lambda; = (d &middot; &Delta;y) / l</span>
+                </div>
+                
+                <p>L'esperimento eseguito da Thomas Young nel 1801 dimostra la natura ondulatoria della luce producendo una figura di interferenza composta da frange chiare e scure. Le frange luminose si ottengono per interferenza costruttiva quando le onde arrivano in fase (<span class="formula">sin &alpha;<sub>k</sub> = k &lambda; / d</span>), mentre le frange scure derivano da interferenza distruttiva (<span class="formula">sin &alpha;<sub>m</sub> = (m + 1/2) &lambda; / d</span>).</p>
+                <p>Lo spettro visibile comprende lunghezze d'onda nel vuoto tra 380 nm (violetto) e 750 nm (rosso). La dispersione della luce si verifica perché l'indice di rifrazione <i>n</i> dipende dalla frequenza della luce, fenomeno che permette al prisma di scomporre la luce bianca nei suoi colori e che genera l'arcobaleno.</p>
+            </article>
+
+            <!-- TESTO ITALIANO -->
+            <article class="text-panel" id="panel-italiano">
+                <h2>Italiano: La Luce nella Letteratura</h2>
+                <p>Inserisci qui il testo di Italiano (es. la metafisica della luce nella Divina Commedia di Dante, il Paradiso, o la luce nella poesia di Giuseppe Ungaretti ed Eugenio Montale)...</p>
+            </article>
+
+            <!-- TESTO FILOSOFIA -->
+            <article class="text-panel" id="panel-filosofia">
+                <h2>Filosofia: Il Simbolismo e la Metafisica della Luce</h2>
+                <p>Inserisci qui il testo di Filosofia (es. il Mito della Caverna di Platone e il Sole come bene supremo, o la filosofia illuminista della ragione)...</p>
+            </article>
+
+            <!-- TESTO ENERGIA -->
+            <article class="text-panel" id="panel-energia">
+                <h2>Energia: La Luce come Fonte di Vita e Tecnologia</h2>
+                <p>Inserisci qui il testo di Energia (es. la fotosintesi clorofilliana, l'effetto fotoelettrico, l'energia solare fotovoltaica e le fonti rinnovabili)...</p>
+            </article>
+
+        </div>
 
     </main>
 
     <footer class="main-footer">
         <p>Progetto Luce nell'Arte — Percorso Interattivo | Frare Pierpaolo - Liceo Statale Duca degli Abruzzi (TV)</p>
     </footer>
+
+    <!-- LOGICA JAVASCRIPT PER LA TRASFORMAZIONE IN SEGNALIBRI -->
+    <script>
+        function showSection(sectionId) {
+            // 1. Nascondi le schede verticali iniziali
+            document.getElementById('cardsList').style.display = 'none';
+
+            // 2. Mostra la barra dei segnalibri in alto
+            const tabsBar = document.getElementById('tabsBar');
+            tabsBar.style.display = 'flex';
+
+            // 3. Mostra il contenitore del testo
+            document.getElementById('textContentBox').style.display = 'block';
+
+            // 4. Aggiorna lo stato dei segnalibri (tasti in alto)
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(btn => {
+                if (btn.getAttribute('onclick').includes(sectionId)) {
+                    btn.classList.add('active'); // Diventa Giallo/Oro con testo bianco
+                } else {
+                    btn.classList.remove('active'); // Torna Blu del fondo con testo bianco
+                }
+            });
+
+            // 5. Mostra il testo della sezione selezionata e nascondi gli altri
+            const panels = document.querySelectorAll('.text-panel');
+            panels.forEach(panel => {
+                panel.classList.remove('active');
+            });
+            document.getElementById('panel-' + sectionId).classList.add('active');
+
+            // Scroll leggero verso l'alto per facilitare la lettura
+            window.scrollTo({ top: 120, behavior: 'smooth' });
+        }
+    </script>
 
 </body>
 </html>
