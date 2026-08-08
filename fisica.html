@@ -1,1 +1,400 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luce nell'Arte - Fisica</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- RESET E BASE --- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
+        body {
+            background-color: #0f172a;
+            color: #cbd5e1;
+            font-family: 'Montserrat', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            line-height: 1.7;
+        }
+
+        /* --- INTESTAZIONE --- */
+        .main-header {
+            text-align: center;
+            padding: 40px 20px 20px 20px;
+        }
+
+        .main-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 38px;
+            color: #ffffff;
+            margin-bottom: 8px;
+            letter-spacing: 2px;
+        }
+
+        .main-header .subtitle {
+            color: #d4af37;
+            font-size: 14px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* --- NAVIGAZIONE HOME --- */
+        .nav-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+            width: 100%;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #d4af37;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            transition: color 0.3s ease, transform 0.3s ease;
+            margin-bottom: 20px;
+        }
+
+        .back-btn:hover {
+            color: #ffffff;
+            transform: translateX(-5px);
+        }
+
+        /* --- CONTAINER PRINCIPALE --- */
+        .sections-wrapper {
+            max-width: 1000px;
+            margin: 0 auto 50px auto;
+            padding: 0 20px;
+            width: 100%;
+        }
+
+        /* --- BARRA SEGNALIBRI (IN ALTO) --- */
+        .tabs-bar {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .tab-btn {
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 15px;
+            font-weight: 600;
+            text-decoration: none;
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            background-color: #0f172a;
+            color: #ffffff;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-block;
+        }
+
+        .tab-btn:hover {
+            border-color: #d4af37;
+            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.2);
+        }
+
+        .tab-btn.active {
+            background-color: #d4af37 !important; 
+            color: #ffffff !important;           
+            border-color: #d4af37 !important;
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+        }
+
+        /* --- SCHEDE CONTENUTO --- */
+        .content-box {
+            background-color: #1e293b;
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            border-radius: 12px;
+            padding: 35px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+        }
+
+        .section-block {
+            margin-bottom: 45px;
+            padding-bottom: 35px;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .section-block:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .section-block h2 {
+            font-family: 'Playfair Display', serif;
+            color: #d4af37;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        /* LAYOUT GRIGLIA TESTO + FOTO VERTICALE */
+        .section-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
+        }
+
+        @media (min-width: 768px) {
+            .section-grid {
+                grid-template-columns: 2fr 1fr; /* Testo a sinistra, Foto verticale a destra */
+            }
+            .section-grid.reverse {
+                grid-template-columns: 1fr 2fr; /* Foto a sinistra, Testo a destra */
+            }
+        }
+
+        .text-col p {
+            color: #e2e8f0;
+            font-size: 15px;
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .text-col p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* BOX IMMAGINE VERTICALE (PORTRAIT) */
+        .image-col {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .img-vertical-box {
+            width: 100%;
+            max-width: 280px;
+            aspect-ratio: 3 / 4; /* Proporzione verticale preferibile */
+            background-color: #0f172a;
+            border: 1px dashed #d4af37;
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            position: relative;
+        }
+
+        .img-vertical-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .img-placeholder-text {
+            color: #94a3b8;
+            font-size: 13px;
+            text-align: center;
+            padding: 15px;
+        }
+
+        .img-caption {
+            font-size: 12px;
+            color: #94a3b8;
+            margin-top: 8px;
+            text-align: center;
+            font-style: italic;
+        }
+
+        /* FORMULE ED EQUAZIONI */
+        .formula {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            color: #f1f5f9;
+            background-color: rgba(15, 23, 42, 0.6);
+            padding: 2px 6px;
+            border-radius: 4px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .formula-block {
+            display: block;
+            text-align: center;
+            margin: 15px 0;
+            padding: 12px;
+            background-color: rgba(15, 23, 42, 0.8);
+            border-left: 3px solid #d4af37;
+            font-size: 15px;
+            border-radius: 0 6px 6px 0;
+        }
+
+        /* FOOTER */
+        .main-footer {
+            text-align: center;
+            padding: 20px;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+            font-size: 13px;
+            color: #94a3b8;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="main-header">
+        <h1>LUCE NELL'ARTE</h1>
+        <p class="subtitle">Approfondimenti Interdisciplinari</p>
+    </header>
+
+    <div class="nav-container">
+        <a href="index.html" class="back-btn">&#8592; Torna alla Home</a>
+    </div>
+
+    <main class="sections-wrapper">
+
+        <!-- BARRA SEGNALIBRI -->
+        <nav class="tabs-bar">
+            <a href="fisica.html" class="tab-btn active">Fisica</a>
+            <a href="italiano.html" class="tab-btn">Italiano</a>
+            <a href="filosofia.html" class="tab-btn">Filosofia</a>
+            <a href="energia.html" class="tab-btn">Energia</a>
+        </nav>
+
+        <!-- CONTENUTO FISICA -->
+        <div class="content-box">
+            
+            <!-- SEZIONE 1 -->
+            <article class="section-block">
+                <h2>1. La misura della circonferenza terrestre (Eratostene)</h2>
+                <div class="section-grid">
+                    <div class="text-col">
+                        <p>Nel III secolo a.C., la storia dello studio della luce inizia con l'osservazione dei raggi solari e delle loro proprietà geometriche. Il matematico, astronomo e geografo greco Eratostene di Cirene, mentre dirigeva la celebre Biblioteca di Alessandria d'Egitto, riuscì a calcolare la circonferenza della Terra con straordinaria precisione utilizzando semplicemente un bastone e principi geometrici fondamentali. Eratostene era a conoscenza di un fenomeno unico che si verificava nella città di Siene (l'odierna Assuan): a mezzogiorno del solstizio d'estate, i raggi solari cadevano perfettamente perpendicolari al suolo, illuminando il fondo dei pozzi senza proiettare alcuna ombra.</p>
+                        <p>Nello stesso momento dello stesso giorno, Eratostene misurò invece l'ombra proiettata da uno gnomone ad Alessandria, più a nord rispetto a Siene. Attraverso la misura dell'ombra e la trigonometria, determinò un'inclinazione dei raggi di circa <span class="formula">7,2°</span> (un cinquantesimo di un angolo giro di <span class="formula">360°</span>). Basandosi sull'assunto che la Terra fosse sferica e che i raggi del Sole viaggiassero paralleli attraverso lo spazio fino a noi, Eratostene intuì che quell'angolo corrispondeva alla porzione di circonferenza terrestre tra le due città. Moltiplicando per cinquanta la distanza nota tra Siene e Alessandria (5000 stadi), ottenne una circonferenza di circa 250.000 stadi: un valore stimato tra i 39.000 e i 40.500 chilometri, sorprendentemente vicino ai reali 40.008 chilometri del meridiano terrestre.</p>
+                    </div>
+                    <div class="image-col">
+                        <div class="img-vertical-box">
+                            <!-- Inserisci qui l'immagine: <img src="immagini/eratostene.jpg" alt="Esperimento di Eratostene"> -->
+                            <span class="img-placeholder-text">Foto Verticale 1<br>(es. Gnomone / Eratostene)</span>
+                        </div>
+                        <span class="img-caption">Misurazione dell'ombra proiettata dallo gnomone</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- SEZIONE 2 -->
+            <article class="section-block">
+                <h2>2. La velocità della luce nella storia</h2>
+                <div class="section-grid">
+                    <div class="text-col">
+                        <p>Se Eratostene dava per assodato che la luce solare viaggiasse in linea retta per calcolare le dimensioni del pianeta, per molti secoli ci si chiese se questa propagazione avvenisse istantaneamente o richiedesse un tempo finito. Il primo tentativo di misurazione terrestre fu compiuto da Galileo con delle lanterne, ma fallì a causa dei tempi di reazione umani. Fu soltanto nel 1676 che l'astronomo Ole Rømer dimostrò la finitezza della velocità della luce osservando i ritardi sistematici nelle eclissi del satellite Io di Giove in funzione della distanza dalla Terra, stimando una velocità di circa 220.000 km/s.</p>
+                        <p>Nel XIX secolo le misurazioni si trasferirono in laboratorio. Hippolyte Fizeau impiegò una ruota dentata e uno specchio a distanza per calcolare il tempo di percorrenza del raggio, ottenendo 313.000 km/s, mentre Léon Foucault perfezionò l'esperimento usando uno specchio rotante e portando la stima a 298.000 km/s (metodo poi affinato da Albert Michelson). La svolta concettuale definitiva arrivò nel 1905 con la teoria della relatività ristretta di Albert Einstein, che riconobbe la velocità della luce nel vuoto (<span class="formula">c</span>) come una costante fondamentale dell'universo e il limite massimo insuperabile per materia e informazione. Dal 1983 è stabilita esattamente a <span class="formula">299.792,458 km/s</span>, parametro utilizzato per ridefinire la misura del metro nel Sistema Internazionale.</p>
+                    </div>
+                    <div class="image-col">
+                        <div class="img-vertical-box">
+                            <!-- Inserisci qui l'immagine: <img src="immagini/velocita_luce.jpg" alt="Esperimento della ruota di Fizeau"> -->
+                            <span class="img-placeholder-text">Foto Verticale 2<br>(es. Ruota dentata di Fizeau / Rømer)</span>
+                        </div>
+                        <span class="img-caption">Dispositivo storico per la misura della velocità della luce</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- SEZIONE 3 -->
+            <article class="section-block">
+                <h2>3. Ottica fisica: La rifrazione della luce</h2>
+                <div class="section-grid">
+                    <div class="text-col">
+                        <p>Comprendere che la luce viaggia a una velocità finita <span class="formula">c</span> nel vuoto ha aperto la strada allo studio di come essa interagisce attraversando mezzi materiali differenti, rallentando e deviando la propria traiettoria. Questo fenomeno prende il nome di rifrazione e si verifica quando la velocità varia secondo la relazione <span class="formula">v = c / n</span>, dove <span class="formula">n</span> è l'indice di rifrazione del mezzo.</p>
+                        
+                        <div class="formula-block">
+                            Legge di Snell: <span class="formula">(sin î) / (sin r̂) = n₂ / n₁ = v₁ / v₂</span>
+                        </div>
+
+                        <p>Quando la luce entra in un mezzo più denso (<span class="formula">n₂ &gt; n₁</span>), si piega verso la perpendicolare (<span class="formula">r̂ &lt; î</span>), mentre passando a un mezzo meno denso (<span class="formula">n₂ &lt; n₁</span>) si allontana da essa (<span class="formula">r̂ &gt; î</span>). Nel secondo caso, esiste un angolo limite <span class="formula">î<sub>L</sub></span> (definito da <span class="formula">sin î<sub>L</sub> = n₂ / n₁</span>) oltre il quale l'angolo di rifrazione supererebbe i <span class="formula">90°</span>, generando il fenomeno della riflessione totale. Tramite il principio di Huygens-Fresnel, si spiega come ogni punto del fronte d'onda diventi una sorgente di onde sferiche secondarie la cui variazione di velocità nel nuovo mezzo modifica la direzione del fronte d'onda complessivo.</p>
+                    </div>
+                    <div class="image-col">
+                        <div class="img-vertical-box">
+                            <!-- Inserisci qui l'immagine: <img src="immagini/rifrazione.jpg" alt="Schema della rifrazione"> -->
+                            <span class="img-placeholder-text">Foto Verticale 3<br>(es. Raggio rifratto / Angolo limite)</span>
+                        </div>
+                        <span class="img-caption">Deviazione del raggio luminoso nella rifrazione</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- SEZIONE 4 -->
+            <article class="section-block">
+                <h2>4. Spettro dei colori e dispersione della luce</h2>
+                <div class="section-grid">
+                    <div class="text-col">
+                        <p>La rifrazione non si limita a deviare un raggio luminoso, ma rivela anche come la luce naturale sia in realtà una miscela di lunghezze d'onda differenti. Poiché l'indice di rifrazione <span class="formula">n</span> varia in base alla frequenza della radiazione, si verifica il fenomeno della dispersione: un prisma di vetro scompone la luce bianca nelle sue componenti, deviando maggiormente le frequenze più alte (come il violetto) rispetto a quelle più basse (come il rosso).</p>
+                        <p>Questo stesso principio genera l'arcobaleno quando la luce solare viene rifratta, riflessa e nuovamente rifratta all'interno delle gocce di pioggia. L'occhio umano percepisce questo spettro visibile per lunghezze d'onda nel vuoto comprese tra <span class="formula">380 nm</span> (violetto) e <span class="formula">750 nm</span> (rosso), mostrandosi particolarmente sensibile alla luce giallo-verde attorno ai <span class="formula">5,40 × 10¹⁴ Hz</span>.</p>
+                    </div>
+                    <div class="image-col">
+                        <div class="img-vertical-box">
+                            <!-- Inserisci qui l'immagine: <img src="immagini/prisma_spettro.jpg" alt="Prisma ottico e spettro dei colori"> -->
+                            <span class="img-placeholder-text">Foto Verticale 4<br>(es. Prisma di Newton / Spettro visibile)</span>
+                        </div>
+                        <span class="img-caption">Dispersione della luce bianca attraverso un prisma</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- SEZIONE 5 -->
+            <article class="section-block">
+                <h2>5. Curiosità: La percezione della luce negli abissi oceanici</h2>
+                <div class="section-grid">
+                    <div class="text-col">
+                        <p>Comprendere che la luce visibile si scompone in frequenze diverse aiuta a spiegare cosa accade nelle profondità marine, dove l'acqua assorbe selettivamente i vari colori dello spettro man mano che ci si immerge. Oltre i duecento metri la luce solare scompare quasi del tutto, ma l'evoluzione ha spinto la vita abissale ad adattarsi in modi sorprendenti a questa assenza di illuminazione naturale. Molte specie possiedono tessuti capaci di assorbire fino al 99,5% della luce residua o tessuti completamente trasparenti per spezzare la propria sagoma ed essere invisibili ai predatori.</p>
+                        <p>Invece di essere ciechi, molti pesci abissali hanno sviluppato una super-vista a colori calibrata sui deboli bagliori della bioluminescenza. A differenza dei vertebrati di superficie che usano i bastoncelli per la visione notturna in bianco e nero e le opsine dei coni per i colori, queste specie profonde possiedono geni multipli per la rodopsina nei bastoncelli. Ciò consente loro di sovrapporre più strati di recettori visivi tarati sulle specifiche lunghezze d'onda emesse dai corpi degli organismi marini, distinguendo prede e conspecifici nel buio pesto.</p>
+                    </div>
+                    <div class="image-col">
+                        <div class="img-vertical-box">
+                            <!-- Inserisci qui l'immagine: <img src="immagini/pesce_abissale.jpg" alt="Pesce abissale e bioluminescenza"> -->
+                            <span class="img-placeholder-text">Foto Verticale 5<br>(es. Fauna abissale / Bioluminescenza)</span>
+                        </div>
+                        <span class="img-caption">Adattamento visivo e bioluminescenza nelle profondità</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- SEZIONE 6 -->
+            <article class="section-block">
+                <h2>6. L'esperimento di Young: La natura ondulatoria della luce</h2>
+                <div class="section-grid">
+                    <div class="text-col">
+                        <p>Mentre fenomeni come la rifrazione e la dispersione descrivono come la luce viaggia, si scompone o viene percepita dagli occhi, la sua reale natura fisica rimase oggetto di dibattito tra teorie corpuscolari e ondulatorie fino all'inizio dell'Ottocento. Nel 1801, l'esperimento della doppia fenditura di Thomas Young dimostrò in modo inconfutabile il comportamento ondulatorio della luce attraverso il fenomeno dell'interferenza. Una sorgente monocromatica illumina due fenditure vicine (<span class="formula">S₁</span> e <span class="formula">S₂</span>, a distanza <span class="formula">d</span>), le quali fungono da sorgenti coerenti per diffrazione, generando onde sferiche in fase.</p>
+                        
+                        <div class="formula-block">
+                            Frange luminose: <span class="formula">sin &alpha;<sub>k</sub> = k (&lambda; / d)</span> | Frange scure: <span class="formula">sin &alpha;<sub>m</sub> = (m + 1/2) (&lambda; / d)</span>
+                        </div>
+
+                        <p>Sullo schermo posto a distanza <span class="formula">l</span> si forma una serie di frange chiare e scure: le frange luminose derivano da interferenza costruttiva quando le onde giungono in fase con una differenza di cammino che è un multiplo intero della lunghezza d'onda, mentre le frange scure corrispondono a un'interferenza distruttiva con onde in opposizione di fase. Questo esperimento ha permesso di misurare la lunghezza d'onda <span class="formula">&lambda;</span> tramite la distanza <span class="formula">&Delta;y</span> tra due frange luminose consecutive con la formula <span class="formula">&lambda; = (d &middot; &Delta;y) / l</span>, confermando che la luce possiede la tipica natura ondulatoria delle radiazioni elettromagnetiche.</p>
+                    </div>
+                    <div class="image-col">
+                        <div class="img-vertical-box">
+                            <!-- Inserisci qui l'immagine: <img src="immagini/esperimento_young.jpg" alt="Esperimento di Young doppia fenditura"> -->
+                            <span class="img-placeholder-text">Foto Verticale 6<br>(es. Schema Doppia Fenditura di Young)</span>
+                        </div>
+                        <span class="img-caption">Figura di interferenza prodotta dalla doppia fenditura</span>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+
+    </main>
+
+    <footer class="main-footer">
+        <p>Progetto Luce nell'Arte — Percorso Interattivo | Frare Pierpaolo - Liceo Statale Duca degli Abruzzi (TV)</p>
+    </footer>
+
+</body>
+</html>
