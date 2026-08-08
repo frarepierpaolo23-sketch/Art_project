@@ -1,1 +1,336 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luce nell'Arte - Italiano</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- RESET E BASE --- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
+        body {
+            background-color: #0f172a;
+            color: #cbd5e1;
+            font-family: 'Montserrat', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            line-height: 1.7;
+        }
+
+        /* --- INTESTAZIONE --- */
+        .main-header {
+            text-align: center;
+            padding: 40px 20px 20px 20px;
+        }
+
+        .main-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 38px;
+            color: #ffffff;
+            margin-bottom: 8px;
+            letter-spacing: 2px;
+        }
+
+        .main-header .subtitle {
+            color: #d4af37;
+            font-size: 14px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* --- NAVIGAZIONE HOME --- */
+        .nav-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+            width: 100%;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #d4af37;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            transition: color 0.3s ease, transform 0.3s ease;
+            margin-bottom: 20px;
+        }
+
+        .back-btn:hover {
+            color: #ffffff;
+            transform: translateX(-5px);
+        }
+
+        /* --- CONTAINER PRINCIPALE --- */
+        .sections-wrapper {
+            max-width: 1000px;
+            margin: 0 auto 50px auto;
+            padding: 0 20px;
+            width: 100%;
+        }
+
+        /* --- BARRA SEGNALIBRI (IN ALTO) --- */
+        .tabs-bar {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .tab-btn {
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 15px;
+            font-weight: 600;
+            text-decoration: none;
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            background-color: #0f172a;
+            color: #ffffff;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-block;
+        }
+
+        .tab-btn:hover {
+            border-color: #d4af37;
+            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.2);
+        }
+
+        .tab-btn.active {
+            background-color: #d4af37 !important; 
+            color: #ffffff !important;           
+            border-color: #d4af37 !important;
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+        }
+
+        /* --- SCHEDE CONTENUTO --- */
+        .content-box {
+            background-color: #1e293b;
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            border-radius: 12px;
+            padding: 35px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+        }
+
+        .section-block {
+            margin-bottom: 45px;
+            padding-bottom: 35px;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .section-block:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .section-block h2 {
+            font-family: 'Playfair Display', serif;
+            color: #d4af37;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        /* STILE TESTO STANDARD */
+        .full-text p {
+            color: #e2e8f0;
+            font-size: 15px;
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        /* LAYOUT GRIGLIA TESTO + FOTO VERTICALE */
+        .section-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
+        }
+
+        @media (min-width: 768px) {
+            .section-grid {
+                grid-template-columns: 2fr 1fr;
+            }
+        }
+
+        .text-col p {
+            color: #e2e8f0;
+            font-size: 15px;
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .text-col p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* BOX IMMAGINE VERTICALE (PORTRAIT) */
+        .image-col {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .img-vertical-box {
+            width: 100%;
+            max-width: 280px;
+            aspect-ratio: 3 / 4;
+            background-color: #0f172a;
+            border: 1px dashed #d4af37;
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            position: relative;
+        }
+
+        .img-vertical-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .img-placeholder-text {
+            color: #94a3b8;
+            font-size: 13px;
+            text-align: center;
+            padding: 15px;
+        }
+
+        .img-caption {
+            font-size: 12px;
+            color: #94a3b8;
+            margin-top: 8px;
+            text-align: center;
+            font-style: italic;
+        }
+
+        /* FOOTER */
+        .main-footer {
+            text-align: center;
+            padding: 20px;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+            font-size: 13px;
+            color: #94a3b8;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="main-header">
+        <h1>LUCE NELL'ARTE</h1>
+        <p class="subtitle">Approfondimenti Interdisciplinari</p>
+    </header>
+
+    <div class="nav-container">
+        <a href="index.html" class="back-btn">&#8592; Torna alla Home</a>
+    </div>
+
+    <main class="sections-wrapper">
+
+        <!-- BARRA SEGNALIBRI -->
+        <nav class="tabs-bar">
+            <a href="fisica.html" class="tab-btn">Fisica</a>
+            <a href="italiano.html" class="tab-btn active">Italiano</a>
+            <a href="filosofia.html" class="tab-btn">Filosofia</a>
+            <a href="energia.html" class="tab-btn">Energia</a>
+        </nav>
+
+        <!-- CONTENUTO ITALIANO -->
+        <div class="content-box">
+            
+            <!-- SEZIONE 1 -->
+            <article class="section-block">
+                <h2>1. La concezione filosofica e poetica della luce in Dante Alighieri</h2>
+                <div class="full-text">
+                    <p>L'esplorazione del valore simbolico della luce nella letteratura italiana trova la sua prima e più complessa formulazione nel Medioevo con Dante Alighieri. Nel Convivio, Dante chiarisce la distinzione tecnica usata dai filosofi tra la "luce", intesa come la sorgente luminosa o principio originario, il "lume", cioè la propagazione attraverso il mezzo, e lo "splendore", ovvero la luce riflessa su un altro corpo. Nella prassi poetica dantesca, tuttavia, il termine luce viene impiegato anche come sinonimo di lume per indicare la luminosità in generale, oltre che per definire i corpi celesti e le anime dei beati. Il concetto si estende in senso metaforico per indicare la vista fisica e gli occhi, ma soprattutto la vista intellettuale, la luce della verità e la grazia divina necessaria a illuminare l'intelletto dell'uomo.</p>
+                </div>
+            </article>
+
+            <!-- SEZIONE 2 -->
+            <article class="section-block">
+                <h2>2. Il percorso della luce nella Divina Commedia</h2>
+                <div class="full-text">
+                    <p>Questa riflessione teorica si traduce visivamente nel viaggio della Divina Commedia, dove la presenza della luce scandisce il cammino di redenzione del poeta. Nell'Inferno, la luce manca del tutto, trattandosi di un baratro oscuro privo di chiarore che viene descritto espressamente come un luogo sordo a ogni luminosità («loco d'ogne luce muto»). Nel Purgatorio, la luce del sole torna a essere presente e la sua interruzione, causata dall'ombra del corpo fisico di Dante, provoca il grande stupore delle anime penitenti. Nel Paradiso, la luce si trasforma nell'elemento fondamentale dell'intera cantica: man mano che il poeta ascende attraverso i cieli, l'intensità della luminosità circostante cresce continuamente e lo splendore del sorriso di Beatrice si fa via via più abbagliante.</p>
+                </div>
+            </article>
+
+            <!-- SEZIONE 3 (CON FOTO VERTICALE 1: DANTE / PARADISO) -->
+            <article class="section-block">
+                <h2>3. La luce celeste e la visione dell'Empireo</h2>
+                <div class="section-grid">
+                    <div class="text-col">
+                        <p>La progressione luminosa della terza cantica culmina nel contatto diretto con il divino. Lungo i nove cieli del Paradiso, i beati non appaiono con le loro forme umane ma si manifestano come entità di pura luminosità, quali bagliori che danzano o gemme disposte in strutture di luce.</p>
+                        <p>L'apice dell'ascesa si raggiunge nell'Empireo, luogo immateriale descritto da Dante come «pura luce: luce intellettüal, piena d'amore». Attraverso la luce divina della grazia e la contemplazione mistica, la capacità visiva e intellettuale del poeta viene elevata fino a consentirgli la visione diretta della divinità e della Trinità.</p>
+                    </div>
+                    <div class="image-col">
+                        <div class="img-vertical-box">
+                            <!-- Inserisci qui l'immagine: <img src="immagini/dante_empireo.jpg" alt="Rosa dei Beati o Visione dell'Empireo"> -->
+                            <span class="img-placeholder-text">Foto Verticale 1<br>(es. Gustave Doré - Paradiso)</span>
+                        </div>
+                        <span class="img-caption">La candida rosa e la luce dell'Empireo</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- SEZIONE 4 (CON FOTO VERTICALE 2: CAMPANELLA / CITTÀ DEL SOLE) -->
+            <article class="section-block">
+                <h2>4. Il Sole e la luce come utopia in Tommaso Campanella</h2>
+                <div class="section-grid">
+                    <div class="text-col">
+                        <p>Secoli dopo, la concezione metafisica dantesca della luce come espressione di Dio e della verità viene ripresa nel Rinascimento da Tommaso Campanella, che la applica alla costruzione di una società ideale. Nella Città del Sole, la luce e il Sole rappresentano il principio fondamentale attorno al quale si sviluppa l'intera utopia. I cittadini riconoscono nel Sole la principale manifestazione visibile di Dio, inteso come sorgente di vita, calore e razionalità divina. Il governatore supremo della comunità viene chiamato proprio "Sole" (o Metafisico), un sacerdote-filosofo che incarna la perfetta unione di autorità spirituale, politica e culturale, illuminando la società con il proprio sapere.</p>
+                        <p>L'assetto urbano rispecchia direttamente questo principio cosmico: la città è costruita su una collina articolata in sette gironi intitolati ai pianeti, al cui centro e punto più alto sorge il Tempio del Sole di forma circolare. All'interno del tempio, sopra l'altare, due mappamondi sono illuminati da sette lampade perennemente accese, simbolo della presenza costante della luce cosmica e della conoscenza. La luce definisce anche la diffusione del sapere nella vita quotidiana: le mura della città sono totalmente affrescate con rappresentazioni di tutte le scienze naturali e umane, trasformando l'ambiente urbano in un libro aperto reso visibile e accessibile a tutti i cittadini fin dall'infanzia, a simboleggiare una conoscenza chiara e trasparente.</p>
+                    </div>
+                    <div class="image-col">
+                        <div class="img-vertical-box">
+                            <!-- Inserisci qui l'immagine: <img src="immagini/citta_del_sole.jpg" alt="Mappa ideale della Città del Sole"> -->
+                            <span class="img-placeholder-text">Foto Verticale 2<br>(es. Pianta della Città del Sole / Campanella)</span>
+                        </div>
+                        <span class="img-caption">Struttura circolare della Città del Sole</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- SEZIONE 5 (CON FOTO VERTICALE 3: FOSCOLO / ALLA SERA) -->
+            <article class="section-block">
+                <h2>5. Lo spegnersi della luce e il conforto delle tenebre in Ugo Foscolo</h2>
+                <div class="section-grid">
+                    <div class="text-col">
+                        <p>Se nel Medioevo dantesco e nel Rinascimento di Campanella la luce solare era la metafora della divinità, della grazia e della verità trasparente, con il Neoclassicismo e il Pre-romanticismo di Ugo Foscolo la prospettiva si ribalta: la luce del giorno diviene il simbolo del travaglio quotidiano e l'oscurità diventa fonte di quiete. Nel sonetto Alla sera, la luce e l'oscurità costituiscono la trama simbolica attraverso cui il poeta esprime la sua concezione dell'esistenza, del tempo e della morte.</p>
+                        <p>Il declino della luce solare coincide con il venire meno dell'attività umana e del "reo tempo", ovvero quel presente doloroso e travagliato. Il progressivo spegnersi della luminosità diurna attenua le passioni, gli affanni e i conflitti quotidiani che consumano l'esistenza. Foscolo analizza questa attenuazione della luce attraverso due condizioni stagionali opposte: nella stagione estiva, la sera conserva una luminosità residua e serena tra "nubi estive e zeffiri sereni", mentre in quella invernale la luce cede del tutto il passo a "inquiete tenebre e lunghe". In entrambi i casi, l'assenza o il diradarsi della luce solare viene accolto con sollievo dal poeta.</p>
+                        <p>L'avanzare delle tenebre non incute timore, ma si trasforma nella metafora visiva e concettuale del "nulla eterno", la morte intesa secondo la concezione laica e materialista di Foscolo. L'oscurità serale anticipa così il buio definitivo capace di cancellare le angosce terrene. A questo spegnersi della luce esteriore del mondo corrisponde un momento di profonda contemplazione interiore: il buio della sera permette al poeta di placare lo "spirto guerrier" e di trasformare l'assenza di luce naturale in una ritrovata quiete dell'animo.</p>
+                    </div>
+                    <div class="image-col">
+                        <div class="img-vertical-box">
+                            <!-- Inserisci qui l'immagine: <img src="immagini/foscolo_sera.jpg" alt="Ritratto di Ugo Foscolo o paesaggio serale"> -->
+                            <span class="img-placeholder-text">Foto Verticale 3<br>(es. Ugo Foscolo / Paesaggio crepuscolare)</span>
+                        </div>
+                        <span class="img-caption">Il crepuscolo e il silenzio della sera</span>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+
+    </main>
+
+    <footer class="main-footer">
+        <p>Progetto Luce nell'Arte — Percorso Interattivo | Frare Pierpaolo - Liceo Statale Duca degli Abruzzi (TV)</p>
+    </footer>
+
+</body>
+</html>
