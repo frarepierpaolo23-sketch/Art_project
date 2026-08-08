@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     
     <style>
-        /* --- RESET DI BASE --- */
+        /* --- RESET E BASE --- */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -62,7 +62,7 @@
             font-size: 14px;
             font-weight: 600;
             transition: color 0.3s ease, transform 0.3s ease;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
 
         .back-btn:hover {
@@ -76,52 +76,13 @@
             margin: 0 auto 50px auto;
             padding: 0 20px;
             width: 100%;
-            transition: all 0.5s ease-in-out;
         }
 
-        /* --- BARRA SEGNALIBRI (NASCOSTA ALL'INIZIO) --- */
-        .tabs-bar {
-            display: flex;
-            gap: 12px;
-            margin-bottom: 25px;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .tab-btn {
-            padding: 12px 24px;
-            border-radius: 8px;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 15px;
-            font-weight: 600;
-            cursor: pointer;
-            border: 1px solid rgba(212, 175, 55, 0.4);
-            background-color: #0f172a; /* Colore Blu Sfondo per i non selezionati */
-            color: #ffffff;            /* Testo Bianco per i non selezionati */
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .tab-btn:hover {
-            border-color: #d4af37;
-            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.2);
-        }
-
-        /* STATO ATTIVO / SELEZIONATO: Tasto Giallo/Oro con Scritta Bianca */
-        .tab-btn.active {
-            background-color: #d4af37 !important; 
-            color: #ffffff !important;           
-            border-color: #d4af37 !important;
-            box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
-        }
-
-        /* --- VISTA 1: SCHEDE VERTICALI INIZIALI --- */
+        /* --- ELENCO SCHEDE VERTICALI --- */
         .cards-list {
             display: flex;
             flex-direction: column;
             gap: 25px;
-            transition: all 0.5s ease;
         }
 
         .section-card {
@@ -130,7 +91,8 @@
             border-radius: 14px;
             overflow: hidden;
             border: 1px solid rgba(212, 175, 55, 0.4);
-            cursor: pointer;
+            text-decoration: none;
+            display: block;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
             transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
             background-size: cover;
@@ -143,12 +105,12 @@
             box-shadow: 0 12px 30px rgba(212, 175, 55, 0.3);
         }
 
-        /* EFFETTO AZZURRATO SULL'IMMAGINE DI SFONDO */
+        /* STRATO AZZURRATO/SCURO SULL'IMMAGINE */
         .section-card::before {
             content: '';
             position: absolute;
             inset: 0;
-            background: rgba(15, 23, 42, 0.5); /* Tinta azzurrata/scura sopra l'immagine */
+            background: rgba(15, 23, 42, 0.5);
             backdrop-filter: blur(1px);
             transition: background 0.3s ease;
         }
@@ -157,11 +119,11 @@
             background: rgba(15, 23, 42, 0.3);
         }
 
-        /* CUBO BLU TRASPARENTE (GLASSMORPHISM) IN SOVRAPPOSIZIONE */
+        /* CUBO BLU TRASPARENTE (GLASSMORPHISM) */
         .glass-box {
             position: absolute;
             inset: 20px;
-            background: rgba(30, 41, 59, 0.75); /* Cubo blu semitrasparente (#1e293b) */
+            background: rgba(30, 41, 59, 0.75);
             backdrop-filter: blur(8px);
             border: 1px solid rgba(212, 175, 55, 0.3);
             border-radius: 10px;
@@ -185,73 +147,11 @@
             letter-spacing: 1px;
         }
 
-        /* IMMAGINI DI SFONDO PER OGNI SEZIONE (Sostituisci i file se hanno nomi diversi) */
+        /* IMMAGINI DI SFONDO (Modifica i nomi se necessario) */
         .card-fisica { background-image: url('fisica.jpg'); }
         .card-italiano { background-image: url('italiano.jpg'); }
         .card-filosofia { background-image: url('filosofia.jpg'); }
         .card-energia { background-image: url('energia.jpg'); }
-
-        /* --- VISTA 2: CONTAINER TESTI DETTAGLIO --- */
-        .text-content-box {
-            display: none;
-            background-color: #1e293b;
-            border: 1px solid rgba(212, 175, 55, 0.4);
-            border-radius: 12px;
-            padding: 35px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-            animation: fadeIn 0.4s ease-in-out;
-        }
-
-        .text-panel {
-            display: none;
-        }
-
-        .text-panel.active {
-            display: block;
-        }
-
-        .text-panel h2 {
-            font-family: 'Playfair Display', serif;
-            color: #d4af37;
-            font-size: 28px;
-            margin-bottom: 20px;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
-            padding-bottom: 10px;
-        }
-
-        .text-panel p {
-            color: #e2e8f0;
-            font-size: 15px;
-            line-height: 1.8;
-            margin-bottom: 15px;
-            text-align: justify;
-        }
-
-        /* STILI PER FORMULE IN FISICA */
-        .formula {
-            font-family: 'Playfair Display', serif;
-            font-style: italic;
-            color: #f1f5f9;
-            background-color: rgba(15, 23, 42, 0.6);
-            padding: 2px 6px;
-            border-radius: 4px;
-            border: 1px solid rgba(212, 175, 55, 0.2);
-        }
-
-        .formula-block {
-            display: block;
-            text-align: center;
-            margin: 15px 0;
-            padding: 12px;
-            background-color: rgba(15, 23, 42, 0.8);
-            border-left: 3px solid #d4af37;
-            font-size: 16px;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
 
         /* FOOTER */
         .main-footer {
@@ -276,81 +176,35 @@
 
     <main class="sections-wrapper">
 
-        <!-- BARRA SEGNALIBRI (SPOSTATA IN ALTO DOPO IL PRIMO CLICK) -->
-        <div class="tabs-bar" id="tabsBar" style="display: none;">
-            <button class="tab-btn" onclick="showSection('fisica')">Fisica</button>
-            <button class="tab-btn" onclick="showSection('italiano')">Italiano</button>
-            <button class="tab-btn" onclick="showSection('filosofia')">Filosofia</button>
-            <button class="tab-btn" onclick="showSection('energia')">Energia</button>
-        </div>
-
-        <!-- SCHEDE INIZIALI CON IMMAGINE AZZURRATA E CUBO TRASPARENTE -->
-        <div class="cards-list" id="cardsList">
+        <div class="cards-list">
             
-            <!-- SEZIONE FISICA -->
-            <div class="section-card card-fisica" onclick="showSection('fisica')">
+            <!-- SCHEDA FISICA -->
+            <a href="fisica.html" class="section-card card-fisica">
                 <div class="glass-box">
                     <h2>Fisica</h2>
                 </div>
-            </div>
+            </a>
 
-            <!-- SEZIONE ITALIANO -->
-            <div class="section-card card-italiano" onclick="showSection('italiano')">
+            <!-- SCHEDA ITALIANO -->
+            <a href="italiano.html" class="section-card card-italiano">
                 <div class="glass-box">
                     <h2>Italiano</h2>
                 </div>
-            </div>
+            </a>
 
-            <!-- SEZIONE FILOSOFIA -->
-            <div class="section-card card-filosofia" onclick="showSection('filosofia')">
+            <!-- SCHEDA FILOSOFIA -->
+            <a href="filosofia.html" class="section-card card-filosofia">
                 <div class="glass-box">
                     <h2>Filosofia</h2>
                 </div>
-            </div>
+            </a>
 
-            <!-- SEZIONE ENERGIA -->
-            <div class="section-card card-energia" onclick="showSection('energia')">
+            <!-- SCHEDA ENERGIA -->
+            <a href="energia.html" class="section-card card-energia">
                 <div class="glass-box">
-                    <h2>Energia</h2>
+                    <h2>Educazione civica</h2>
                 </div>
-            </div>
-
-        </div>
-
-        <!-- RIQUADRO CHE MOSTRA IL TESTO DELLA MATERIA SELEZIONATA -->
-        <div class="text-content-box" id="textContentBox">
-            
-            <!-- TESTO FISICA -->
-            <article class="text-panel" id="panel-fisica">
-                <h2>Fisica: Ottica, Ondulatoria e Spettro Luminoso</h2>
-                <p>La rifrazione si verifica quando un raggio luminoso cambia direzione nel passare da un mezzo trasparente a un altro. La velocità della luce cambia a seconda del mezzo (<span class="formula">v = c / n</span>), e la deviazione è regolata dalla legge di Snell: <span class="formula">(sin î) / (sin r̂) = n₂ / n₁ = v₁ / v₂</span>.</p>
-                <p>Quando la luce passa a un mezzo più denso (<span class="formula">n₂ &gt; n₁</span>), si piega verso la perpendicolare (<span class="formula">r̂ &lt; î</span>), mentre nel caso opposto (<span class="formula">n₂ &lt; n₁</span>) si allontana da essa (<span class="formula">r̂ &gt; î</span>). Per <span class="formula">n₂ &lt; n₁</span>, esiste un angolo limite <span class="formula">î<sub>L</sub></span> definito da <span class="formula">sin î<sub>L</sub> = n₂ / n₁</span> per cui l'angolo di rifrazione raggiunge <span class="formula">r̂ = 90°</span>; se l'angolo di incidenza supera <span class="formula">î<sub>L</sub></span>, la luce subisce una riflessione totale. Attraverso il principio di Huygens-Fresnel, si dimostra che ciascun punto del fronte d'onda si comporta come una sorgente di onde sferiche secondarie.</p>
-                
-                <div class="formula-block">
-                    <span class="formula">Esperimento di Young: &lambda; = (d &middot; &Delta;y) / l</span>
-                </div>
-                
-                <p>L'esperimento eseguito da Thomas Young nel 1801 dimostra la natura ondulatoria della luce producendo una figura di interferenza composta da frange chiare e scure. Le frange luminose si ottengono per interferenza costruttiva quando le onde arrivano in fase (<span class="formula">sin &alpha;<sub>k</sub> = k &lambda; / d</span>), mentre le frange scure derivano da interferenza distruttiva (<span class="formula">sin &alpha;<sub>m</sub> = (m + 1/2) &lambda; / d</span>).</p>
-                <p>Lo spettro visibile comprende lunghezze d'onda nel vuoto tra 380 nm (violetto) e 750 nm (rosso). La dispersione della luce si verifica perché l'indice di rifrazione <i>n</i> dipende dalla frequenza della luce, fenomeno che permette al prisma di scomporre la luce bianca nei suoi colori e che genera l'arcobaleno.</p>
-            </article>
-
-            <!-- TESTO ITALIANO -->
-            <article class="text-panel" id="panel-italiano">
-                <h2>Italiano: La Luce nella Letteratura</h2>
-                <p>Inserisci qui il testo di Italiano (es. la metafisica della luce nella Divina Commedia di Dante, il Paradiso, o la luce nella poesia di Giuseppe Ungaretti ed Eugenio Montale)...</p>
-            </article>
-
-            <!-- TESTO FILOSOFIA -->
-            <article class="text-panel" id="panel-filosofia">
-                <h2>Filosofia: Il Simbolismo e la Metafisica della Luce</h2>
-                <p>Inserisci qui il testo di Filosofia (es. il Mito della Caverna di Platone e il Sole come bene supremo, o la filosofia illuminista della ragione)...</p>
-            </article>
-
-            <!-- TESTO ENERGIA -->
-            <article class="text-panel" id="panel-energia">
-                <h2>Energia: La Luce come Fonte di Vita e Tecnologia</h2>
-                <p>Inserisci qui il testo di Energia (es. la fotosintesi clorofilliana, l'effetto fotoelettrico, l'energia solare fotovoltaica e le fonti rinnovabili)...</p>
-            </article>
+            </a>
 
         </div>
 
@@ -359,41 +213,6 @@
     <footer class="main-footer">
         <p>Progetto Luce nell'Arte — Percorso Interattivo | Frare Pierpaolo - Liceo Statale Duca degli Abruzzi (TV)</p>
     </footer>
-
-    <!-- LOGICA JAVASCRIPT PER LA TRASFORMAZIONE IN SEGNALIBRI -->
-    <script>
-        function showSection(sectionId) {
-            // 1. Nascondi le schede verticali iniziali
-            document.getElementById('cardsList').style.display = 'none';
-
-            // 2. Mostra la barra dei segnalibri in alto
-            const tabsBar = document.getElementById('tabsBar');
-            tabsBar.style.display = 'flex';
-
-            // 3. Mostra il contenitore del testo
-            document.getElementById('textContentBox').style.display = 'block';
-
-            // 4. Aggiorna lo stato dei segnalibri (tasti in alto)
-            const buttons = document.querySelectorAll('.tab-btn');
-            buttons.forEach(btn => {
-                if (btn.getAttribute('onclick').includes(sectionId)) {
-                    btn.classList.add('active'); // Diventa Giallo/Oro con testo bianco
-                } else {
-                    btn.classList.remove('active'); // Torna Blu del fondo con testo bianco
-                }
-            });
-
-            // 5. Mostra il testo della sezione selezionata e nascondi gli altri
-            const panels = document.querySelectorAll('.text-panel');
-            panels.forEach(panel => {
-                panel.classList.remove('active');
-            });
-            document.getElementById('panel-' + sectionId).classList.add('active');
-
-            // Scroll leggero verso l'alto per facilitare la lettura
-            window.scrollTo({ top: 120, behavior: 'smooth' });
-        }
-    </script>
 
 </body>
 </html>
