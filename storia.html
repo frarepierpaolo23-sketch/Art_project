@@ -1,1 +1,383 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luce nell'Arte - Storia</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- RESET E BASE --- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
+        body {
+            background-color: #0f172a;
+            color: #cbd5e1;
+            font-family: 'Montserrat', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            line-height: 1.7;
+        }
+
+        /* --- INTESTAZIONE --- */
+        .main-header {
+            text-align: center;
+            padding: 40px 20px 20px 20px;
+        }
+
+        .main-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 38px;
+            color: #ffffff;
+            margin-bottom: 8px;
+            letter-spacing: 2px;
+        }
+
+        .main-header .subtitle {
+            color: #d4af37;
+            font-size: 14px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* --- NAVIGAZIONE HOME --- */
+        .nav-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+            width: 100%;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #d4af37;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            transition: color 0.3s ease, transform 0.3s ease;
+            margin-bottom: 20px;
+        }
+
+        .back-btn:hover {
+            color: #ffffff;
+            transform: translateX(-5px);
+        }
+
+        /* --- CONTAINER PRINCIPALE --- */
+        .sections-wrapper {
+            max-width: 1000px;
+            margin: 0 auto 50px auto;
+            padding: 0 20px;
+            width: 100%;
+        }
+
+        /* --- BARRA SEGNALIBRI (IN ALTO) --- */
+        .tabs-bar {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .tab-btn {
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 15px;
+            font-weight: 600;
+            text-decoration: none;
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            background-color: #0f172a;
+            color: #ffffff;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-block;
+        }
+
+        .tab-btn:hover {
+            border-color: #d4af37;
+            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.2);
+        }
+
+        .tab-btn.active {
+            background-color: #d4af37 !important; 
+            color: #ffffff !important;           
+            border-color: #d4af37 !important;
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+        }
+
+        /* --- SCHEDE CONTENUTO --- */
+        .content-box {
+            background-color: #1e293b;
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            border-radius: 12px;
+            padding: 35px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+        }
+
+        .section-block {
+            margin-bottom: 45px;
+            padding-bottom: 35px;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .section-block:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .section-block h2 {
+            font-family: 'Playfair Display', serif;
+            color: #d4af37;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        /* LAYOUT GRIGLIA TESTO + FOTO VERTICALE */
+        .section-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
+        }
+
+        @media (min-width: 768px) {
+            .section-grid {
+                grid-template-columns: 2fr 1fr;
+            }
+        }
+
+        .text-col p {
+            color: #e2e8f0;
+            font-size: 15px;
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .text-col p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* BOX IMMAGINE VERTICALE (PORTRAIT) */
+        .image-col {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .img-vertical-box {
+            width: 100%;
+            max-width: 280px;
+            aspect-ratio: 3 / 4;
+            background-color: #0f172a;
+            border: 1px dashed #d4af37;
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            position: relative;
+        }
+
+        .img-vertical-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .img-placeholder-text {
+            color: #94a3b8;
+            font-size: 13px;
+            text-align: center;
+            padding: 15px;
+        }
+
+        .img-caption {
+            font-size: 12px;
+            color: #94a3b8;
+            margin-top: 8px;
+            text-align: center;
+            font-style: italic;
+        }
+
+        /* FOOTER */
+        .main-footer {
+            text-align: center;
+            padding: 20px;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+            font-size: 13px;
+            color: #94a3b8;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="main-header">
+        <h1>LUCE NELL'ARTE</h1>
+        <p class="subtitle">Approfondimenti Interdisciplinari</p>
+    </header>
+
+    <div class="nav-container">
+        <a href="index.html" class="back-btn">&#8592; Torna alla Home</a>
+    </div>
+
+    <main class="sections-wrapper">
+
+        <!-- BARRA SEGNALIBRI -->
+        <nav class="tabs-bar">
+            <a href="fisica.html" class="tab-btn">Fisica</a>
+            <a href="italiano.html" class="tab-btn">Italiano</a>
+            <a href="storia.html" class="tab-btn active">Storia</a>
+            <a href="energia.html" class="tab-btn">Educazione civica</a>
+        </nav>
+
+        <!-- CONTENUTO STORIA -->
+        <div class="content-box">
+            
+            <!-- SEZIONE 1 -->
+            <article class="section-block">
+                <h2>1. Il ciclo divino del Sole e la lotta contro le tenebre nell'antico Egitto</h2>
+                <div class="section-grid">
+                    <div class="text-col">
+                        <p>La storia del pensiero umano individua nella luce solare il primo e più potente simbolo di vita, ordine e divinità. Nell'antico Egitto, questa concezione trovò la sua massima espressione in Ra, il dio solare e creatore dell'universo. Oggetto di un culto centrale a Eliopoli fin dal Regno Antico, Ra incarnava la sorgente di calore e la guida del cosmo, e la figura stessa del faraone legittimava il proprio potere definendosi "figlio di Ra". Per gli egizi, la presenza della luce era il risultato di un perenne viaggio mitologico: di giorno il dio solare solcava il cielo sulla barca Mandjet, portando nutrimento e chiarore al mondo dei vivi; al tramonto passava sulla barca Mesektet per addentrarsi nel regno sotterraneo dell'Oltretomba (Duat).</p>
+                        <p>Attraversando le dodici ore della notte, la luce di Ra donava un temporaneo sollievo alle anime dei defunti, ma lo esponeva alla terribile minaccia del serpente Apofi, personificazione del caos che cercava di inghiottire l'astro. La vittoria quotidiana su Apofi, garantita dall'aiuto di divinità alleate come Seth e Mehen, permetteva al Sole di risorgere ogni mattina, rinnovando il trionfo della luce sull'oscurità eterna.</p>
+                    </div>
+                    <div class="image-col">
+                        <div class="img-vertical-box">
+                            <!-- Inserisci qui l'immagine: <img src="immagini/ra_barca.jpg" alt="Ra sulla barca solare"> -->
+                            <span class="img-placeholder-text">Foto Verticale 1<br>(es. Il dio Ra sulla barca solare / Apofi)</span>
+                        </div>
+                        <span class="img-caption">Il viaggio notturno di Ra e la lotta con Apofi</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- SEZIONE 2 -->
+            <article class="section-block">
+                <h2>2. La rivoluzione immateriale di Akhenaton e l'universalismo della luce di Aton</h2>
+                <div class="section-grid">
+                    <div class="text-col">
+                        <p>Nel XIV secolo a.C., la teologia solare egizia subì una svolta radicale con il faraone Amenhotep IV, il quale cambiò il proprio nome in Akhenaton ("colui che è utile ad Aton") ed elevò Aton, il disco solare, a unica divinità del regno. A differenza di Ra e del tradizionale pantheon antropomorfo che agiva nell'ombra dei santuari, Aton venne concepito come la manifestazione pura, immateriale e tangibile della luce solare in quanto energia cosmica universale. Questa scelta rispondeva a precise motivazioni religiose e politiche: la luce di Aton era considerata democratica e universalistica, capace di illuminare egualmente tutti i popoli della Terra senza distinzioni.</p>
+                        <p>Sostituendo il culto visibile del Sole all'esclusività dei templi tradizionali, Akhenaton riuscì ad abbattere lo strapotere dei sacerdoti di Amon a Tebe. L'iconografia del periodo abbandonò le forme umane per rappresentare Aton semplicemente come un disco da cui si sprigionavano raggi terminanti con mani umane che offrivano l'Ankh (la vita) ai regnanti. Questa metafisica della luminosità plasmò anche l'architettura: la nuova capitale Akhetaton venne edificata con templi privi di soffitti, affinché ogni altare venisse inondato senza filtri dalla luce solare.</p>
+                    </div>
+                    <div class="image-col">
+                        <div class="img-vertical-box">
+                            <!-- Inserisci qui l'immagine: <img src="immagini/akhenaton_aton.jpg" alt="Rilievo con Akhenaton e i raggi di Aton"> -->
+                            <span class="img-placeholder-text">Foto Verticale 2<br>(es. Rilievo di Akhenaton e il disco di Aton)</span>
+                        </div>
+                        <span class="img-caption">I raggi di Aton che terminano con mani che donano la vita</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- SEZIONE 3 -->
+            <article class="section-block">
+                <h2>3. Le divinità solari dell'America precolombiana: la lotta di Huitzilopochtli e l'abbondanza di Inti</h2>
+                <div class="section-grid">
+                    <div class="text-col">
+                        <p>Parallelamente alle civiltà del Vicino Oriente, anche nell'America precolombiana la luce del Sole fu intesa come la forza vitale indispensabile per la sopravvivenza dell'universo. Nella cultura azteca, questa visione si incarnò in Huitzilopochtli, dio del Sole del mezzogiorno e della guerra. La mitologica nascita del dio sul monte Coatepec, dove emerse armato per sconfiggere la sorella Coyolxauhqui (la Luna) e le Stelle che minacciavano la madre, rappresentava la quotidiana battaglia della luce contro l'oscurità. Gli Aztechi credevano che per permettere al Sole di risorgere all'alba fosse necessario nutrire la divinità con il sangue umano, inteso come l'unica forza capace di rigenerare il suo splendore solare.</p>
+                        <p>Nell'Impero Inca, la luce assumeva invece una valenza benefica e ordinatrice attraverso Inti, il dio Sole considerato l'antenato della dinastia imperiale. Fonte primaria di calore e fertilità per i raccolti, Inti legittimava il potere dei sovrani, che si proclamavano suoi figli diretti. Il centro di questo culto era il tempio del Koricancha a Cusco, dove le pareti rivestite di lastre d'oro riflettevano e moltiplicavano i raggi solari, trasformando il metallo prezioso nella concretizzazione solida della luce divina.</p>
+                    </div>
+                    <div class="image-col">
+                        <div class="img-vertical-box">
+                            <!-- Inserisci qui l'immagine: <img src="immagini/inti_koricancha.jpg" alt="Rappresentazione del dio Inti o Koricancha"> -->
+                            <span class="img-placeholder-text">Foto Verticale 3<br>(es. Disco solare inca Inti / Tempio Koricancha)</span>
+                        </div>
+                        <span class="img-caption">La venerazione del dio Sole Inti nella cultura Inca</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- SEZIONE 4 -->
+            <article class="section-block">
+                <h2>4. La doppia natura della luce nel mondo classico: dalla materia di Elio all'intelletto di Apollo</h2>
+                <div class="section-grid">
+                    <div class="text-col">
+                        <p>Spostando lo sguardo nel bacino del Mediterraneo, la civiltà greco-romana rielaborò il simbolismo solare scindendolo tra dimensione fisica e dimensione spirituale. In origine, la presenza materiale della luce diurna appartenne a Elio, il titanico occhio del mondo che ogni giorno attraversava la volta celeste su un carro dorato trainato da quattro cavalli alati, rivelando dall'alto tutto ciò che era nascosto nell'ombra. Con l'evoluzione del pensiero greco, la personificazione astronomica di Elio venne assorbita da Apollo (detto Febo, "il luminoso"), che elevò la luce da fenomeno naturale a principio di ordine, verità e purificazione morale.</p>
+                        <p>Nato nell'isola di Delo (il cui nome evoca ciò che è "chiaro" e "visibile"), Apollo incarnava il bagliore dell'intelletto capace di disperdere l'oscurità dell'ignoranza e del caos. La luce apollinea si legò alle arti, alla poesia e all'oracolo di Delfi, dove il raggio del dio offriva agli uomini la chiarezza razionale e la rivelazione della verità. Nel mondo romano, questo valore solare venne infine adottato dagli imperatori come strumento politico per associare il proprio governo a un'era di splendore e stabilità.</p>
+                    </div>
+                    <div class="image-col">
+                        <div class="img-vertical-box">
+                            <!-- Inserisci qui l'immagine: <img src="immagini/apollo_statua.jpg" alt="Statua classica di Apollo"> -->
+                            <span class="img-placeholder-text">Foto Verticale 4<br>(es. Statua di Apollo del Belvedere / Elio sul carro)</span>
+                        </div>
+                        <span class="img-caption">Apollo Febo, personificazione della luce intellettuale</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- SEZIONE 5 -->
+            <article class="section-block">
+                <h2>5. Il Re Sole e la sacralizzazione della luce nell'assolutismo monarchico</h2>
+                <div class="section-grid">
+                    <div class="text-col">
+                        <p>Nel XVII secolo, la secolare associazione tra la luce apollinea e il potere politico trovò la sua massima celebrazione profana nella figura di Luigi XIV di Francia. La scelta dell'emblema del Sole non fu un semplice artificio estetico, ma il fondamento propagandistico dell'assolutismo monarchico. Così come il Sole è il centro incontrastato del cosmo e la fonte che dona vita e calore a ogni cosa, il re si poneva come il perno unico dello Stato e la sorgente prima di giustizia per i sudditi.</p>
+                        <p>Questa identificazione, coltivata fin dal 1653 quando un quattordicenne Luigi XIV interpretò il dio Apollo nel Ballet Royal de la Nuit per simboleggiare il trionfo dell'ordine sulle guerre civili, plasmò la stessa architettura della Reggia di Versailles, progettata per catturare e riflettere i raggi solari. Persino il cerimoniale di corte venne strutturato sul ciclo dell'astro: il risveglio (le Lever) e il coricamento (le Coucher) del sovrano coincidevano ritualmente con il sorgere e il tramontare del Sole, trasformando la vita del re nella sola vera fonte di luce dell'intero regno.</p>
+                    </div>
+                    <div class="image-col">
+                        <div class="img-vertical-box">
+                            <!-- Inserisci qui l'immagine: <img src="immagini/luigi_xiv.jpg" alt="Ritratto di Luigi XIV come Re Sole"> -->
+                            <span class="img-placeholder-text">Foto Verticale 5<br>(es. Ritratto di Luigi XIV / Emblema del Re Sole)</span>
+                        </div>
+                        <span class="img-caption">Luigi XIV e l'emblema solare della monarchia assoluta</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- SEZIONE 6 -->
+            <article class="section-block">
+                <h2>6. Dalla luce divina al lume della ragione: la svolta filosofica dell'Illuminismo</h2>
+                <div class="section-grid">
+                    <div class="text-col">
+                        <p>Con il XVIII secolo si consumò una svolta fondamentale: la luce abbandonò i connotati sacri, mistici o monarchici per diventare la metafora fondativa della modernità filosofica. Il termine stesso Illuminismo (Lumières, Aufklärung) indicò nella ragione umana lo strumento per rischiarare le tenebre dell'ignoranza, del pregiudizio, della superstizione e del fanatismo religioso. La luce cessò di essere un raggio calato da una divinità o da un sovrano per diventare una facoltà immanente alla mente di ogni individuo.</p>
+                        <p>Pensatori come Voltaire, Diderot e d'Alembert intesero la "luce intellettuale" come un processo critico e scientifico volto a chiarire i meccanismi della natura e della società, un ideale incarnato dall'Encyclopédie, concepita come un faro destinato a diffondere il sapere. Nelle arti figurative dell'epoca, la luce venne raffigurata non più come un raggio mistico barocco, ma come un bagliore chiaro e profano che promana dalla Verità o dalla Ragione, dissipando le nebbie dell'oscurantismo per fondare una nuova era di tolleranza e libertà.</p>
+                    </div>
+                    <div class="image-col">
+                        <div class="img-vertical-box">
+                            <!-- Inserisci qui l'immagine: <img src="immagini/encyclopedie.jpg" alt="Frontespizio dell'Encyclopédie"> -->
+                            <span class="img-placeholder-text">Foto Verticale 6<br>(es. Frontespizio Encyclopédie / Allegoria della Ragione)</span>
+                        </div>
+                        <span class="img-caption">L'Encyclopédie e il faro della conoscenza illuminista</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- SEZIONE 7 -->
+            <article class="section-block">
+                <h2>7. La luce critica e morale in Kant, Montesquieu e Rousseau</h2>
+                <div class="section-grid">
+                    <div class="text-col">
+                        <p>Nel dibattito illuminista, il concetto di chiarificazione intellettuale si articolò in diverse prospettive teoriche. Immanuel Kant, nel celebre saggio del 1784 Risposta alla domanda: che cos'è l'Illuminismo?, definì l'epoca come l'uscita dell'uomo da uno stato di minorità imputabile a se stesso e sintetizzò questo processo nel motto «Sapere aude!» («abbi il coraggio di servirti della tua propria intelligenza!»). La luce kantiana è la scintilla autonoma del pensiero critico che spazza via la pigrizia e la cieca obbedienza ai dogmi.</p>
+                        <p>Sul piano politico, Montesquieu applicò la luce della ragione allo studio delle istituzioni nello Spirito delle leggi, con l'obiettivo di dissolvere le tenebre del dispotismo, governo cupo basato sulla paura, e fare chiarezza sulla necessità della divisione dei poteri. Infine, Jean-Jacques Rousseau mantenne una posizione più sfumata: pur criticando nel Discorso sulle scienze e le arti la cultura sofisticata che usa la luce del sapere per mascherare la decadenza morale, nell'Emilio e nel Contratto sociale rivalutò la "luce interiore" della coscienza, intesa come il lume naturale del sentimento e della ragione morale che guida l'uomo verso la giustizia e la verità.</p>
+                    </div>
+                    <div class="image-col">
+                        <div class="img-vertical-box">
+                            <!-- Inserisci qui l'immagine: <img src="immagini/kant.jpg" alt="Ritratto di Immanuel Kant"> -->
+                            <span class="img-placeholder-text">Foto Verticale 7<br>(es. Ritratto di Immanuel Kant / Montesquieu / Rousseau)</span>
+                        </div>
+                        <span class="img-caption">Immanuel Kant e l'uso autonomo della ragione</span>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+
+    </main>
+
+    <footer class="main-footer">
+        <p>Progetto Luce nell'Arte — Percorso Interattivo | Frare Pierpaolo - Liceo Statale Duca degli Abruzzi (TV)</p>
+    </footer>
+
+</body>
+</html>
