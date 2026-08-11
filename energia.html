@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luce nell'Arte - Energia</title>
+    <title>Luce nell'Arte - Educazione Civica</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
@@ -29,27 +29,27 @@
         /* --- INTESTAZIONE --- */
         .main-header {
             text-align: center;
-            padding: 50px 20px 30px 20px;
+            padding: 40px 20px 20px 20px;
         }
 
         .main-header h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 46px;
+            font-size: 42px;
             color: #ffffff;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             letter-spacing: 2px;
         }
 
         .main-header .subtitle {
             color: #d4af37;
-            font-size: 18px;
+            font-size: 16px;
             letter-spacing: 3px;
             text-transform: uppercase;
             font-weight: 600;
         }
 
         /* --- NAVIGAZIONE HOME --- */
-        .nav-container {
+        .nav-top-container {
             max-width: 1000px;
             margin: 0 auto;
             padding: 0 20px;
@@ -62,10 +62,10 @@
             gap: 10px;
             color: #d4af37;
             text-decoration: none;
-            font-size: 16px;
+            font-size: 15px;
             font-weight: 600;
             transition: color 0.3s ease, transform 0.3s ease;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
         }
 
         .back-btn:hover {
@@ -73,17 +73,68 @@
             transform: translateX(-5px);
         }
 
-        /* --- CONTAINER PRINCIPALE --- */
-        .content-wrapper {
+        /* --- STILI TABS-BAR --- */
+        .tabs-bar {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
             max-width: 1000px;
-            margin: 0 auto 60px auto;
+            margin: 0 auto 30px auto;
             padding: 0 20px;
             width: 100%;
         }
 
+        .tab-btn {
+            background-color: #1e293b;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 8px;
+            padding: 12px 15px;
+            text-align: center;
+            color: #e2e8f0;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .tab-btn:hover {
+            background-color: #334155;
+            border-color: #d4af37;
+            color: #ffffff;
+            transform: translateY(-3px);
+        }
+
+        /* TAB ATTIVA ILLUMINATA DI GIALLO */
+        .tab-btn.active {
+            background-color: #eab308;
+            color: #0f172a;
+            border-color: #fef08a;
+            font-weight: 700;
+            box-shadow: 0 0 15px rgba(234, 179, 8, 0.6);
+        }
+
+        /* --- CONTAINER PRINCIPALE (BOX TESTO) --- */
+        .content-wrapper {
+            max-width: 1000px;
+            margin: 0 auto 50px auto;
+            padding: 0 20px;
+            width: 100%;
+        }
+
+        .content-box {
+            background-color: #1e293b;
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+        }
+
         .content-section {
-            margin-bottom: 45px;
-            padding-bottom: 35px;
+            margin-bottom: 35px;
+            padding-bottom: 25px;
             border-bottom: 1px solid rgba(212, 175, 55, 0.25);
         }
 
@@ -96,8 +147,8 @@
         .content-section h2 {
             font-family: 'Playfair Display', serif;
             color: #d4af37;
-            font-size: 28px;
-            margin-bottom: 20px;
+            font-size: 26px;
+            margin-bottom: 18px;
             text-transform: uppercase;
             letter-spacing: 1.5px;
             display: flex;
@@ -107,32 +158,18 @@
 
         .content-section p {
             color: #f1f5f9;
-            font-size: 18px;
-            margin-bottom: 20px;
+            font-size: 17px;
+            margin-bottom: 18px;
             text-align: justify;
         }
 
-        /* EFFETTO DOMANDA DEL CORSO */
         .question-title {
             color: #38bdf8;
-            font-size: 22px;
+            font-size: 20px;
             font-family: 'Playfair Display', serif;
             margin-bottom: 15px;
             line-height: 1.5;
             font-style: italic;
-        }
-
-        /* LINK CLICCABILI ED ELEGANTI INGRANDITI */
-        a.credit-link {
-            color: #38bdf8;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.2s ease, text-decoration 0.2s ease;
-        }
-
-        a.credit-link:hover {
-            color: #d4af37;
-            text-decoration: underline;
         }
 
         /* FOOTER */
@@ -143,33 +180,53 @@
             font-size: 14px;
             color: #94a3b8;
         }
+
+        @media (max-width: 768px) {
+            .tabs-bar {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .content-box {
+                padding: 20px;
+            }
+        }
     </style>
 </head>
 <body>
 
     <header class="main-header">
         <h1>LUCE NELL'ARTE</h1>
-        <p class="subtitle">Connessioni Interdisciplinari — Energia</p>
+        <p class="subtitle">Connessioni Interdisciplinari — Educazione Civica</p>
     </header>
 
-    <div class="nav-container">
+    <div class="nav-top-container">
         <a href="index.html" class="back-btn">&#8592; Torna alla Home</a>
     </div>
 
+    <!-- TABS BAR CON LA STRUTTURA ED I LINK RICHIESTI -->
+    <nav class="tabs-bar">
+        <a href="fisica.html" class="tab-btn">Fisica</a>
+        <a href="italiano.html" class="tab-btn">Italiano</a>
+        <a href="storia.html" class="tab-btn">Storia</a>
+        <a href="energia.html" class="tab-btn active">Educazione civica</a>
+    </nav>
+
+    <!-- RIQUADRO CON IL TESTO -->
     <main class="content-wrapper">
-        
-        <section class="content-section">
-            <h2><i class="fa-solid fa-solar-panel fa-bounce"></i> PANNELLI SOLARI</h2>
-            <p>Con l'avvento della tecnologia moderna, la millenaria relazione tra l'uomo e la luce solare compie un salto concettuale fondamentale: il raggio del Sole cessa di essere soltanto una metafora filosofica o una divinità cosmica per diventare una fonte di energia pulita, direttamente convertibile in forza motrice ed elettricità. Il pannello fotovoltaico rappresenta l'ingegno chimico e fisico con cui l'umanità è riuscita a "catturare" la luce per trasformarla in corrente continua attraverso il fenomeno noto come effetto fotovoltaico.</p>
-            <p>L'elemento fondamentale di questa tecnologia è la cella fotovoltaica, realizzata prevalentemente in silicio, un materiale semiconduttore capace di interagire con le particelle luminose. Quando i fotoni trasmessi dalla radiazione solare colpiscono la superficie del materiale, la loro energia viene assorbita dagli elettroni presenti negli atomi di silicio. Questo apporto energetico libera gli elettroni dalle loro orbite, mettendoli in movimento e creando una differenza di potenziale all'interno della struttura chimica del pannello.</p>
-            <p>La corrente continua generata dal flusso ordinato di questi elettroni viene poi incanalata verso un inverter, un dispositivo essenziale che converte la carica in corrente alternata, ossia nella forma d'onda energetica utilizzabile per le utenze domestiche, commerciali e industriali. Attraverso questo processo silenzioso e privo di emissioni, la luce solare abbandona la sua dimensione impalpabile e si concretizza in un'energia rinnovabile e inesauribile, ponendosi come il pilastro centrale della transizione ecologica e del futuro sostenibile del nostro pianeta.</p>
-        </section>
+        <div class="content-box">
+            
+            <section class="content-section">
+                <h2><i class="fa-solid fa-solar-panel fa-bounce"></i> PANNELLI SOLARI</h2>
+                <p>Con l'avvento della tecnologia moderna, la millenaria relazione tra l'uomo e la luce solare compie un salto concettuale fondamentale: il raggio del Sole cessa di essere soltanto una metafora filosofica o una divinità cosmica per diventare una fonte di energia pulita, direttamente convertibile in forza motrice ed elettricità. Il pannello fotovoltaico rappresenta l'ingegno chimico e fisico con cui l'umanità è riuscita a "catturare" la luce per trasformarla in corrente continua attraverso il fenomeno noto come effetto fotovoltaico.</p>
+                <p>L'elemento fondamentale di questa tecnologia è la cella fotovoltaica, realizzata prevalentemente in silicio, un materiale semiconduttore capace di interagire con le particelle luminose. Quando i fotoni trasmessi dalla radiazione solare colpiscono la superficie del materiale, la loro energia viene assorbita dagli elettroni presenti negli atomi di silicio. Questo apporto energetico libera gli elettroni dalle loro orbite, mettendoli in movimento e creando una differenza di potenziale all'interno della struttura chimica del pannello.</p>
+                <p>La corrente continua generata dal flusso ordinato di questi elettroni viene poi incanalata verso un inverter, un dispositivo essenziale che converte la carica in corrente alternata, ossia nella forma d'onda energetica utilizzabile per le utenze domestiche, commerciali e industriali. Attraverso questo processo silenzioso e privo di emissioni, la luce solare abbandona la sua dimensione impalpabile e si concretizza in un'energia rinnovabile e inesauribile, ponendosi come il pilastro centrale della transizione ecologica e del futuro sostenibile del nostro pianeta.</p>
+            </section>
 
-        <section class="content-section">
-            <h2 class="question-title"><i class="fa-solid fa-circle-question fa-beat"></i> DOMANDA: La luce è soltanto un fenomeno fisico o è anche un linguaggio capace di raccontare emozioni, idee e modi diversi di vedere il mondo?</h2>
-            <p>La luce non è soltanto un fenomeno fisico governato dalle leggi dell'ottica e della meccanica quantistica, ma rappresenta un linguaggio espressivo profondo, capace di plasmare emozioni, idee e visioni del mondo. Se da un lato la scienza la descrive come un'onda elettromagnetica e un flusso di fotoni essenziale per la vita e per le tecnologie rinnovabili, dall'altro la cultura umana ha trasformato questa radiazione visibile nel più potente dei codici simbolici. Attraverso i secoli, la luce ha raccontato il sacro e l'ordine cosmico nelle mitologie antiche, in cui il sorgere dell'astro solare coincideva con la vittoria della vita sulle tenebre. Successivamente si è fatta strumento politico e scenografico nelle mani del potere assoluto, come nella corte del Re Sole, per poi secolarizzare nel Settecento e diventare la metafora fondativa della ragione, della conoscenza e della libertà intellettuale dell'Illuminismo. Oltre alle idee e alla filosofia, la luce parla al cuore dell'esperienza emotiva. Nelle arti visive, nella pittura, nel cinema e nella fotografia, il modo in cui un raggio squarcia l'ombra o illumina un dettaglio non serve semplicemente a mostrare la realtà, ma a rivelare lo stato d'animo dei soggetti, evocando drammaticità, intimità o speranza. La luce è dunque un ponte invisibile tra materia e spirito: come fenomeno fisico ci permette di vedere il mondo, ma come linguaggio ci insegna a comprenderlo e a sentirlo.</p>
-        </section>
+            <section class="content-section">
+                <h2 class="question-title"><i class="fa-solid fa-circle-question fa-beat"></i> DOMANDA: La luce è soltanto un fenomeno fisico o è anche un linguaggio capace di raccontare emozioni, idee e modi diversi di vedere il mondo?</h2>
+                <p>La luce non è soltanto un fenomeno fisico governato dalle leggi dell'ottica e della meccanica quantistica, ma rappresenta un linguaggio espressivo profondo, capace di plasmare emozioni, idee e visioni del mondo. Se da un lato la scienza la descrive come un'onda elettromagnetica e un flusso di fotoni essenziale per la vita e per le tecnologie rinnovabili, dall'altro la cultura umana ha trasformato questa radiazione visibile nel più potente dei codici simbolici. Attraverso i secoli, la luce ha raccontato il sacro e l'ordine cosmico nelle mitologie antiche, in cui il sorgere dell'astro solare coincideva con la vittoria della vita sulle tenebre. Successivamente si è fatta strumento politico e scenografico nelle mani del potere assoluto, come nella corte del Re Sole, per poi secolarizzare nel Settecento e diventare la metafora fondativa della ragione, della conoscenza e della libertà intellettuale dell'Illuminismo. Oltre alle idee e alla filosofia, la luce parla al cuore dell'esperienza emotiva. Nelle arti visive, nella pittura, nel cinema e nella fotografia, il modo in cui un raggio squarcia l'ombra o illumina un dettaglio non serve semplicemente a mostrare la realtà, ma a rivelare lo stato d'animo dei soggetti, evocando drammaticità, intimità o speranza. La luce è dunque un ponte invisibile tra materia e spirito: come fenomeno fisico ci permette di vedere il mondo, ma come linguaggio ci insegna a comprenderlo e a sentirlo.</p>
+            </section>
 
+        </div>
     </main>
 
     <footer class="main-footer">
