@@ -3,94 +3,259 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crediti e Fonti - Progetto Luce</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Luce nell'Arte - Crediti</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    
     <style>
+        /* --- RESET E BASE --- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
         body {
             background-color: #0f172a;
-            color: #fafaf9;
-            font-family: 'Montserrat', sans-serif;
-            padding: 80px 10%;
-            line-height: 1.8;
-        }
-        h1 {
-            font-family: 'Playfair Display', serif;
-            color: #d4af37;
-            font-size: 45px;
-            margin-bottom: 20px;
-            border-bottom: 2px solid rgba(212, 175, 55, 0.3);
-            padding-bottom: 15px;
-        }
-        h2 {
-            font-family: 'Playfair Display', serif;
-            color: #d4af37;
-            font-size: 24px;
-            margin-top: 40px;
-            margin-bottom: 15px;
-        }
-        p, li {
-            font-size: 16px;
             color: #cbd5e1;
+            font-family: 'Montserrat', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            line-height: 1.7;
         }
-        ul {
-            margin-left: 20px;
-            margin-bottom: 30px;
-            list-style-type: square;
+
+        /* --- INTESTAZIONE --- */
+        .main-header {
+            text-align: center;
+            padding: 40px 20px 20px 20px;
         }
-        li {
-            margin-bottom: 12px;
+
+        .main-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 38px;
+            color: #ffffff;
+            margin-bottom: 8px;
+            letter-spacing: 2px;
         }
-        strong {
+
+        .main-header .subtitle {
             color: #d4af37;
-        }
-        .btn-back {
-            display: inline-block;
-            margin-top: 40px;
-            padding: 12px 25px;
-            background-color: #d4af37;
-            color: #0f172a;
-            text-decoration: none;
-            font-weight: 600;
+            font-size: 14px;
+            letter-spacing: 2px;
             text-transform: uppercase;
-            font-size: 12px;
-            letter-spacing: 1px;
-            border-radius: 50px;
-            transition: all 0.3s;
         }
-        .btn-back:hover {
-            background-color: transparent;
+
+        /* --- NAVIGAZIONE HOME --- */
+        .nav-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+            width: 100%;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
             color: #d4af37;
-            box-shadow: inset 0 0 0 2px #d4af37;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            transition: color 0.3s ease, transform 0.3s ease;
+            margin-bottom: 20px;
+        }
+
+        .back-btn:hover {
+            color: #ffffff;
+            transform: translateX(-5px);
+        }
+
+        /* --- CONTAINER PRINCIPALE --- */
+        .credits-wrapper {
+            max-width: 900px;
+            margin: 0 auto 50px auto;
+            padding: 0 20px;
+            width: 100%;
+        }
+
+        .content-box {
+            background-color: #1e293b;
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+        }
+
+        .credits-section {
+            margin-bottom: 35px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .credits-section:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .credits-section h2 {
+            font-family: 'Playfair Display', serif;
+            color: #d4af37;
+            font-size: 22px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .credits-section p {
+            color: #e2e8f0;
+            font-size: 15px;
+            margin-bottom: 8px;
+        }
+
+        .credits-section ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .credits-section li {
+            font-size: 14px;
+            margin-bottom: 8px;
+            color: #cbd5e1;
+            word-break: break-word;
+        }
+
+        /* LINK CLICCABILI ED ELEGANTI */
+        a.credit-link {
+            color: #38bdf8;
+            text-decoration: none;
+            transition: color 0.2s ease, text-decoration 0.2s ease;
+        }
+
+        a.credit-link:hover {
+            color: #d4af37;
+            text-decoration: underline;
+        }
+
+        /* FOOTER */
+        .main-footer {
+            text-align: center;
+            padding: 20px;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+            font-size: 13px;
+            color: #94a3b8;
         }
     </style>
 </head>
 <body>
 
-    <h1>Crediti e Documentazione del Progetto</h1>
-    
-    <h2>Tecnologie e Sviluppo</h2>
-    <ul>
-        <li><strong>Linguaggi Utilizzati:</strong> HTML5 (struttura e semantica), CSS3 (fogli di stile avanzati) e JavaScript (gestione delle animazioni ed effetti di scroll).</li>
-        <li><strong>Struttura del Sito:</strong> Ideata e configurata da <strong>Frare Pierpaolo</strong> (impostazione dei collegamenti ipertestuali, divisione in paragrafi logici e organizzazione dei contenuti in elenchi puntati per una lettura ottimale).</li>
-        <li><strong>Sviluppo Grafico ed Estetico:</strong> Interfaccia visiva, palette cromatica e layout responsivo realizzati con il supporto dell'Intelligenza Artificiale (<strong>Gemini</strong>).</li>
-        <li><strong>Hosting:</strong> Il sito è ospitato e pubblicato online tramite la piattaforma <strong>GitHub Pages</strong>.</li>
-    </ul>
+    <header class="main-header">
+        <h1>LUCE NELL'ARTE</h1>
+        <p class="subtitle">Crediti e Fonti</p>
+    </header>
 
-    <h2>Contenuti, Ricerche e Fonti</h2>
-    <ul>
-        <li><strong>Testi Scritti da:</strong> Frare Pierpaolo.</li>
-        <li><strong>Informazioni sulle Opere:</strong> Le schede critiche e storiche sono state formulate combinando la consultazione di siti web specialistici di settore, presentazioni in PowerPoint fornite dai docenti durante le lezioni in classe e il libro di testo in adozione.</li>
-        <li><strong>Connessioni Interdisciplinari:</strong> Elaborate a partire dai libri di testo scolastici delle materie coinvolte (<em>dettagli e volumi specifici da inserire in futuro</em>).</li>
-    </ul>
+    <div class="nav-container">
+        <a href="index.html" class="back-btn">&#8592; Torna alla Home</a>
+    </div>
 
-    <h2>Risorse Multimediali</h2>
-    <ul>
-        <li><strong>Iconografia:</strong> Simboli e icone vettoriali integrati tramite la libreria open-source <em>FontAwesome</em>.</li>
-        <li><strong>Tipografia:</strong> Font di sistema caricati via web (<em>Playfair Display</em> per i titoli storici e <em>Montserrat</em> per i testi degli appunti) provenienti dal catalogo gratuito <em>Google Fonts</em>.</li>
-    </ul>
+    <main class="credits-wrapper">
+        <div class="content-box">
+            
+            <section class="credits-section">
+                <p><strong>Linguaggi:</strong> HTML, CSS e JavaScript</p>
+                <p><strong>Struttura del sito:</strong> Ideata e configurata Frare Pierpaolo</p>
+                <p><strong>Sviluppo grafico ed estetico:</strong> Gemini</p>
+                <p><strong>Hosting:</strong> GitHub Pages</p>
+            </section>
 
-    <a href="index.html" class="btn-back">← Torna alla Home</a>
+            <section class="credits-section">
+                <h2>CONTENUTI:</h2>
+                <p><strong>Testi elaborati e scritti:</strong> Frare Pierpaolo</p>
+                <br>
+                <p><strong>Informazioni opere:</strong></p>
+                <ul>
+                    <li><a class="credit-link" href="https://www.targetti.com/it/Progetti/Bronzi-di-Riace" target="_blank" rel="noopener">targetti.com/.../Bronzi-di-Riace</a></li>
+                    <li><a class="credit-link" href="https://www.globusrivista.it/mezzo-secolo-di-eternita-la-bellezza-immortale-dei-bronzi-di-riace-nel-cinquantenario-della-loro-rinascita/" target="_blank" rel="noopener">globusrivista.it/.../bronzi-di-riace</a></li>
+                    <li><a class="credit-link" href="https://www.dz-e.com/il-progetto-di-revamping-a-san-vitale-il-restauro-illuminotecnico-della-basilica-patrimonio-unesco/" target="_blank" rel="noopener">dz-e.com/.../basilica-patrimonio-unesco</a></li>
+                    <li><a class="credit-link" href="https://www.turismo.ra.it/cultura-e-storia/edifici-religiosi/basilica-san-vitale" target="_blank" rel="noopener">turismo.ra.it/.../basilica-san-vitale</a></li>
+                    <li><a class="credit-link" href="https://www.artesvelata.it/basilica-san-vitale-ravenna/#Giustiniano_e_Teodora" target="_blank" rel="noopener">artesvelata.it/.../basilica-san-vitale-ravenna</a></li>
+                    <li><a class="credit-link" href="https://ildiscorsosullartehome.wordpress.com/2019/05/12/la-basilica-di-san-vitale-a-ravenna-splendori-architettonici-e-musivi-nella-terra-di-teodorico/" target="_blank" rel="noopener">ildiscorsosullartehome.wordpress.com/.../san-vitale</a></li>
+                    <li><a class="credit-link" href="https://www.sainte-chapelle.fr/it" target="_blank" rel="noopener">sainte-chapelle.fr/it</a></li>
+                    <li><a class="credit-link" href="https://www.cometoparis.com/ita/blog/storia-della-sainte-chapelle-s945" target="_blank" rel="noopener">cometoparis.com/.../storia-della-sainte-chapelle</a></li>
+                    <li><a class="credit-link" href="https://www.paristickets.com/it/sainte-chapelle/stained-glass-windows/" target="_blank" rel="noopener">paristickets.com/.../stained-glass-windows</a></li>
+                    <li><a class="credit-link" href="https://www.saintechapelletickets.com/about" target="_blank" rel="noopener">saintechapelletickets.com/about</a></li>
+                    <li><a class="credit-link" href="https://www.frammentirivista.it/abate-suger-gotico-storia/" target="_blank" rel="noopener">frammentirivista.it/.../abate-suger-gotico-storia</a></li>
+                    <li><a class="credit-link" href="https://ladiscussione.com/252060/cultura/la-gioconda-luci-ed-ombre-sul-dipinto-piu-chiacchierato-da-sempre/" target="_blank" rel="noopener">ladiscussione.com/.../la-gioconda-luci-ed-ombre</a></li>
+                    <li><a class="credit-link" href="https://it.wikipedia.org/wiki/Gioconda" target="_blank" rel="noopener">it.wikipedia.org/wiki/Gioconda</a></li>
+                    <li><a class="credit-link" href="https://collections.louvre.fr/en/ark:/53355/cl010062370" target="_blank" rel="noopener">collections.louvre.fr/.../cl010062370</a></li>
+                    <li><a class="credit-link" href="https://www.defsrl.com/lampada-illuminazione-gioconda-museo-del-louvre-parigi/" target="_blank" rel="noopener">defsrl.com/.../lampada-illuminazione-gioconda</a></li>
+                    <li><a class="credit-link" href="https://it.cathopedia.org/wiki/Ultima_Cena_(Tintoretto)" target="_blank" rel="noopener">it.cathopedia.org/.../Ultima_Cena_(Tintoretto)</a></li>
+                    <li><a class="credit-link" href="https://it.wikipedia.org/wiki/Ultima_Cena_(Tintoretto)" target="_blank" rel="noopener">it.wikipedia.org/wiki/Ultima_Cena_(Tintoretto)</a></li>
+                    <li><a class="credit-link" href="https://www.arteworld.it/ultima-cena-tintoretto-analisi/" target="_blank" rel="noopener">arteworld.it/.../ultima-cena-tintoretto-analisi</a></li>
+                    <li><a class="credit-link" href="https://www.artesvelata.it/morte-marat-david/" target="_blank" rel="noopener">artesvelata.it/.../morte-marat-david</a></li>
+                    <li><a class="credit-link" href="https://www.analisidellopera.it/la-morte-di-marat-di-jacques-louis-david/" target="_blank" rel="noopener">analisidellopera.it/.../la-morte-di-marat</a></li>
+                    <li><a class="credit-link" href="https://www.cavazza.it/drupal/it/la-morte-di-marat" target="_blank" rel="noopener">cavazza.it/.../la-morte-di-marat</a></li>
+                    <li><a class="credit-link" href="https://it.wikipedia.org/wiki/La_morte_di_Marat" target="_blank" rel="noopener">it.wikipedia.org/wiki/La_morte_di_Marat</a></li>
+                    <li><a class="credit-link" href="https://it.wikipedia.org/wiki/Il_bacio_(Hayez)" target="_blank" rel="noopener">it.wikipedia.org/wiki/Il_bacio_(Hayez)</a></li>
+                    <li><a class="credit-link" href="https://www.artesvelata.it/il-bacio-di-hayez/" target="_blank" rel="noopener">artesvelata.it/.../il-bacio-di-hayez</a></li>
+                    <li><a class="credit-link" href="https://www.arteworld.it/il-bacio-hayez-analisi/" target="_blank" rel="noopener">arteworld.it/.../il-bacio-hayez-analisi</a></li>
+                    <li><a class="credit-link" href="https://www.raiscuola.rai.it/storiadellarte/articoli/2021/12/Il-qui-ed-ora-nellEstasi-di-Bernini-4f1fc32a-4c61-4cbf-a904-9e84056c997a.html" target="_blank" rel="noopener">raiscuola.rai.it/.../Estasi-di-Bernini</a></li>
+                    <li><a class="credit-link" href="https://www.storicang.it/a/lestasi-di-santa-teresa-scultura-che-levita_17283" target="_blank" rel="noopener">storicang.it/.../lestasi-di-santa-teresa</a></li>
+                    <li><a class="credit-link" href="https://it.wikipedia.org/wiki/Estasi_di_santa_Teresa_d%27Avila" target="_blank" rel="noopener">it.wikipedia.org/.../Estasi_di_santa_Teresa_d_Avila</a></li>
+                </ul>
+                <br>
+                <p><strong>Connessioni interdisciplinari</strong></p>
+                <ul>
+                    <li><a class="credit-link" href="https://www.geopop.it/misurare-la-circonferenza-della-terra-con-un-bastone-la-storia-e-lesperimento-di-eratostene/" target="_blank" rel="noopener">geopop.it/.../esperimento-di-eratostene</a></li>
+                    <li><a class="credit-link" href="https://www.grag.org/eratostene-e-la-misura-della-circonferenza-terrestre/" target="_blank" rel="noopener">grag.org/.../eratostene-e-la-misura-della-circonferenza</a></li>
+                    <li><a class="credit-link" href="https://it.wikipedia.org/wiki/Eratostene" target="_blank" rel="noopener">it.wikipedia.org/wiki/Eratostene</a></li>
+                    <li><a class="credit-link" href="https://www.treccani.it/enciclopedia/luce_(Enciclopedia-Dantesca)/" target="_blank" rel="noopener">treccani.it/.../luce_(Enciclopedia-Dantesca)</a></li>
+                    <li><a class="credit-link" href="https://it.wikipedia.org/wiki/Paradiso_(Divina_Commedia)" target="_blank" rel="noopener">it.wikipedia.org/wiki/Paradiso_(Divina_Commedia)</a></li>
+                    <li><a class="credit-link" href="https://it.wikipedia.org/wiki/La_citt%C3%A0_del_Sole" target="_blank" rel="noopener">it.wikipedia.org/wiki/La_citta_del_Sole</a></li>
+                    <li><a class="credit-link" href="https://sapere.virgilio.it/scuola/superiori/letteratura-storia-filosofia/letteratura-ottocento/alla-sera-di-ugo-foscolo-sintesi-e-spiegazione-della-poesia" target="_blank" rel="noopener">sapere.virgilio.it/.../alla-sera-di-ugo-foscolo</a></li>
+                    <li><a class="credit-link" href="https://it.wikipedia.org/wiki/Alla_sera" target="_blank" rel="noopener">it.wikipedia.org/wiki/Alla_sera</a></li>
+                    <li><a class="credit-link" href="https://it.wikipedia.org/wiki/Ra" target="_blank" rel="noopener">it.wikipedia.org/wiki/Ra</a></li>
+                    <li><a class="credit-link" href="https://www.storicang.it/a/il-dio-ra-e-il-suo-viaggio-nel-mondo-dei-morti_15406" target="_blank" rel="noopener">storicang.it/.../il-dio-ra-e-il-suo-viaggio</a></li>
+                    <li><a class="credit-link" href="https://www.treccani.it/enciclopedia/akhenaton_(Dizionario-di-Storia)/" target="_blank" rel="noopener">treccani.it/.../akhenaton</a></li>
+                    <li><a class="credit-link" href="https://www.storicang.it/a/il-faraone-akhenaton-e-il-suo-dio-aton_15445" target="_blank" rel="noopener">storicang.it/.../akhenaton-e-il-suo-dio-aton</a></li>
+                    <li><a class="credit-link" href="https://www.treccani.it/enciclopedia/aton/" target="_blank" rel="noopener">treccani.it/enciclopedia/aton</a></li>
+                    <li><a class="credit-link" href="https://www.treccani.it/enciclopedia/apollo_(Enciclopedia-dei-ragazzi)/" target="_blank" rel="noopener">treccani.it/enciclopedia/apollo</a></li>
+                    <li><a class="credit-link" href="https://www.romanoimpero.com/2010/01/il-culto-di-apollo.html" target="_blank" rel="noopener">romanoimpero.com/.../il-culto-di-apollo</a></li>
+                    <li><a class="credit-link" href="https://it.wikipedia.org/wiki/Elio_(divinit%C3%A0)" target="_blank" rel="noopener">it.wikipedia.org/wiki/Elio_(divinita)</a></li>
+                    <li><a class="credit-link" href="https://www.thrillerstoriciedintorni.it/2025/03/02/perche-luigi-xiv-era-detto-re-sole/" target="_blank" rel="noopener">thrillerstoriciedintorni.it/.../perche-luigi-xiv-era-detto-re-sole</a></li>
+                    <li><a class="credit-link" href="https://www.treccani.it/enciclopedia/luigi-xiv-re-di-francia-detto-il-grande-o-il-re-sole/" target="_blank" rel="noopener">treccani.it/.../luigi-xiv</a></li>
+                    <li><a class="credit-link" href="https://www.fattiperlastoria.it/assolutismo-monarchico-luigi-xiv/" target="_blank" rel="noopener">fattiperlastoria.it/.../assolutismo-monarchico-luigi-xiv</a></li>
+                    <li><a class="credit-link" href="https://www.treccani.it/enciclopedia/illuminismo/" target="_blank" rel="noopener">treccani.it/enciclopedia/illuminismo</a></li>
+                    <li><a class="credit-link" href="https://www.zeta.vision/2025/10/lilluminismo-la-luce-della-ragione-e-la-religione-delluomo/" target="_blank" rel="noopener">zeta.vision/.../lilluminismo-la-luce-della-ragione</a></li>
+                    <li><a class="credit-link" href="https://it.wikipedia.org/wiki/Luce_(filosofia)" target="_blank" rel="noopener">it.wikipedia.org/wiki/Luce_(filosofia)</a></li>
+                    <li><a class="credit-link" href="https://www.treccani.it/enciclopedia/immanuel-kant/" target="_blank" rel="noopener">treccani.it/enciclopedia/immanuel-kant</a></li>
+                    <li><a class="credit-link" href="https://it.wikipedia.org/wiki/Sapere_aude" target="_blank" rel="noopener">it.wikipedia.org/wiki/Sapere_aude</a></li>
+                    <li><a class="credit-link" href="https://www.treccani.it/enciclopedia/charles-louis-de-secondat-barone-di-la-brede-e-di-montesquieu/" target="_blank" rel="noopener">treccani.it/.../montesquieu</a></li>
+                    <li><a class="credit-link" href="https://it.wikipedia.org/wiki/Montesquieu" target="_blank" rel="noopener">it.wikipedia.org/wiki/Montesquieu</a></li>
+                    <li><a class="credit-link" href="https://www.treccani.it/enciclopedia/jean-jacques-rousseau/" target="_blank" rel="noopener">treccani.it/.../jean-jacques-rousseau</a></li>
+                    <li><a class="credit-link" href="https://it.wikipedia.org/wiki/Jean-Jacques_Rousseau" target="_blank" rel="noopener">it.wikipedia.org/wiki/Jean-Jacques_Rousseau</a></li>
+                    <li><a class="credit-link" href="https://www.treccani.it/enciclopedia/huitzilopochtli/" target="_blank" rel="noopener">treccani.it/enciclopedia/huitzilopochtli</a></li>
+                    <li><a class="credit-link" href="https://it.wikipedia.org/wiki/Huitzilopochtli" target="_blank" rel="noopener">it.wikipedia.org/wiki/Huitzilopochtli</a></li>
+                    <li><a class="credit-link" href="https://it.wikipedia.org/wiki/Inti" target="_blank" rel="noopener">it.wikipedia.org/wiki/Inti</a></li>
+                    <li><a class="credit-link" href="https://www.sorgenia.it/guida-energia/pannelli-solari-cosa-sono#:~:text=Composti%20da%20celle%20fotovoltaiche%2C%20i,casa%20o%20di%20un'azienda." target="_blank" rel="noopener">sorgenia.it/.../pannelli-solari-cosa-sono</a></li>
+                    <li><a class="credit-link" href="https://eniplenitude.com/energie-intelligenti/energie-alternative/come-funzionano-i-pannelli-solari" target="_blank" rel="noopener">eniplenitude.com/.../come-funzionano-i-pannelli-solari</a></li>
+                    <li><a class="credit-link" href="https://it.wikipedia.org/wiki/Pannello_fotovoltaico" target="_blank" rel="noopener">it.wikipedia.org/wiki/Pannello_fotovoltaico</a></li>
+                </ul>
+            </section>
+
+            <section class="credits-section">
+                <h2>RISORSE MULTIMEDIALI</h2>
+                <p><strong>Iconografia:</strong> Simboli ed icone integrati tramite la libreria open-source FontAwesome <a class="credit-link" href="https://fontawesome.com/" target="_blank" rel="noopener">fontawesome.com</a></p>
+                <p><strong>Tipografia:</strong> Font caricati via web provenienti dal catalogo gratuito Google Fonts <a class="credit-link" href="https://fonts.google.com/" target="_blank" rel="noopener">fonts.google.com</a></p>
+            </section>
+
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <p>Progetto Luce nell'Arte — Percorso Interattivo | Frare Pierpaolo - Liceo Statale Duca degli Abruzzi (TV)</p>
+    </footer>
 
 </body>
 </html>
