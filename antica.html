@@ -9,6 +9,44 @@
     <!-- Google Fonts per una tipografia elegante e coerente -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
+        /* Wrapper a tutto schermo per il loader */
+#loader-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0f172a; /* Stesso colore di sfondo del tuo sito */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Sta sopra a tutto il resto */
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+/* Contenuto interno (icona + testo) */
+.loader-content {
+    text-align: center;
+    color: #e2e8f0;
+}
+
+.loader-icon {
+    font-size: 50px;
+    color: #d4af37; /* Colore oro/dettaglio */
+    margin-bottom: 15px;
+}
+
+.loader-content p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+
+/* Classe usata da JavaScript per nascondere la schermata */
+#loader-wrapper.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
         body.arte-antica {
             background-color: #0f172a !important; /* Sfondo blu scuro coordinato */
             color: #cbd5e1;            /* Testo chiaro ad alto contrasto */
@@ -128,6 +166,14 @@
     </style>
 </head>
 <body class="arte-antica">
+    <!-- SCHERMATA DI CARICAMENTO -->
+<div id="loader-wrapper">
+    <div class="loader-content">
+        <!-- Icona animata da FontAwesome -->
+        <i class="fa-solid fa-spinner fa-spin loader-icon"></i>
+        <p>Ossidazione del bronzo in corso...</p>
+    </div>
+</div>
 
     <header>
         <p>Tappa 1 di 8</p>
@@ -186,6 +232,12 @@
             <img src="Roma2.jpg" alt="Allestimento al Museo di Reggio Calabria con luce LED dinamica">
         </div>
     </main>
-
+<script>
+    window.addEventListener('load', function() {
+        const loader = document.getElementById('loader-wrapper');
+        // Aggiunge la classe che sfuma e nasconde il loader
+        loader.classList.add('hidden');
+    });
+</script>
 </body>
 </html>
